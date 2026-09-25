@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d3epibl8d1mog"]
+
+[ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/peasant.tscn" id="1_hisic"]
+
+[node name="Team" type="Node2D" unique_id=1143186444]
+position = Vector2(48, 40)
+
+[node name="Peasant" parent="." unique_id=1413816408 instance=ExtResource("1_hisic")]
+position = Vector2(-24, -24)
+
+[node name="Peasant2" parent="." unique_id=1610346810 instance=ExtResource("1_hisic")]
+position = Vector2(-48, -24)
+
+[node name="Peasant3" parent="." unique_id=979824219 instance=ExtResource("1_hisic")]
+position = Vector2(-72, -24)
+
+[node name="Peasant4" parent="." unique_id=106525528 instance=ExtResource("1_hisic")]
+position = Vector2(-72, -56)
+
+[node name="Peasant5" parent="." unique_id=1193405886 instance=ExtResource("1_hisic")]
+position = Vector2(-48, -56)
+
+[node name="Peasant6" parent="." unique_id=1287266661 instance=ExtResource("1_hisic")]
+position = Vector2(-24, -56)

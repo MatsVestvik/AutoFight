@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dm62aqo7f5k71"]
+
+[ext_resource type="PackedScene" uid="uid://d3epibl8d1mog" path="res://scenes/team.tscn" id="1_e05a3"]
+
+[node name="Arena" type="Node2D" unique_id=949174598]
+
+[node name="Team" parent="." unique_id=1143186444 instance=ExtResource("1_e05a3")]
+position = Vector2(0, 8)
+
+[node name="Team2" parent="." unique_id=241019359 instance=ExtResource("1_e05a3")]
+position = Vector2(104, 8)
