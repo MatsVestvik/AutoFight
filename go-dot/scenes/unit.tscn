@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bwj4dgsua6xlr"]
+
+[ext_resource type="Script" uid="uid://dymwhx7t3j0l5" path="res://scripts/unit.gd" id="1_k673f"]
+[ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="2_k673f"]
+[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="3_1jvru"]
+
+[node name="Unit" type="Node2D" unique_id=1413816408]
+script = ExtResource("1_k673f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1664916512]
+scale = Vector2(2, 2)
+texture = ExtResource("2_k673f")
+
+[node name="attack" type="Label" parent="." unique_id=83758382]
+offset_left = -21.0
+offset_top = 24.0
+offset_right = -13.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1jvru")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cooldown" type="Label" parent="." unique_id=778731486]
+offset_left = -6.0
+offset_top = 24.0
+offset_right = 2.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_1jvru")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

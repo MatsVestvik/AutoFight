@@ -1,24 +1,35 @@
 [gd_scene format=3 uid="uid://d3epibl8d1mog"]
 
-[ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/peasant.tscn" id="1_hisic"]
+[ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/unit.tscn" id="1_hisic"]
+[ext_resource type="Script" uid="uid://6kbr2qqm0n3h" path="res://scripts/team.gd" id="1_jn8yb"]
+[ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="2_6pm8d"]
+[ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="4_m8wau"]
 
 [node name="Team" type="Node2D" unique_id=1143186444]
-position = Vector2(48, 40)
+script = ExtResource("1_jn8yb")
+unit_scene = ExtResource("1_hisic")
+peasant = ExtResource("2_6pm8d")
+archer = ExtResource("4_m8wau")
 
-[node name="Peasant" parent="." unique_id=1413816408 instance=ExtResource("1_hisic")]
-position = Vector2(-24, -24)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=503883132]
+zoom = Vector2(5, 5)
 
-[node name="Peasant2" parent="." unique_id=1610346810 instance=ExtResource("1_hisic")]
-position = Vector2(-48, -24)
+[node name="Slots" type="Node2D" parent="." unique_id=1761015763]
 
-[node name="Peasant3" parent="." unique_id=979824219 instance=ExtResource("1_hisic")]
-position = Vector2(-72, -24)
+[node name="Slot_0_0" type="Marker2D" parent="Slots" unique_id=1823408267]
+position = Vector2(-56, -32)
 
-[node name="Peasant4" parent="." unique_id=106525528 instance=ExtResource("1_hisic")]
-position = Vector2(-72, -56)
+[node name="Slot_0_1" type="Marker2D" parent="Slots" unique_id=1564487987]
+position = Vector2(0, -32)
 
-[node name="Peasant5" parent="." unique_id=1193405886 instance=ExtResource("1_hisic")]
-position = Vector2(-48, -56)
+[node name="Slot_0_2" type="Marker2D" parent="Slots" unique_id=176980118]
+position = Vector2(56, -32)
 
-[node name="Peasant6" parent="." unique_id=1287266661 instance=ExtResource("1_hisic")]
-position = Vector2(-24, -56)
+[node name="Slot_1_0" type="Marker2D" parent="Slots" unique_id=1898567036]
+position = Vector2(-56, 24)
+
+[node name="Slot_1_1" type="Marker2D" parent="Slots" unique_id=682685478]
+position = Vector2(0, 24)
+
+[node name="Slot_1_2" type="Marker2D" parent="Slots" unique_id=1245180441]
+position = Vector2(56, 24)
