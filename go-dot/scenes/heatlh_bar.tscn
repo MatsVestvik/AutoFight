@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d11omibq61uxe"]
+
+[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="1_txgcy"]
+[ext_resource type="Script" uid="uid://btmsf1kr0h43p" path="res://scripts/heatlh_bar.gd" id="2_irkm6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8xmf"]
+bg_color = Color(0.22352941, 0, 0, 0.41568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5u8a"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="HealthBar" type="ProgressBar" unique_id=1840329202]
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_txgcy")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_r8xmf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f5u8a")
+max_value = 1000.0
+value = 1000.0
+show_percentage = false
+script = ExtResource("2_irkm6")

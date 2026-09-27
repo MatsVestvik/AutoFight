@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://6kbr2qqm0n3h" path="res://scripts/team.gd" id="1_jn8yb"]
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="2_6pm8d"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="4_m8wau"]
+[ext_resource type="PackedScene" uid="uid://bqr3nlxu5oaml" path="res://scenes/trigger_view.tscn" id="5_65q0i"]
+[ext_resource type="PackedScene" uid="uid://d11omibq61uxe" path="res://scenes/heatlh_bar.tscn" id="6_jpyfq"]
 
 [node name="Team" type="Node2D" unique_id=1143186444]
 script = ExtResource("1_jn8yb")
@@ -11,10 +13,8 @@ unit_scene = ExtResource("1_hisic")
 peasant = ExtResource("2_6pm8d")
 archer = ExtResource("4_m8wau")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=503883132]
-zoom = Vector2(5, 5)
-
 [node name="Slots" type="Node2D" parent="." unique_id=1761015763]
+position = Vector2(0, 8)
 
 [node name="Slot_0_0" type="Marker2D" parent="Slots" unique_id=1823408267]
 position = Vector2(-56, -32)
@@ -33,3 +33,13 @@ position = Vector2(0, 24)
 
 [node name="Slot_1_2" type="Marker2D" parent="Slots" unique_id=1245180441]
 position = Vector2(56, 24)
+
+[node name="TriggerView" parent="." unique_id=771928632 instance=ExtResource("5_65q0i")]
+position = Vector2(176, -64)
+
+[node name="HealthBar" parent="." unique_id=1840329202 instance=ExtResource("6_jpyfq")]
+offset_top = -72.0
+offset_bottom = -64.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1907988336]
+zoom = Vector2(5, 5)

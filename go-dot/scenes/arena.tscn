@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dm62aqo7f5k71"]
 
 [ext_resource type="PackedScene" uid="uid://d3epibl8d1mog" path="res://scenes/team.tscn" id="1_e05a3"]
+[ext_resource type="Script" uid="uid://bskfsbuun1e6a" path="res://scripts/arena.gd" id="1_wl4x5"]
 
 [node name="Arena" type="Node2D" unique_id=949174598]
+script = ExtResource("1_wl4x5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=281676958]
+zoom = Vector2(2, 2)
 
 [node name="Team" parent="." unique_id=1143186444 instance=ExtResource("1_e05a3")]
-position = Vector2(0, 8)
+position = Vector2(-112, 0)
 
 [node name="Team2" parent="." unique_id=241019359 instance=ExtResource("1_e05a3")]
-position = Vector2(104, 8)
+position = Vector2(112, 0)
+enemy = true
