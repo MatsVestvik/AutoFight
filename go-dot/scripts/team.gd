@@ -11,8 +11,8 @@ const MAX_HEALTH: int = 1000;
 @onready var health_bar: ProgressBar = $HealthBar
 
 var grid: Array[Unit] = [];
-@export var enemy: bool = false;
 
+@export var enemy: bool = false;
 @export var unit_scene: PackedScene;
 @export var peasant: unitData;
 @export var archer: unitData;
