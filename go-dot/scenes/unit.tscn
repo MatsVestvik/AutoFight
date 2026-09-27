@@ -13,6 +13,10 @@ anti_aliasing = false
 [node name="Unit" type="Node2D" unique_id=1413816408]
 script = ExtResource("1_k673f")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1664916512]
+scale = Vector2(2, 2)
+texture = ExtResource("2_k673f")
+
 [node name="attack" type="Label" parent="." unique_id=83758382]
 offset_left = -21.0
 offset_top = 24.0
@@ -48,7 +52,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_gic7v")
 max_value = 1.0
 fill_mode = 3
 show_percentage = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1664916512]
-scale = Vector2(2, 2)
-texture = ExtResource("2_k673f")

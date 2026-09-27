@@ -17,21 +17,40 @@ var grid: Array[Unit] = [];
 @export var peasant: unitData;
 @export var archer: unitData;
 
+signal unit_triggered_signal(damage: int)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	grid.resize(ROWS*COLS);
 	grid.fill(null);
-	spawn_unit(peasant, 0,0);
-	spawn_unit(archer, 0,1);
-	spawn_unit(peasant, 0,2);
-	spawn_unit(archer, 1,0);
-	spawn_unit(peasant, 1,1);
-	spawn_unit(peasant, 1,2);
 	health_bar.set_health(MAX_HEALTH)
 	setup_trigger_view()
 
-func setup_trigger_view() -> void:
+func export_team_data() -> Array[unitData]:
+	var exported: Array[unitData] = []
+	exported.resize(MAX_MEMBERS)
+	exported.fill(null)
 	
+	for i in range(MAX_MEMBERS):
+		if grid[i] != null:
+			exported[i] = grid[i].unit_data
+			
+	return exported
+		
+func import_team_data(data_array: Array[unitData]) -> void:
+	for i in range(MAX_MEMBERS):
+		if grid[i] != null:
+			delete_unit(i)
+			
+	for i in range(MAX_MEMBERS):
+		var data = data_array[i]
+		if data != null:
+			var row = i/COLS
+			var col = i% COLS
+			spawn_unit(data,row,col)
+	return
+	
+func setup_trigger_view() -> void:
 	if(enemy):
 		trigger_view.position.x = -trigger_view.position.x
 	return
@@ -67,19 +86,25 @@ func _connect_unit(u:Unit) -> void:
 func _on_unit_triggered(amount: int, color_name: String) -> void:
 	trigger_view.addTrigger(amount, color_name)
 	unit_triggered_signal.emit(amount)
-	
-signal unit_triggered_signal(damage: int)
 
 func take_damage(damage: int) -> void:
 	health_bar.take_damage(damage)
 	
 func spawn_unit(data: unitData, row: int, col: int) -> void:
+	print("Spawning unit: ", data, " at row: ", row, " col: ", col)
+	
 	var new_unit: Unit = unit_scene.instantiate()
 	
 	add_child(new_unit)
 	place_unit(new_unit, row, col);
-
-
 	_connect_unit(new_unit)
-	
 	new_unit.setup(data)
+	
+	print("Unit spawned at position: ", new_unit.position, " global: ", new_unit.global_position)
+	
+	
+	
+func delete_unit(i: int) -> void:
+	remove_child(grid[i])
+	grid[i].queue_free()
+	grid[i] = null

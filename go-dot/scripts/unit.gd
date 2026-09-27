@@ -10,6 +10,7 @@ var attack: int;
 var cooldown: float;
 var current_timer: float = 0.0
 var unit_name: String;
+var unit_data = unitData
 
 func _ready() -> void:
 	return
@@ -20,6 +21,7 @@ func flip() -> void:
 	attack_label.position.x = -attack_label.position.x
 	
 func setup(data:unitData) -> void:
+	unit_data = data
 	sprite_2d.texture = data.sprite;
 	attack_label.text = str(data.attack);
 	cooldown_label.text = str(data.cooldown_speed);
