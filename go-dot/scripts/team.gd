@@ -1,4 +1,5 @@
 extends Node2D
+class_name Team
 
 const MAX_MEMBERS: int = 6;
 const ROWS: int = 2;
@@ -103,8 +104,7 @@ func spawn_unit(data: unitData, row: int, col: int) -> void:
 	print("Unit spawned at position: ", new_unit.position, " global: ", new_unit.global_position)
 	
 	
-	
 func delete_unit(i: int) -> void:
-	remove_child(grid[i])
-	grid[i].queue_free()
+	if is_instance_valid(grid[i]):
+		grid[i].queue_free()
 	grid[i] = null

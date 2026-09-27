@@ -1,37 +1,52 @@
 [gd_scene format=3 uid="uid://bnjagfu5cbyeg"]
 
+[ext_resource type="Script" uid="uid://b3nnfu8bja1wk" path="res://scripts/shop.gd" id="1_8r1wq"]
 [ext_resource type="PackedScene" uid="uid://d3epibl8d1mog" path="res://scenes/team.tscn" id="1_lx5au"]
 [ext_resource type="Script" uid="uid://ggcl52i66ycm" path="res://scripts/disk.gd" id="2_xfvoa"]
 [ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/unit.tscn" id="3_2fc2m"]
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="4_8r1wq"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="5_ajxib"]
+[ext_resource type="PackedScene" uid="uid://dtq584guuqiuk" path="res://scenes/shop_unit.tscn" id="7_ajxib"]
 
 [node name="Shop" type="Node2D" unique_id=1578769010]
+script = ExtResource("1_8r1wq")
+team_scene = ExtResource("1_lx5au")
+peasant = ExtResource("4_8r1wq")
+archer = ExtResource("5_ajxib")
+
+[node name="Team_Slot" type="Marker2D" parent="." unique_id=1766557349]
+position = Vector2(-80, -56)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=924871861]
 zoom = Vector2(2, 2)
 
-[node name="Team" parent="." unique_id=1143186444 instance=ExtResource("1_lx5au")]
-position = Vector2(-120, -64)
-
 [node name="Disk" type="Node2D" parent="." unique_id=1773313839]
-position = Vector2(-96, 112)
+position = Vector2(-96, 88)
 script = ExtResource("2_xfvoa")
 unit_scene = ExtResource("3_2fc2m")
+shop_unit_scene = ExtResource("7_ajxib")
 peasant = ExtResource("4_8r1wq")
 archer = ExtResource("5_ajxib")
 
 [node name="Slot_1" type="Marker2D" parent="Disk" unique_id=713439361]
-position = Vector2(-104, 0)
+position = Vector2(-120, 0)
 
 [node name="Slot_2" type="Marker2D" parent="Disk" unique_id=1576567274]
-position = Vector2(-48, 0)
+position = Vector2(-56, 0)
 
 [node name="Slot_3" type="Marker2D" parent="Disk" unique_id=1516431475]
 position = Vector2(8, 0)
 
 [node name="Slot_4" type="Marker2D" parent="Disk" unique_id=599082650]
-position = Vector2(64, 0)
+position = Vector2(72, 0)
 
 [node name="Slot_5" type="Marker2D" parent="Disk" unique_id=1128824285]
-position = Vector2(120, 0)
+position = Vector2(136, 0)
+
+[node name="Battle" type="Button" parent="." unique_id=1038126824]
+offset_left = 160.0
+offset_top = 88.0
+offset_right = 264.0
+offset_bottom = 128.0
+
+[connection signal="pressed" from="Battle" to="." method="_on_battle_pressed"]

@@ -11,8 +11,8 @@ var team_array_2: Array[unitData] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	team_array = [peasant, peasant, peasant, peasant, peasant, archer]
-	team_array_2 = [archer, archer, archer, archer, archer, peasant]
+	team_array = [peasant, null, peasant, null, peasant, archer]
+	team_array_2 = [archer, archer, archer, null, archer, peasant]
 	
 	team.import_team_data(team_array)
 	team_2.import_team_data(team_array_2)
@@ -30,3 +30,6 @@ func summon_team() -> void:
 func attack(damage: int) -> void:
 	team.take_damage(damage)
 	return
+	
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/shop.tscn")
