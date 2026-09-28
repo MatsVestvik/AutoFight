@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dow4s5h356igy"]
+
+[ext_resource type="Script" uid="uid://b78buecrq4ptd" path="res://scripts/shop_team.gd" id="1_ybuqc"]
+[ext_resource type="PackedScene" uid="uid://dtq584guuqiuk" path="res://scenes/shop_unit.tscn" id="2_bqqdo"]
+[ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="3_0uios"]
+[ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="4_fc1cj"]
+
+[node name="Shop_Team" type="Node2D" unique_id=170921929]
+script = ExtResource("1_ybuqc")
+unit_scene = ExtResource("2_bqqdo")
+peasant = ExtResource("3_0uios")
+archer = ExtResource("4_fc1cj")
+
+[node name="Slots" type="Node2D" parent="." unique_id=472083857]
+position = Vector2(0, 8)
+
+[node name="Slot_0_0" type="Marker2D" parent="Slots" unique_id=295822043]
+position = Vector2(-64, -40)
+
+[node name="Slot_0_1" type="Marker2D" parent="Slots" unique_id=1189684283]
+position = Vector2(0, -40)
+
+[node name="Slot_0_2" type="Marker2D" parent="Slots" unique_id=1681471123]
+position = Vector2(64, -40)
+
+[node name="Slot_1_0" type="Marker2D" parent="Slots" unique_id=2078240309]
+position = Vector2(-64, 24)
+
+[node name="Slot_1_1" type="Marker2D" parent="Slots" unique_id=751326188]
+position = Vector2(0, 24)
+
+[node name="Slot_1_2" type="Marker2D" parent="Slots" unique_id=669757058]
+position = Vector2(64, 24)
