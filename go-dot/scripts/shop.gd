@@ -16,7 +16,7 @@ var active_team: Team
 var grid: Array[Unit] = []
 
 func _ready() -> void:
-	team_array = [peasant, null, peasant, null, null, archer]
+	team_array = GameManager.get_team()
 	setup_team(team_array)
 	connect_disk(disk)
 	pass # Replace with function body.
@@ -31,6 +31,10 @@ func setup_team(unit_data: Array[unitData])->void:
 	return
 
 func _on_battle_pressed() -> void:
+	var team_to_save: Array[unitData] = active_team.export_team_data()
+	
+	GameManager.save_team(team_to_save)
+	
 	get_tree().change_scene_to_file("res://scenes/arena.tscn")
 
 func connect_disk(disk:Disk)->void:

@@ -11,7 +11,7 @@ var team_array_2: Array[unitData] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	team_array = [peasant, null, peasant, null, peasant, archer]
+	team_array = GameManager.get_team()
 	team_array_2 = [archer, archer, archer, null, archer, peasant]
 	
 	team.import_team_data(team_array)
