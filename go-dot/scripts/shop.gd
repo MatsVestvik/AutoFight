@@ -58,7 +58,7 @@ func _on_unit_drag_ended (unit:shop_unit) -> void:
 		print("selling")
 		sell_unit(unit)
 	else:
-		unit.reset_position
+		unit.reset_position()
 		
 func sell_unit(unit: shop_unit) -> void:
 	var current_team: Array[unitData] = active_team.export_team_data()

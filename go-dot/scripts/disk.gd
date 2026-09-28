@@ -1,11 +1,7 @@
 extends Node2D
 class_name Disk
 
-@onready var slot_1: Marker2D = $Slot_1
-@onready var slot_2: Marker2D = $Slot_2
-@onready var slot_3: Marker2D = $Slot_3
-@onready var slot_4: Marker2D = $Slot_4
-@onready var slot_5: Marker2D = $Slot_5
+@onready var slots: Array[Marker2D] = [$Slot_1, $Slot_2, $Slot_3, $Slot_4, $Slot_5]
 
 @export var unit_scene: PackedScene;
 @export var shop_unit_scene: PackedScene;
@@ -22,11 +18,9 @@ func _ready() -> void:
 	spawn_unit(peasant, 2)
 	spawn_unit(archer, 3)
 	spawn_unit(archer, 4)
-	pass
 
 func get_slot_position(index: int) -> Vector2:
-	var marker = get_child(index) as Marker2D
-	return marker.position
+	return slots[index].position
 	
 func place_unit(unit:shop_unit, index: int) -> bool:
 	if row[index] != null:
@@ -43,6 +37,10 @@ signal buy(data:unitData)
 
 func connect_unit(unit:shop_unit)->void:
 	unit.buy.connect(on_unit_buy)
+	unit.drag_ended.connect(_on_unit_drag_ended)
+
+func _on_unit_drag_ended(unit: shop_unit) -> void:
+	unit.reset_position()
 	
 func on_unit_buy(data:unitData) -> void:
 	print("registered in disk")

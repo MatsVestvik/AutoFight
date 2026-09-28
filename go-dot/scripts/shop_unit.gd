@@ -50,3 +50,8 @@ func _on_pressed() -> void:
 		
 	print("buying")
 	buy.emit(unit_data)
+	
+func reset_position() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "position", original_pos, 0.15).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
