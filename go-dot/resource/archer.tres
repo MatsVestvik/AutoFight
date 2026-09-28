@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_i4bxn")
 unit_name = "archer"
-cooldown_speed = 7.0
+cooldown_speed = 2.0
 attack = 20
 sprite = ExtResource("2_bsd4x")
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

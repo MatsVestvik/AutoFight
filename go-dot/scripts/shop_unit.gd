@@ -13,6 +13,7 @@ var slot_index: int = -1
 signal buy(data:unitData)
 signal drag_started(unit:shop_unit)
 signal drag_ended(unit:shop_unit)
+signal info(unit:shop_unit)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,10 +48,9 @@ func _on_pressed() -> void:
 		is_dragging = false
 		z_index = 0
 		drag_ended.emit(self)
-		
-	print("buying")
-	buy.emit(unit_data)
+	buy.emit(self)
 	
+
 func reset_position() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "position", original_pos, 0.15).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

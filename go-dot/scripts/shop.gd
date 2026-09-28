@@ -5,9 +5,12 @@ const MAX_MEMBERS = 6
 var team_array: Array[unitData] = []
 
 @export var shop_team_scene: PackedScene
+@export var info_view: PackedScene
+
 @export var peasant: unitData;
 @export var archer: unitData;
 
+@onready var info_view_slot: Marker2D = $InfoView_Slot
 @onready var disk: Disk = $Disk
 @onready var team_slot: Marker2D = $Team_Slot
 @onready var sell_zone: Panel = $Sell_Zone
@@ -37,6 +40,13 @@ func setup_team(unit_data: Array[unitData])->void:
 
 	return
 
+func create_info_view(unit: shop_unit) -> void:
+	var active_info_view: PanelContainer = info_view.instantiate()
+	add_child(active_info_view)
+	
+	active_info_view.set_info(unit)
+	active_info_view.position = info_view_slot.position
+	
 func _on_battle_pressed() -> void:
 	var team_to_save: Array[unitData] = active_team.export_team_data()
 	
@@ -50,6 +60,11 @@ func connect_disk(disk:Disk)->void:
 func _connect_unit(u:shop_unit) -> void:
 	if not u.drag_ended.is_connected(_on_unit_drag_ended):
 		u.drag_ended.connect(_on_unit_drag_ended)
+	if not u.drag_started.is_connected(_on_unit_drag_started):
+		u.drag_started.connect(_on_unit_drag_started)
+
+func _on_unit_drag_started (unit:shop_unit) -> void:
+	create_info_view(unit)
 	
 func _on_unit_drag_ended (unit:shop_unit) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()
@@ -69,7 +84,7 @@ func sell_unit(unit: shop_unit) -> void:
 	active_team.import_team_data(current_team)
 	connect_team_units()
 	
-func buy_unit(data:unitData) -> bool:
+func buy_unit(unit: shop_unit) -> bool:
 	if not active_team:
 		return false
 	
@@ -79,7 +94,7 @@ func buy_unit(data:unitData) -> bool:
 	if free_slot_index == -1:
 		print("team full")
 		return false
-	current_team[free_slot_index] = data
+	current_team[free_slot_index] = unit.unit_data
 	active_team.import_team_data(current_team)
 	connect_team_units()
 	

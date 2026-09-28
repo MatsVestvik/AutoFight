@@ -4,30 +4,65 @@
 [ext_resource type="PackedScene" uid="uid://dow4s5h356igy" path="res://scenes/shop_team.tscn" id="2_ajxib"]
 [ext_resource type="Script" uid="uid://ggcl52i66ycm" path="res://scripts/disk.gd" id="2_xfvoa"]
 [ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/unit.tscn" id="3_2fc2m"]
+[ext_resource type="PackedScene" uid="uid://b5e1tq0ygw4rq" path="res://scenes/info_view.tscn" id="3_m4ofw"]
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="4_8r1wq"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="5_ajxib"]
+[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="5_y6sft"]
 [ext_resource type="PackedScene" uid="uid://dtq584guuqiuk" path="res://scenes/shop_unit.tscn" id="7_ajxib"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn52r"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujbl2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwkox"]
+bg_color = Color(0.22352941, 0.23529412, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orhak"]
+bg_color = Color(0.40392157, 0.42352942, 0.4117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hllpq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dsbu"]
 
 [node name="Shop" type="Node2D" unique_id=1578769010]
 script = ExtResource("1_8r1wq")
 shop_team_scene = ExtResource("2_ajxib")
+info_view = ExtResource("3_m4ofw")
 peasant = ExtResource("4_8r1wq")
 archer = ExtResource("5_ajxib")
 
+[node name="InfoView_Slot" type="Marker2D" parent="." unique_id=1654396266]
+position = Vector2(160, -48)
+
 [node name="Sell_Zone" type="Panel" parent="." unique_id=31634684]
-offset_left = 144.0
+offset_left = -272.0
 offset_top = -144.0
-offset_right = 264.0
-offset_bottom = -32.0
+offset_right = -152.0
+offset_bottom = -56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_828cs")
+
+[node name="Label" type="Label" parent="Sell_Zone" unique_id=599432862]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_y6sft")
+text = "Drag to
+Sell"
 
 [node name="Team_Slot" type="Marker2D" parent="." unique_id=1766557349]
-position = Vector2(-80, -56)
+position = Vector2(-48, -56)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=924871861]
 zoom = Vector2(2, 2)
 
 [node name="Disk" type="Node2D" parent="." unique_id=1773313839]
-position = Vector2(-96, 88)
+position = Vector2(-72, 88)
 script = ExtResource("2_xfvoa")
 unit_scene = ExtResource("3_2fc2m")
 shop_unit_scene = ExtResource("7_ajxib")
@@ -49,10 +84,42 @@ position = Vector2(72, 0)
 [node name="Slot_5" type="Marker2D" parent="Disk" unique_id=1128824285]
 position = Vector2(136, 0)
 
+[node name="Buy_Zone" type="Panel" parent="Disk" unique_id=185345372]
+offset_left = -200.0
+offset_top = -136.0
+offset_right = -80.0
+offset_bottom = -48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dn52r")
+
+[node name="Label" type="Label" parent="Disk/Buy_Zone" unique_id=675103925]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("5_y6sft")
+text = "Drag to
+Buy"
+
+[node name="Reroll" type="Button" parent="Disk" unique_id=496430946]
+offset_left = -200.0
+offset_right = -128.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("5_y6sft")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujbl2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hwkox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_orhak")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hllpq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6dsbu")
+text = "Refresh"
+
 [node name="Battle" type="Button" parent="." unique_id=1038126824]
 offset_left = 160.0
 offset_top = 88.0
 offset_right = 264.0
 offset_bottom = 128.0
 
+[connection signal="pressed" from="Disk/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="Disk/Reroll" to="Disk" method="_on_reroll_pressed"]
 [connection signal="pressed" from="Battle" to="." method="_on_battle_pressed"]

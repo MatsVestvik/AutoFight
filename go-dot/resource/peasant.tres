@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="unitData" format=3 uid="uid://bqly7gvxuh4lo"]
 
 [ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unitData.gd" id="1_vteld"]
-[ext_resource type="Texture2D" uid="uid://du1x8tp3jf2x0" path="res://assets/characters/peasant.png" id="2_1pwey"]
+[ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="2_1pwey"]
 
 [resource]
 script = ExtResource("1_vteld")
 unit_name = "peasant"
-cooldown_speed = 5.0
+cooldown_speed = 1.0
 attack = 5
 sprite = ExtResource("2_1pwey")
 metadata/_custom_type_script = "uid://diifg2j7wc77r"
