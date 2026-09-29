@@ -16,16 +16,12 @@ bg_color = Color(0.5764706, 0, 0, 1)
 bg_color = Color(0.74509805, 0, 0, 1)
 
 [node name="InfoView" type="PanelContainer" unique_id=403697188]
-offset_left = -40.0
-offset_top = -56.0
-offset_right = 40.0
-offset_bottom = 56.0
+offset_left = -80.0
+offset_top = -160.0
+offset_right = 72.0
+offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjuu5")
 script = ExtResource("1_cw1sc")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=913756729]
-position = Vector2(40, 56)
-zoom = Vector2(4, 4)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1643410830]
 layout_mode = 2
@@ -55,14 +51,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "ATK"
 
 [node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=1816305518]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "COD"
 
 [node name="Stats_HBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=756371902]
@@ -72,29 +68,37 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 2)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "1"
 
 [node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Stats_HBox" unique_id=295344798]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "1"
 
 [node name="Description_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1830860066]
 custom_maximum_size = Vector2(80, -1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 3
-text = "This is a description of the unit"
+theme_override_font_sizes/font_size = 8
+text = "This is a description
+of the unit
+
+
+
+
+"
 
 [node name="Close_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=29631896]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_1xjg2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_roeni")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0jr6r")
-text = "close
-"
+text = "close"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Close_Button" to="." method="_on_close_button_pressed"]

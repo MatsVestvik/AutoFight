@@ -13,6 +13,7 @@ class_name Disk
 var row: Array[shop_unit] = []
 
 signal info(shop_unit)
+signal buy(data:unitData)
 
 func _ready() -> void:
 	row.resize(5);
@@ -51,10 +52,10 @@ func place_unit(unit:shop_unit, index: int) -> bool:
 	
 	return true
 	
-signal buy(data:unitData)
 
 func connect_unit(unit:shop_unit)->void:
 	unit.drag_ended.connect(_on_unit_drag_ended)
+	unit.drag_started.connect(_on_unit_drag_started)
 
 func _on_unit_drag_ended(unit: shop_unit) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()
@@ -62,6 +63,9 @@ func _on_unit_drag_ended(unit: shop_unit) -> void:
 	if buy_zone.get_global_rect().has_point(mouse_pos):
 		on_unit_buy(unit)
 	unit.reset_position()
+
+func _on_unit_drag_started(unit: shop_unit) -> void:
+	info.emit(unit)
 	
 func on_unit_buy(unit: shop_unit) -> void:
 	print("registered in disk")

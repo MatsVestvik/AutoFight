@@ -29,3 +29,7 @@ func set_info(unit: shop_unit) -> void:
 	
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_close_button_pressed() -> void:
+	hide()

@@ -17,11 +17,14 @@ var team_array: Array[unitData] = []
 
 var active_team: shop_team
 var grid: Array[Unit] = []
+var active_info_view: PanelContainer
 
 func _ready() -> void:
 	team_array = GameManager.get_team()
 	setup_team(team_array)
 	connect_disk(disk)
+	create_info_view()
+	active_info_view.hide()
 
 func connect_team_units() -> void:
 		for child in active_team.get_children():
@@ -37,15 +40,20 @@ func setup_team(unit_data: Array[unitData])->void:
 	active_team.position = team_slot.position
 	
 	connect_team_units()
-
 	return
 
-func create_info_view(unit: shop_unit) -> void:
-	var active_info_view: PanelContainer = info_view.instantiate()
+func create_info_view() -> void:
+	active_info_view = info_view.instantiate()
 	add_child(active_info_view)
 	
-	active_info_view.set_info(unit)
 	active_info_view.position = info_view_slot.position
+	
+func update_info_view(unit: shop_unit) -> void:
+	if not active_info_view:
+		return
+	active_info_view.set_info(unit)
+	active_info_view.show()
+	
 	
 func _on_battle_pressed() -> void:
 	var team_to_save: Array[unitData] = active_team.export_team_data()
@@ -56,6 +64,7 @@ func _on_battle_pressed() -> void:
 
 func connect_disk(disk:Disk)->void:
 	disk.buy.connect(buy_unit)
+	disk.info.connect(update_info_view)
 
 func _connect_unit(u:shop_unit) -> void:
 	if not u.drag_ended.is_connected(_on_unit_drag_ended):
@@ -64,7 +73,8 @@ func _connect_unit(u:shop_unit) -> void:
 		u.drag_started.connect(_on_unit_drag_started)
 
 func _on_unit_drag_started (unit:shop_unit) -> void:
-	create_info_view(unit)
+	
+	update_info_view(unit)
 	
 func _on_unit_drag_ended (unit:shop_unit) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()

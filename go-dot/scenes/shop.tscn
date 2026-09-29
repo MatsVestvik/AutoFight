@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3nnfu8bja1wk" path="res://scripts/shop.gd" id="1_8r1wq"]
 [ext_resource type="PackedScene" uid="uid://dow4s5h356igy" path="res://scenes/shop_team.tscn" id="2_ajxib"]
 [ext_resource type="Script" uid="uid://ggcl52i66ycm" path="res://scripts/disk.gd" id="2_xfvoa"]
-[ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/unit.tscn" id="3_2fc2m"]
+[ext_resource type="PackedScene" uid="uid://bwj4dgsua6xlr" path="res://scenes/arena_unit.tscn" id="3_2fc2m"]
 [ext_resource type="PackedScene" uid="uid://b5e1tq0ygw4rq" path="res://scenes/info_view.tscn" id="3_m4ofw"]
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="4_8r1wq"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="5_ajxib"]
@@ -36,7 +36,7 @@ peasant = ExtResource("4_8r1wq")
 archer = ExtResource("5_ajxib")
 
 [node name="InfoView_Slot" type="Marker2D" parent="." unique_id=1654396266]
-position = Vector2(160, -48)
+position = Vector2(120, -144)
 
 [node name="Sell_Zone" type="Panel" parent="." unique_id=31634684]
 offset_left = -272.0

@@ -1,11 +1,7 @@
-extends Button
+extends superUnit
 
 class_name shop_unit
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var attack: Label = $attack
-
-var unit_data: unitData
 var is_dragging: bool = false
 var original_pos: Vector2
 var slot_index: int = -1
@@ -19,7 +15,6 @@ signal info(unit:shop_unit)
 func _ready() -> void:
 	button_down.connect(_on_button_down)
 	button_up.connect(_on_button_up)
-	pass # Replace with function body.
 
 func _process(_delta: float) -> void:
 	if is_dragging:
@@ -28,7 +23,6 @@ func _process(_delta: float) -> void:
 func setup(unit: unitData) -> void:
 	unit_data = unit
 	sprite_2d.texture = unit.sprite
-	attack.text = str(unit.attack)
 	return
 
 func _on_button_down() -> void:

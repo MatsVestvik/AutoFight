@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bwj4dgsua6xlr"]
+
+[ext_resource type="Script" uid="uid://dymwhx7t3j0l5" path="res://scripts/arena_unit.gd" id="1_hqeln"]
+[ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="2_dcxyr"]
+[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="3_5s34w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4ofw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqeln"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcxyr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tb304"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gic7v"]
+anti_aliasing = false
+
+[node name="Unit" type="Button" unique_id=336616030]
+offset_left = -64.0
+offset_top = -64.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4ofw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hqeln")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dcxyr")
+script = ExtResource("1_hqeln")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1664916512]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dcxyr")
+
+[node name="attack" type="Label" parent="." unique_id=83758382]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 8.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5s34w")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cooldownbar" type="ProgressBar" parent="." unique_id=1283311623]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 60.0
+offset_bottom = 59.0
+theme_override_styles/background = SubResource("StyleBoxFlat_tb304")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gic7v")
+max_value = 1.0
+fill_mode = 3
+show_percentage = false

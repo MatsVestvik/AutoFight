@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func addTrigger(number: int, color: String) -> void:
+func addTrigger(number: int) -> void:
 	var label = Label.new()
 	label.text = str(number)
 	label.add_theme_font_override("font", PIXEL_OPERATOR_8)

@@ -82,12 +82,21 @@ func place_unit(unit:Unit, row: int, col: int) -> bool:
 	return true
 
 func _connect_unit(u:Unit) -> void:
-	u.attack_signal.connect(_on_unit_triggered)
+	u.trigger_signal.connect(_on_unit_triggered)
+	
+func _on_unit_triggered(unit: Unit) -> void:
+	trigger_view.addTrigger(unit.unit_data.attack)
+	unit_triggered_signal.emit(unit.unit_data.attack)
 
-func _on_unit_triggered(amount: int, color_name: String) -> void:
-	trigger_view.addTrigger(amount, color_name)
-	unit_triggered_signal.emit(amount)
-
+func buff_unit_infront(unit:Unit) -> void:
+	get_unit_infront(unit)
+	
+func get_unit_infront(unit:Unit) -> Unit:
+	var pos: int = grid.find(unit)
+	if pos in [0,1,3,4]:
+		return grid[pos+1]
+	else: return null
+	
 func take_damage(damage: int) -> void:
 	health_bar.take_damage(damage)
 	
