@@ -12,12 +12,15 @@ func flip() -> void:
 	
 	
 func setup(data:unitData) -> void:
-	unit_data = data
+	unit_data = data.duplicate()
 	sprite_2d.texture = data.sprite;
 	attack_label.text = str(data.attack);
 	
 	cooldownbar.min_value = 0.0
 	cooldownbar.max_value = data.cooldown_speed
+	
+func update() -> void:
+	attack_label.text = str(self.unit_data.attack)
 	
 func _process(delta:float) -> void:
 	if unit_data.cooldown_speed <= 0.0:
@@ -33,6 +36,8 @@ func _process(delta:float) -> void:
 		trigger()
 
 func trigger() -> void:
+	self.unit_data.attack += 1
+	update()
 	trigger_signal.emit(self)
 	print(unit_data.unit_name, " attacked")
 	

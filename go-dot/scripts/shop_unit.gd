@@ -20,10 +20,6 @@ func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position()-(size/2.0)
 		
-func setup(unit: unitData) -> void:
-	unit_data = unit
-	sprite_2d.texture = unit.sprite
-	return
 
 func _on_button_down() -> void:
 	is_dragging = true

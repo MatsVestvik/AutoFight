@@ -20,12 +20,6 @@ func _ready() -> void:
 	team.unit_triggered_signal.connect(func(dmg): team_2.take_damage(dmg))
 	team_2.unit_triggered_signal.connect(func(dmg): team.take_damage(dmg))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func summon_team() -> void:
-	pass
 	
 func attack(damage: int) -> void:
 	team.take_damage(damage)
