@@ -10,4 +10,5 @@ cooldown_speed = 2.0
 attack = 20
 sprite = ExtResource("2_bsd4x")
 description = "High damage unit "
+cost = 10
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

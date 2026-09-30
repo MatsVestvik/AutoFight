@@ -4,7 +4,8 @@
 [ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="2_b2xd3"]
 [ext_resource type="Texture2D" uid="uid://dm6fwc0tujk46" path="res://assets/characters/archer.png" id="3_m7ln4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjuu5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2xd3"]
+bg_color = Color(0, 0, 0, 0.4392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xjg2"]
 bg_color = Color(1, 0, 0, 1)
@@ -18,9 +19,9 @@ bg_color = Color(0.74509805, 0, 0, 1)
 [node name="InfoView" type="PanelContainer" unique_id=403697188]
 offset_left = -80.0
 offset_top = -160.0
-offset_right = 72.0
-offset_bottom = 64.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjuu5")
+offset_right = 184.0
+offset_bottom = 248.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2xd3")
 script = ExtResource("1_cw1sc")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1643410830]
@@ -34,14 +35,15 @@ theme_override_constants/margin_bottom = 2
 layout_mode = 2
 
 [node name="Name_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=741964571]
-custom_minimum_size = Vector2(0, 70)
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
 text = "Name"
+horizontal_alignment = 1
 
 [node name="Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1211866091]
-position = Vector2(40, 40.000004)
-scale = Vector2(2.0000002, 1.75)
+position = Vector2(71, 69)
+scale = Vector2(3.9375002, 3.5624998)
 texture = ExtResource("3_m7ln4")
 
 [node name="Category_HBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=760077157]
@@ -50,6 +52,7 @@ layout_mode = 2
 [node name="Attack_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=219370604]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 8
 text = "ATK"
@@ -57,6 +60,7 @@ text = "ATK"
 [node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=1816305518]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 8
 text = "COD"
@@ -67,6 +71,7 @@ layout_mode = 2
 [node name="Attack_Label" type="Label" parent="MarginContainer/VBoxContainer/Stats_HBox" unique_id=1935071257]
 custom_minimum_size = Vector2(30, 2)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 16
 text = "1"
@@ -74,28 +79,30 @@ text = "1"
 [node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Stats_HBox" unique_id=295344798]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 16
 text = "1"
 
 [node name="Description_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1830860066]
-custom_maximum_size = Vector2(160, -1)
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(260, -1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 8
-text = "This is a description
-of the unit
+text = "This is a description of the unit
 
 
 
 
 "
+autowrap_mode = 3
 
 [node name="Close_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=29631896]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_1xjg2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_roeni")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0jr6r")

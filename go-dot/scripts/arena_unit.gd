@@ -34,7 +34,4 @@ func _process(delta:float) -> void:
 		current_timer -= unit_data.cooldown_speed
 		cooldownbar.value = current_timer
 		trigger()
-
-func trigger() -> void:
-	trigger_signal.emit(self)
 	

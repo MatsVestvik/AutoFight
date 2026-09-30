@@ -6,7 +6,7 @@ const ROWS: int = 2;
 const COLS: int = 3;
 
 const MAX_HEALTH: int = 1000;
-const SLOT_SNAP_DISTANCE: float = 64.0
+const SLOT_SNAP_DISTANCE: float = 128.0
 
 @onready var slots_container: Node2D = $Slots;
 
@@ -78,7 +78,7 @@ func move_or_swap_unit(unit: shop_unit, target_index: int) -> void:
 		unit.slot_index = target_index
 		
 		# Oppdater startposisjonen og animer dit
-		unit.original_pos = get_slot_pos_by_index(target_index)
+		unit.original_pos = get_slot_pos_by_index(target_index) - (unit.size/2)
 		unit.reset_position()
 	else:
 		# 2. Målruten er OPPTATT -> Bytter plass (Swap)
@@ -90,8 +90,8 @@ func move_or_swap_unit(unit: shop_unit, target_index: int) -> void:
 		target_unit.slot_index = origin_index
 		
 		# Sett nye hjemmeposisjoner
-		unit.original_pos = get_slot_pos_by_index(target_index)
-		target_unit.original_pos = get_slot_pos_by_index(origin_index)
+		unit.original_pos = get_slot_pos_by_index(target_index)- (unit.size/2)
+		target_unit.original_pos = get_slot_pos_by_index(origin_index)- (unit.size/2)
 		
 		# Animer begge til sine nye plasser
 		unit.reset_position()
@@ -121,7 +121,7 @@ func place_unit(unit:shop_unit, row: int, col: int) -> bool:
 	if enemy:
 		unit.flip()
 
-	unit.position = get_slot_position(row,col)
+	unit.position = get_slot_position(row,col) - (unit.size/2)
 	return true
 	
 func spawn_unit(data: unitData, row: int, col: int) -> void:

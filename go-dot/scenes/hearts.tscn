@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://nbdve0tvjugc"]
+
+[ext_resource type="Texture2D" uid="uid://fhk42btdvtg4" path="res://assets/icons/fullHeart.png" id="1_14ev0"]
+[ext_resource type="Script" uid="uid://cr01n4h3pbseu" path="res://scripts/hearts.gd" id="1_hugpe"]
+[ext_resource type="Texture2D" uid="uid://cdlvww64485hp" path="res://assets/icons/emptyHeart.png" id="2_hugpe"]
+
+[node name="Hearts" type="Node2D" unique_id=1577678993]
+script = ExtResource("1_hugpe")
+
+[node name="Heart_1" type="Sprite2D" parent="." unique_id=1579808146]
+position = Vector2(-48, -16)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_2" type="Sprite2D" parent="." unique_id=1923043297]
+position = Vector2(-24, -16)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_3" type="Sprite2D" parent="." unique_id=188249745]
+position = Vector2(0, -16)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_4" type="Sprite2D" parent="." unique_id=969431269]
+position = Vector2(24, -16)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_5" type="Sprite2D" parent="." unique_id=1541523096]
+position = Vector2(48, -16)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_6" type="Sprite2D" parent="." unique_id=865315998]
+position = Vector2(-48, 8)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_7" type="Sprite2D" parent="." unique_id=1532816539]
+position = Vector2(-24, 8)
+texture = ExtResource("1_14ev0")
+
+[node name="Heart_8" type="Sprite2D" parent="." unique_id=1446552237]
+position = Vector2(0, 8)
+texture = ExtResource("2_hugpe")
+
+[node name="Heart_9" type="Sprite2D" parent="." unique_id=403713699]
+position = Vector2(24, 8)
+texture = ExtResource("2_hugpe")
+
+[node name="Heart_10" type="Sprite2D" parent="." unique_id=333739435]
+position = Vector2(48, 8)
+texture = ExtResource("2_hugpe")

@@ -4,46 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="3_dl2ea"]
 [ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="4_hm2hj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
-bg_color = Color(0.6, 0.6, 0.6, 0.44705883)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn52r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujbl2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwkox"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orhak"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hllpq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dsbu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohoeo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ttkb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2gme"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gpyyg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw1sc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="shop_unit" type="Button" unique_id=1411842001]
-offset_left = -32.0
-offset_top = -40.0
-offset_right = 32.0
-offset_bottom = 24.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_828cs")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_dn52r")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ujbl2")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hwkox")
-theme_override_styles/hover = SubResource("StyleBoxFlat_orhak")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hllpq")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6dsbu")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ohoeo")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_3ttkb")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_g2gme")
-theme_override_styles/focus = SubResource("StyleBoxFlat_gpyyg")
+offset_left = -64.0
+offset_top = -64.0
+scale = Vector2(2, 2)
+theme_override_styles/normal = SubResource("StyleBoxFlat_cw1sc")
 script = ExtResource("1_63wcd")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=203337177]
 position = Vector2(32, 32)
@@ -52,10 +22,9 @@ texture = ExtResource("3_dl2ea")
 
 [node name="attack" type="Label" parent="." unique_id=489476411]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 48.0
-offset_right = 16.0
-offset_bottom = 60.0
+offset_top = 52.0
+offset_right = 8.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_hm2hj")
 theme_override_font_sizes/font_size = 8

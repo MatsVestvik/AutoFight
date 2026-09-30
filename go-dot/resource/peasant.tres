@@ -10,4 +10,5 @@ cooldown_speed = 1.0
 attack = 5
 sprite = ExtResource("2_1pwey")
 description = "A fast attacking unit with low damage"
+cost = 5
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

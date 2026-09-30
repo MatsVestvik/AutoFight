@@ -14,6 +14,7 @@ var team_array: Array[unitData] = []
 @onready var disk: Disk = $Disk
 @onready var team_slot: Marker2D = $Team_Slot
 @onready var sell_zone: Panel = $Sell_Zone
+@onready var coins_label: Label = $Coins_Label
 
 var active_team: shop_team
 var grid: Array[Unit] = []
@@ -25,7 +26,12 @@ func _ready() -> void:
 	connect_disk(disk)
 	create_info_view()
 	active_info_view.hide()
+	update_coin_label()
+	sell_zone.hide()
 
+func update_coin_label() -> void:
+	coins_label.text = str(GameManager.coins)
+	
 func connect_team_units() -> void:
 		for child in active_team.get_children():
 			if child is shop_unit:
@@ -73,10 +79,11 @@ func _connect_unit(u:shop_unit) -> void:
 		u.drag_started.connect(_on_unit_drag_started)
 
 func _on_unit_drag_started (unit:shop_unit) -> void:
-	
+	sell_zone.show()
 	update_info_view(unit)
 	
 func _on_unit_drag_ended (unit:shop_unit) -> void:
+	sell_zone.hide()
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	
 	if sell_zone.get_global_rect().has_point(mouse_pos):
@@ -86,7 +93,6 @@ func _on_unit_drag_ended (unit:shop_unit) -> void:
 	var target_slot: int = active_team.get_slot_index_at_position(mouse_pos)
 	
 	if target_slot != -1:
-		print("Flytter/bytter til rute: ", target_slot)
 		active_team.move_or_swap_unit(unit, target_slot)
 	else:
 		unit.reset_position()
@@ -98,9 +104,12 @@ func sell_unit(unit: shop_unit) -> void:
 		current_team[unit.slot_index] = null
 		
 	active_team.import_team_data(current_team)
+	
 	connect_team_units()
 	
 func buy_unit(unit: shop_unit) -> bool:
+	if(unit.unit_data.cost > GameManager.coins):
+		return false
 	if not active_team:
 		return false
 	
@@ -112,5 +121,7 @@ func buy_unit(unit: shop_unit) -> bool:
 	current_team[free_slot_index] = unit.unit_data
 	active_team.import_team_data(current_team)
 	connect_team_units()
+	GameManager.coins -= unit.unit_data.cost
+	update_coin_label()
 
 	return true

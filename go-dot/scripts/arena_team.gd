@@ -19,8 +19,8 @@ var grid: Array[Unit] = [];
 @export var archer: unitData;
 
 signal unit_triggered_signal(damage: int)
+signal death_signal()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	grid.resize(ROWS*COLS);
 	grid.fill(null);
@@ -103,6 +103,8 @@ func get_unit_infront(unit:Unit) -> Unit:
 	
 func take_damage(damage: int) -> void:
 	health_bar.take_damage(damage)
+	if health_bar.health <= 0:
+		death_signal.emit()
 	
 func spawn_unit(data: unitData, row: int, col: int) -> void:
 	var new_unit: Unit = unit_scene.instantiate()

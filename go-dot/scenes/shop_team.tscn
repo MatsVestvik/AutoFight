@@ -15,19 +15,19 @@ archer = ExtResource("4_fc1cj")
 position = Vector2(0, 8)
 
 [node name="Slot_0_0" type="Marker2D" parent="Slots" unique_id=295822043]
-position = Vector2(-64, -40)
+position = Vector2(-128, -80)
 
 [node name="Slot_0_1" type="Marker2D" parent="Slots" unique_id=1189684283]
-position = Vector2(0, -40)
+position = Vector2(0, -80)
 
 [node name="Slot_0_2" type="Marker2D" parent="Slots" unique_id=1681471123]
-position = Vector2(64, -40)
+position = Vector2(128, -80)
 
 [node name="Slot_1_0" type="Marker2D" parent="Slots" unique_id=2078240309]
-position = Vector2(-64, 24)
+position = Vector2(-128, 48)
 
 [node name="Slot_1_1" type="Marker2D" parent="Slots" unique_id=751326188]
-position = Vector2(0, 24)
+position = Vector2(0, 48)
 
 [node name="Slot_1_2" type="Marker2D" parent="Slots" unique_id=669757058]
-position = Vector2(64, 24)
+position = Vector2(128, 48)

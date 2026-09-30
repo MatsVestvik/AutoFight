@@ -4,20 +4,26 @@
 [ext_resource type="Script" uid="uid://bskfsbuun1e6a" path="res://scripts/arena.gd" id="1_wl4x5"]
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="2_xdvfk"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="3_7ft05"]
+[ext_resource type="Texture2D" uid="uid://bk4x57r8u4woy" path="res://assets/backgrounds/background.png" id="4_7ft05"]
 
 [node name="Arena" type="Node2D" unique_id=949174598]
 script = ExtResource("1_wl4x5")
 peasant = ExtResource("2_xdvfk")
 archer = ExtResource("3_7ft05")
 
+[node name="Background" type="Sprite2D" parent="." unique_id=931970653]
+position = Vector2(23.999998, 7.9999995)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_7ft05")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=281676958]
 zoom = Vector2(2, 2)
 
 [node name="Team" parent="." unique_id=1143186444 instance=ExtResource("1_e05a3")]
-position = Vector2(-112, 0)
+position = Vector2(-112, -56)
 
 [node name="Team2" parent="." unique_id=241019359 instance=ExtResource("1_e05a3")]
-position = Vector2(112, 0)
+position = Vector2(112, -56)
 enemy = true
 
 [node name="Button" type="Button" parent="." unique_id=1051918195]

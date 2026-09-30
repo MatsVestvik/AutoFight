@@ -7,3 +7,5 @@ class_name unitData
 @export var sprite: Texture2D;
 @export var buff: int;
 @export var description: String;
+@export var cost: int;
+@export var income: int;

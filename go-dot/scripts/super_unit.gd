@@ -17,8 +17,8 @@ func setup(data:unitData) -> void:
 	sprite_2d.texture = data.sprite;
 	attack_label.text = str(data.attack);
 
-
 func trigger() -> void:
 	trigger_signal.emit(self)
+	GameManager.coins += unit_data.income
 	print(unit_data.unit_name, " triggered")
 	

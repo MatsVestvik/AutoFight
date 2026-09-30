@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ddia5ehdww0re"]
+
+[ext_resource type="Script" uid="uid://bnerjhbip0u7a" path="res://scripts/disk_unit.gd" id="1_172nd"]
+[ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="1_bx4j8"]
+[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="2_172nd"]
+[ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/font/PixelOperator8-Bold.ttf" id="4_d2be6"]
+[ext_resource type="Texture2D" uid="uid://b6rct15xx8l14" path="res://assets/icons/coin.png" id="5_8jkdq"]
+[ext_resource type="Texture2D" uid="uid://b7fmg8vkqyli1" path="res://assets/boxes/normal.png" id="6_8jkdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
+bg_color = Color(0, 0, 0, 0.6313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jkdq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hchur"]
+bg_color = Color(0, 0, 0, 0.79607844)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jkdq"]
+
+[node name="DiskUnit" type="Button" unique_id=1411842001]
+offset_left = -56.0
+offset_top = -48.0
+offset_right = 72.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_828cs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jkdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hchur")
+script = ExtResource("1_172nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=203337177]
+position = Vector2(48, 48)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bx4j8")
+
+[node name="attack" type="Label" parent="." unique_id=489476411]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 94.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_172nd")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cooldown_label" type="Label" parent="." unique_id=945133048]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 24.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0.72156864, 1, 1)
+theme_override_fonts/font = ExtResource("4_d2be6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8jkdq")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins_Label" type="Label" parent="." unique_id=467844784]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 104.0
+offset_right = 96.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("4_d2be6")
+theme_override_font_sizes/font_size = 16
+text = "0"
+vertical_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Coins_Label" unique_id=285971999]
+position = Vector2(-10, 8)
+texture = ExtResource("5_8jkdq")
+
+[node name="Border" type="Sprite2D" parent="." unique_id=366719430]
+position = Vector2(64, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("6_8jkdq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

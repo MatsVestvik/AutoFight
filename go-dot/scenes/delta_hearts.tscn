@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cpbu3bcqkvvtg"]
+
+[ext_resource type="Script" uid="uid://cx8ijsq7krv6j" path="res://scripts/delta_hearts.gd" id="1_idtbk"]
+[ext_resource type="Texture2D" uid="uid://fhk42btdvtg4" path="res://assets/icons/fullHeart.png" id="2_3lbwi"]
+
+[node name="DeltaHearts" type="Node2D" unique_id=559903314]
+script = ExtResource("1_idtbk")
+
+[node name="Heart_1" type="Sprite2D" parent="." unique_id=815586834]
+position = Vector2(-48, -16)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_2" type="Sprite2D" parent="." unique_id=329528379]
+position = Vector2(-24, -16)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_3" type="Sprite2D" parent="." unique_id=1562277609]
+position = Vector2(0, -16)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_4" type="Sprite2D" parent="." unique_id=701630307]
+position = Vector2(24, -16)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_5" type="Sprite2D" parent="." unique_id=379562525]
+position = Vector2(48, -16)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_6" type="Sprite2D" parent="." unique_id=2019228531]
+position = Vector2(-48, 8)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_7" type="Sprite2D" parent="." unique_id=558356189]
+position = Vector2(-24, 8)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_8" type="Sprite2D" parent="." unique_id=1475347267]
+position = Vector2(0, 8)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_9" type="Sprite2D" parent="." unique_id=719937888]
+position = Vector2(24, 8)
+texture = ExtResource("2_3lbwi")
+
+[node name="Heart_10" type="Sprite2D" parent="." unique_id=921650780]
+position = Vector2(48, 8)
+texture = ExtResource("2_3lbwi")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2136674341]
+zoom = Vector2(7, 7)

@@ -11,4 +11,5 @@ attack = 1
 sprite = ExtResource("2_7jm4x")
 buff = 10
 description = "On trigger permanently buff the unit infront's attack"
+cost = 30
 metadata/_custom_type_script = "uid://diifg2j7wc77r"
