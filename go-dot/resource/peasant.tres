@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="unitData" format=3 uid="uid://bqly7gvxuh4lo"]
 
-[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unitData.gd" id="1_vteld"]
+[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unit_data.gd" id="1_vteld"]
 [ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="2_1pwey"]
 
 [resource]
@@ -9,4 +9,5 @@ unit_name = "peasant"
 cooldown_speed = 1.0
 attack = 5
 sprite = ExtResource("2_1pwey")
+description = "A fast attacking unit with low damage"
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

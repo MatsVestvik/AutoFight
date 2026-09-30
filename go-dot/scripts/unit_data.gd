@@ -6,3 +6,4 @@ class_name unitData
 @export var attack: int;
 @export var sprite: Texture2D;
 @export var buff: int;
+@export var description: String;

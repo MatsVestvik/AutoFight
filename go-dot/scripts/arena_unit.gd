@@ -10,7 +10,6 @@ func flip() -> void:
 	if sprite_2d:
 		sprite_2d.flip_h = not sprite_2d.flip_h
 	
-	
 func setup(data:unitData) -> void:
 	unit_data = data.duplicate()
 	sprite_2d.texture = data.sprite;
@@ -23,6 +22,7 @@ func update() -> void:
 	attack_label.text = str(self.unit_data.attack)
 	
 func _process(delta:float) -> void:
+	update()
 	if unit_data.cooldown_speed <= 0.0:
 		print(unit_data.unit_name, " no cooldown speed")
 		return
@@ -36,8 +36,5 @@ func _process(delta:float) -> void:
 		trigger()
 
 func trigger() -> void:
-	self.unit_data.attack += 1
-	update()
 	trigger_signal.emit(self)
-	print(unit_data.unit_name, " attacked")
 	

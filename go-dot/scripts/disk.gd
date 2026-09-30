@@ -29,9 +29,7 @@ func get_slot_position(index: int) -> Vector2:
 	
 func refresh_units() -> void:
 	clear_disk()
-	print("refreshing")
 	for i in range(5):
-		print("refresing", i)
 		var unit: shop_unit = shop_unit_scene.instantiate()
 		spawn_unit(GameManager.available_pool.pick_random(), i)
 		
@@ -68,7 +66,6 @@ func _on_unit_drag_started(unit: shop_unit) -> void:
 	info.emit(unit)
 	
 func on_unit_buy(unit: shop_unit) -> void:
-	print("registered in disk")
 	buy.emit(unit)
 	
 	var index = row.find(unit)
@@ -87,5 +84,3 @@ func spawn_unit(data: unitData, index: int) -> void:
 
 func _on_reroll_pressed() -> void:
 	refresh_units()
-	print("refreshed")
-	pass # Replace with function body.

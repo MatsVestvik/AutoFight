@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="unitData" format=3 uid="uid://rub4dcfd002o"]
 
-[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unitData.gd" id="1_clv4r"]
+[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unit_data.gd" id="1_7jm4x"]
 [ext_resource type="Texture2D" uid="uid://b1kixokp2bssj" path="res://assets/characters/wizard.png" id="2_7jm4x"]
 
 [resource]
-script = ExtResource("1_clv4r")
+script = ExtResource("1_7jm4x")
 unit_name = "Wizard"
 cooldown_speed = 3.0
 attack = 1
 sprite = ExtResource("2_7jm4x")
 buff = 10
+description = "On trigger permanently buff the unit infront's attack"
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

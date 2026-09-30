@@ -26,6 +26,7 @@ func set_info(unit: shop_unit) -> void:
 	sprite.texture = unit.unit_data.sprite
 	attack_label.text = str(unit.unit_data.attack)
 	cooldown_label.text = str(unit.unit_data.cooldown_speed)
+	description_label.text = unit.unit_data.description
 	
 func _process(delta: float) -> void:
 	pass

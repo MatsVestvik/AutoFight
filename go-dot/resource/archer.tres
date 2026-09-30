@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="unitData" format=3 uid="uid://c4po4tumtpqv6"]
 
-[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unitData.gd" id="1_i4bxn"]
+[ext_resource type="Script" uid="uid://diifg2j7wc77r" path="res://scripts/unit_data.gd" id="1_bsd4x"]
 [ext_resource type="Texture2D" uid="uid://dm6fwc0tujk46" path="res://assets/characters/archer.png" id="2_bsd4x"]
 
 [resource]
-script = ExtResource("1_i4bxn")
+script = ExtResource("1_bsd4x")
 unit_name = "archer"
 cooldown_speed = 2.0
 attack = 20
 sprite = ExtResource("2_bsd4x")
+description = "High damage unit "
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

@@ -26,4 +26,5 @@ func attack(damage: int) -> void:
 	return
 	
 func _on_button_pressed() -> void:
+	GameManager.player_team_data = team_array
 	get_tree().change_scene_to_file("res://scenes/shop.tscn")

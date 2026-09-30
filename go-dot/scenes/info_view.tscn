@@ -51,14 +51,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "ATK"
 
 [node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=1816305518]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "COD"
 
 [node name="Stats_HBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=756371902]
@@ -79,7 +79,7 @@ theme_override_font_sizes/font_size = 16
 text = "1"
 
 [node name="Description_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1830860066]
-custom_maximum_size = Vector2(80, -1)
+custom_maximum_size = Vector2(160, -1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 8

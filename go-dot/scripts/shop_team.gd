@@ -6,6 +6,7 @@ const ROWS: int = 2;
 const COLS: int = 3;
 
 const MAX_HEALTH: int = 1000;
+const SLOT_SNAP_DISTANCE: float = 64.0
 
 @onready var slots_container: Node2D = $Slots;
 
@@ -45,6 +46,57 @@ func import_team_data(data_array: Array[unitData]) -> void:
 			spawn_unit(data,row,col)
 	return
 	
+func get_slot_index_at_position(global_pos: Vector2) -> int:
+	var closest_index = -1
+	var min_distance: float = SLOT_SNAP_DISTANCE
+	
+	for i in range(slots_container.get_child_count()):
+		var marker = slots_container.get_child(i) as Marker2D
+		var dist = marker.global_position.distance_to(global_pos)
+		if dist < min_distance:
+			min_distance = dist
+			closest_index = i
+	return closest_index
+	
+func get_slot_pos_by_index(index:int) -> Vector2:
+	return (slots_container.get_child(index) as Marker2D).position
+	
+func move_or_swap_unit(unit: shop_unit, target_index: int) -> void:
+	var origin_index: int = unit.slot_index
+	
+	# Slapp over samme rute som den kom fra
+	if origin_index == target_index:
+		unit.reset_position()
+		return
+		
+	var target_unit: shop_unit = grid[target_index]
+	
+	if target_unit == null:
+		# 1. Målruten er TOM -> Enkel flytting
+		grid[origin_index] = null
+		grid[target_index] = unit
+		unit.slot_index = target_index
+		
+		# Oppdater startposisjonen og animer dit
+		unit.original_pos = get_slot_pos_by_index(target_index)
+		unit.reset_position()
+	else:
+		# 2. Målruten er OPPTATT -> Bytter plass (Swap)
+		grid[origin_index] = target_unit
+		grid[target_index] = unit
+		
+		# Oppdater indeksene
+		unit.slot_index = target_index
+		target_unit.slot_index = origin_index
+		
+		# Sett nye hjemmeposisjoner
+		unit.original_pos = get_slot_pos_by_index(target_index)
+		target_unit.original_pos = get_slot_pos_by_index(origin_index)
+		
+		# Animer begge til sine nye plasser
+		unit.reset_position()
+		target_unit.reset_position()
+
 func _get_index(row: int, col: int) -> int:
 	if(enemy):
 		return row * COLS + (2-col) 
@@ -73,16 +125,11 @@ func place_unit(unit:shop_unit, row: int, col: int) -> bool:
 	return true
 	
 func spawn_unit(data: unitData, row: int, col: int) -> void:
-	print("Spawning unit: ", data, " at row: ", row, " col: ", col)
-	
 	var new_unit: shop_unit = unit_scene.instantiate()
 	
 	add_child(new_unit)
 	place_unit(new_unit, row, col);
 	new_unit.setup(data)
-	
-	print("Unit spawned at position: ", new_unit.position, " global: ", new_unit.global_position)
-
 	
 func delete_unit(i: int) -> void:
 	if is_instance_valid(grid[i]):

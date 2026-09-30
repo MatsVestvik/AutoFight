@@ -83,15 +83,17 @@ func place_unit(unit:Unit, row: int, col: int) -> bool:
 
 func _connect_unit(u:Unit) -> void:
 	u.trigger_signal.connect(_on_unit_triggered)
+	u.trigger_signal.connect(buff_unit_infront)
 	
 func _on_unit_triggered(unit: Unit) -> void:
+
 	trigger_view.addTrigger(unit.unit_data.attack)
 	unit_triggered_signal.emit(unit.unit_data.attack)
 
 func buff_unit_infront(unit:Unit) -> void:
-	print("buffing unit infront")
+	if not get_unit_infront(unit):
+		return
 	get_unit_infront(unit).unit_data.attack += unit.unit_data.buff
-	
 	
 func get_unit_infront(unit:Unit) -> Unit:
 	var pos: int = grid.find(unit)
@@ -103,17 +105,11 @@ func take_damage(damage: int) -> void:
 	health_bar.take_damage(damage)
 	
 func spawn_unit(data: unitData, row: int, col: int) -> void:
-	print("Spawning unit: ", data, " at row: ", row, " col: ", col)
-	
 	var new_unit: Unit = unit_scene.instantiate()
-	
 	add_child(new_unit)
 	place_unit(new_unit, row, col);
 	_connect_unit(new_unit)
 	new_unit.setup(data)
-	
-	print("Unit spawned at position: ", new_unit.position, " global: ", new_unit.global_position)
-	
 	
 func delete_unit(i: int) -> void:
 	if is_instance_valid(grid[i]):

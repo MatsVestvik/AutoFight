@@ -80,8 +80,14 @@ func _on_unit_drag_ended (unit:shop_unit) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	
 	if sell_zone.get_global_rect().has_point(mouse_pos):
-		print("selling")
 		sell_unit(unit)
+		return
+		
+	var target_slot: int = active_team.get_slot_index_at_position(mouse_pos)
+	
+	if target_slot != -1:
+		print("Flytter/bytter til rute: ", target_slot)
+		active_team.move_or_swap_unit(unit, target_slot)
 	else:
 		unit.reset_position()
 		
@@ -102,11 +108,9 @@ func buy_unit(unit: shop_unit) -> bool:
 	var free_slot_index: int = current_team.find(null)
 	
 	if free_slot_index == -1:
-		print("team full")
 		return false
 	current_team[free_slot_index] = unit.unit_data
 	active_team.import_team_data(current_team)
 	connect_team_units()
-	
-	print("Bought unit")
+
 	return true
