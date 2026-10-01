@@ -13,13 +13,12 @@ func flip() -> void:
 func setup(data:unitData) -> void:
 	unit_data = data.duplicate()
 	sprite_2d.texture = data.sprite;
-	attack_label.text = str(data.attack);
-	
 	cooldownbar.min_value = 0.0
 	cooldownbar.max_value = data.cooldown_speed
+	stats_container.create_from_unit_data(data)
 	
 func update() -> void:
-	attack_label.text = str(self.unit_data.attack)
+	pass
 	
 func _process(delta:float) -> void:
 	update()

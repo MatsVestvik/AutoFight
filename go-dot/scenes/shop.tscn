@@ -13,12 +13,10 @@
 [ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/font/PixelOperator8-Bold.ttf" id="10_1v8qu"]
 [ext_resource type="Texture2D" uid="uid://b6rct15xx8l14" path="res://assets/icons/coin.png" id="11_44xle"]
 [ext_resource type="PackedScene" uid="uid://nbdve0tvjugc" path="res://scenes/hearts.tscn" id="13_24it5"]
+[ext_resource type="PackedScene" uid="uid://qw0veb0ioirk" path="res://scenes/trophys.tscn" id="14_7mqwv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
 bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn52r"]
-bg_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujbl2"]
 
@@ -46,7 +44,7 @@ position = Vector2(8, 0)
 scale = Vector2(7, 7)
 
 [node name="InfoView_Slot" type="Marker2D" parent="." unique_id=1654396266]
-position = Vector2(304, -224)
+position = Vector2(424, -40)
 
 [node name="Sell_Zone" type="Panel" parent="." unique_id=31634684]
 offset_left = -552.0
@@ -71,7 +69,7 @@ position = Vector2(-168, -120)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=924871861]
 
 [node name="Disk" type="Node2D" parent="." unique_id=1773313839]
-position = Vector2(-72, 72)
+position = Vector2(-72, 64)
 script = ExtResource("2_xfvoa")
 unit_scene = ExtResource("3_2fc2m")
 disk_unit_scene = ExtResource("9_1v8qu")
@@ -93,28 +91,11 @@ position = Vector2(26, 130)
 [node name="Slot_5" type="Marker2D" parent="Disk" unique_id=1128824285]
 position = Vector2(154, 130)
 
-[node name="Buy_Zone" type="Panel" parent="Disk" unique_id=185345372]
-offset_left = 312.0
-offset_top = 128.0
-offset_right = 440.0
-offset_bottom = 248.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dn52r")
-
-[node name="Label" type="Label" parent="Disk/Buy_Zone" unique_id=675103925]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 16.0
-offset_right = 104.0
-offset_bottom = 51.0
-theme_override_fonts/font = ExtResource("5_y6sft")
-text = "Drag to
-Buy"
-
 [node name="Reroll" type="Button" parent="Disk" unique_id=496430946]
-offset_left = -496.0
-offset_top = 128.0
-offset_right = -376.0
-offset_bottom = 248.0
+offset_left = 160.0
+offset_top = 80.0
+offset_right = 280.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("5_y6sft")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujbl2")
@@ -125,10 +106,10 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_6dsbu")
 text = "Refresh"
 
 [node name="Battle" type="Button" parent="." unique_id=1038126824]
-offset_left = 424.0
-offset_top = 200.0
-offset_right = 552.0
-offset_bottom = 320.0
+offset_left = 328.0
+offset_top = 232.0
+offset_right = 560.0
+offset_bottom = 312.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_1v8qu")
 
 [node name="Label" type="Label" parent="Battle" unique_id=146035466]
@@ -157,6 +138,10 @@ texture = ExtResource("11_44xle")
 
 [node name="Hearts" parent="." unique_id=1577678993 instance=ExtResource("13_24it5")]
 position = Vector2(456, -272)
+scale = Vector2(2, 2)
+
+[node name="Trophys" parent="." unique_id=1222710178 instance=ExtResource("14_7mqwv")]
+position = Vector2(200, -264)
 scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Disk/Reroll" to="." method="_on_reroll_pressed"]

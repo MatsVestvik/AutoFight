@@ -91,9 +91,11 @@ func _on_unit_triggered(unit: Unit) -> void:
 	unit_triggered_signal.emit(unit.unit_data.attack)
 
 func buff_unit_infront(unit:Unit) -> void:
+	var front: Unit = get_unit_infront(unit)
 	if not get_unit_infront(unit):
 		return
-	get_unit_infront(unit).unit_data.attack += unit.unit_data.buff
+	front.unit_data.attack += unit.unit_data.buff
+	front.stats_container.create_from_unit_data(front.unit_data)
 	
 func get_unit_infront(unit:Unit) -> Unit:
 	var pos: int = grid.find(unit)

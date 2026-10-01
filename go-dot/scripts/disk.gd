@@ -2,7 +2,6 @@ extends Node2D
 class_name Disk
 
 @onready var slots: Array[Marker2D] = [$Slot_1, $Slot_2, $Slot_3, $Slot_4, $Slot_5]
-@onready var buy_zone: Panel = $Buy_Zone
 @onready var button: Button = $Reroll
 
 @export var unit_scene: PackedScene;
@@ -12,14 +11,13 @@ class_name Disk
 
 var row: Array[disk_unit] = []
 
-signal info(shop_unit)
+signal hover(shop_unit)
 signal buy(data:unitData)
 
 func _ready() -> void:
 	row.resize(5);
 	row.fill(null);
 	refresh_units()
-	buy_zone.hide()
 	
 func get_slot_position(index: int) -> Vector2:
 	return slots[index].position
@@ -46,32 +44,29 @@ func place_unit(unit:disk_unit, index: int) -> bool:
 	
 	return true
 	
-
 func connect_unit(unit:shop_unit)->void:
-	unit.drag_ended.connect(_on_unit_drag_ended)
+	unit.buy.connect(_on_unit_pressed)
 	unit.drag_started.connect(_on_unit_drag_started)
+	unit.hover.connect(hover_unit)
 
-func _on_unit_drag_ended(unit: shop_unit) -> void:
-	buy_zone.hide()
-	var mouse_pos: Vector2 = get_global_mouse_position()
+func hover_unit(unit:disk_unit)-> void:
+	hover.emit(unit)
 	
-	if buy_zone.get_global_rect().has_point(mouse_pos):
-		var success: bool = false
-		var shop = get_parent()
-		success = shop.buy_unit(unit)
-		if success:
-			var index = row.find(unit)
-			if index != -1:
-				row[index] = null
-			unit.queue_free()
-		else:
-			unit.reset_position()
+func _on_unit_pressed(unit: shop_unit) -> void:
+	
+	var success: bool = false
+	var shop = get_parent()
+	success = shop.buy_unit(unit)
+	if success:
+		var index = row.find(unit)
+		if index != -1:
+			row[index] = null
+		unit.queue_free()
 	else:
 		unit.reset_position()
 
 func _on_unit_drag_started(unit: shop_unit) -> void:
-	buy_zone.show()
-	info.emit(unit)
+	hover.emit(unit)
 	
 func on_unit_buy(unit: shop_unit) -> void:
 	buy.emit(unit)

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://gj7tgegq5e11" path="res://scripts/info_view.gd" id="1_cw1sc"]
 [ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="2_b2xd3"]
+[ext_resource type="Texture2D" uid="uid://bexa7r33najo3" path="res://assets/backgrounds/info_view.png" id="2_m7ln4"]
 [ext_resource type="Texture2D" uid="uid://dm6fwc0tujk46" path="res://assets/characters/archer.png" id="3_m7ln4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2xd3"]
-bg_color = Color(0, 0, 0, 0.4392157)
+[ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/font/PixelOperator8-Bold.ttf" id="5_2yslb"]
+[ext_resource type="PackedScene" uid="uid://b7gmnsklhl4j6" path="res://scenes/stats_container.tscn" id="6_2yslb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xjg2"]
 bg_color = Color(1, 0, 0, 1)
@@ -16,96 +16,72 @@ bg_color = Color(0.5764706, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jr6r"]
 bg_color = Color(0.74509805, 0, 0, 1)
 
-[node name="InfoView" type="PanelContainer" unique_id=403697188]
-offset_left = -80.0
-offset_top = -160.0
-offset_right = 184.0
-offset_bottom = 248.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_b2xd3")
+[node name="InfoView" type="Node2D" unique_id=2111275306]
 script = ExtResource("1_cw1sc")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1643410830]
-layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
+[node name="Background" type="Sprite2D" parent="." unique_id=2132280305]
+scale = Vector2(4, 4)
+texture = ExtResource("2_m7ln4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1188922282]
-layout_mode = 2
-
-[node name="Name_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=741964571]
-custom_minimum_size = Vector2(0, 140)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_b2xd3")
-text = "Name"
-horizontal_alignment = 1
-
-[node name="Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1211866091]
-position = Vector2(71, 69)
-scale = Vector2(3.9375002, 3.5624998)
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1211866091]
+position = Vector2(-24, -64)
+scale = Vector2(2, 2)
 texture = ExtResource("3_m7ln4")
 
-[node name="Category_HBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=760077157]
-layout_mode = 2
-
-[node name="Attack_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=219370604]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
-text = "ATK"
-
-[node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Category_HBox" unique_id=1816305518]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
-text = "COD"
-
-[node name="Stats_HBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=756371902]
-layout_mode = 2
-
-[node name="Attack_Label" type="Label" parent="MarginContainer/VBoxContainer/Stats_HBox" unique_id=1935071257]
-custom_minimum_size = Vector2(30, 2)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+[node name="Close_Button" type="Button" parent="." unique_id=29631896]
+offset_left = -80.0
+offset_top = -120.0
+offset_right = -56.0
+offset_bottom = -96.0
 theme_override_fonts/font = ExtResource("2_b2xd3")
 theme_override_font_sizes/font_size = 16
-text = "1"
-
-[node name="Cooldown_Label" type="Label" parent="MarginContainer/VBoxContainer/Stats_HBox" unique_id=295344798]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 16
-text = "1"
-
-[node name="Description_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1830860066]
-custom_minimum_size = Vector2(0, 200)
-custom_maximum_size = Vector2(260, -1)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 8
-text = "This is a description of the unit
-
-
-
-
-"
-autowrap_mode = 3
-
-[node name="Close_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=29631896]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_b2xd3")
-theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_1xjg2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_roeni")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0jr6r")
-text = "close"
+text = "X"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Close_Button" to="." method="_on_close_button_pressed"]
+[node name="Cooldown_Label" type="Label" parent="." unique_id=309785753]
+offset_left = -16.0
+offset_top = -88.0
+offset_right = 53.0
+offset_bottom = -80.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_2yslb")
+theme_override_font_sizes/font_size = 8
+text = "CoolDown:"
+
+[node name="Cooldown" type="Label" parent="." unique_id=196422336]
+offset_left = 16.0
+offset_top = -80.0
+offset_right = 56.0
+offset_bottom = -72.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_2yslb")
+theme_override_font_sizes/font_size = 8
+text = "10.0"
+
+[node name="Name_Label" type="Label" parent="." unique_id=444189475]
+offset_left = -56.0
+offset_top = -120.0
+offset_right = 56.0
+offset_bottom = -104.0
+theme_override_fonts/font = ExtResource("5_2yslb")
+text = "Name"
+vertical_alignment = 2
+
+[node name="Description" type="Label" parent="." unique_id=1609011580]
+offset_left = -56.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_b2xd3")
+theme_override_font_sizes/font_size = 8
+text = "Description
+"
+autowrap_mode = 3
+
+[node name="StatsContainer" parent="." unique_id=924566793 instance=ExtResource("6_2yslb")]
+position = Vector2(-40, -16)
+
+[connection signal="pressed" from="Close_Button" to="." method="_on_close_button_pressed"]

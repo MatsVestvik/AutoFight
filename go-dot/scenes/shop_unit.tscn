@@ -2,10 +2,26 @@
 
 [ext_resource type="Script" uid="uid://ckfoda43cdch6" path="res://scripts/shop_unit.gd" id="1_63wcd"]
 [ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="3_dl2ea"]
-[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="4_hm2hj"]
+[ext_resource type="PackedScene" uid="uid://b7gmnsklhl4j6" path="res://scenes/stats_container.tscn" id="4_0pyxn"]
+[ext_resource type="Texture2D" uid="uid://2r4qbkhas5ca" path="res://assets/icons/selected_square_0001.png" id="4_3js71"]
+[ext_resource type="Texture2D" uid="uid://mibwfrhjvlyl" path="res://assets/icons/selected_square_0002.png" id="5_0pyxn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw1sc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_od2cu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3js71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0pyxn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="shop_unit" type="Button" unique_id=1411842001]
 offset_left = -64.0
@@ -20,16 +36,15 @@ position = Vector2(32, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("3_dl2ea")
 
-[node name="attack" type="Label" parent="." unique_id=489476411]
-layout_mode = 0
-offset_top = 52.0
-offset_right = 8.0
-offset_bottom = 64.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_hm2hj")
-theme_override_font_sizes/font_size = 8
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="StatsContainer" parent="." unique_id=924566793 instance=ExtResource("4_0pyxn")]
+position = Vector2(16, 60)
+scale = Vector2(0.5, 0.5)
 
+[node name="Selected" type="AnimatedSprite2D" parent="." unique_id=246056946]
+position = Vector2(32, 32)
+scale = Vector2(2.25, 2.25)
+sprite_frames = SubResource("SpriteFrames_od2cu")
+autoplay = "default"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

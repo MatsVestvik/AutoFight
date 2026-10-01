@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bnerjhbip0u7a" path="res://scripts/disk_unit.gd" id="1_172nd"]
 [ext_resource type="Texture2D" uid="uid://bv5kja4gghx7l" path="res://assets/characters/peasant.png" id="1_bx4j8"]
-[ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="2_172nd"]
 [ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/font/PixelOperator8-Bold.ttf" id="4_d2be6"]
 [ext_resource type="Texture2D" uid="uid://b6rct15xx8l14" path="res://assets/icons/coin.png" id="5_8jkdq"]
 [ext_resource type="Texture2D" uid="uid://b7fmg8vkqyli1" path="res://assets/boxes/normal.png" id="6_8jkdq"]
+[ext_resource type="Texture2D" uid="uid://2r4qbkhas5ca" path="res://assets/icons/selected_square_0001.png" id="7_urbhd"]
+[ext_resource type="Texture2D" uid="uid://mibwfrhjvlyl" path="res://assets/icons/selected_square_0002.png" id="8_7gywp"]
+[ext_resource type="PackedScene" uid="uid://b7gmnsklhl4j6" path="res://scenes/stats_container.tscn" id="8_urbhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
 bg_color = Color(0, 0, 0, 0.6313726)
@@ -17,6 +19,20 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 0.79607844)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jkdq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dn52r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_urbhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7gywp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DiskUnit" type="Button" unique_id=1411842001]
 offset_left = -56.0
@@ -33,25 +49,12 @@ position = Vector2(48, 48)
 scale = Vector2(3, 3)
 texture = ExtResource("1_bx4j8")
 
-[node name="attack" type="Label" parent="." unique_id=489476411]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 8.0
-offset_right = 94.0
-offset_bottom = 24.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_172nd")
-theme_override_font_sizes/font_size = 16
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="cooldown_label" type="Label" parent="." unique_id=945133048]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 104.0
-offset_right = 24.0
-offset_bottom = 120.0
+offset_left = 78.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 32.0
 theme_override_colors/font_color = Color(0, 0.72156864, 1, 1)
 theme_override_fonts/font = ExtResource("4_d2be6")
 theme_override_font_sizes/font_size = 16
@@ -62,10 +65,10 @@ vertical_alignment = 1
 
 [node name="Coins_Label" type="Label" parent="." unique_id=467844784]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 104.0
-offset_right = 96.0
-offset_bottom = 120.0
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 112.0
+offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("4_d2be6")
 theme_override_font_sizes/font_size = 16
 text = "0"
@@ -75,10 +78,20 @@ vertical_alignment = 2
 position = Vector2(-10, 8)
 texture = ExtResource("5_8jkdq")
 
-[node name="Border" type="Sprite2D" parent="." unique_id=366719430]
+[node name="Border" type="Sprite2D" parent="." unique_id=849552228]
 position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("6_8jkdq")
+
+[node name="Selected" type="AnimatedSprite2D" parent="." unique_id=468885964]
+position = Vector2(64, 64)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_dn52r")
+autoplay = "default"
+frame_progress = 0.25026387
+
+[node name="StatsContainer" parent="." unique_id=924566793 instance=ExtResource("8_urbhd")]
+position = Vector2(26, 112)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

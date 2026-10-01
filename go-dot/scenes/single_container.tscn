@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bhxb5q44dnl5u"]
+
+[ext_resource type="Texture2D" uid="uid://dwleuufsmenp2" path="res://assets/type_boxes/normal.png" id="1_icp0y"]
+[ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/font/PixelOperator8-Bold.ttf" id="2_b3534"]
+[ext_resource type="Script" uid="uid://cafp5baisl4pn" path="res://scripts/single_container.gd" id="2_pj6kl"]
+
+[node name="SingleContainer" type="Control" unique_id=1616320671]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_pj6kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=999707617]
+texture = ExtResource("1_icp0y")
+
+[node name="Label" type="Label" parent="." unique_id=1579509697]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 14.0
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("2_b3534")
+theme_override_font_sizes/font_size = 8
+text = "20"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

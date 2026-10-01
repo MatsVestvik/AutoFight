@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://tmoys28sptmq"]
+
+[ext_resource type="Script" uid="uid://ckmh25uwcnlrw" path="res://scripts/start_screen.gd" id="1_5pab1"]
+[ext_resource type="PackedScene" uid="uid://lwdj3n8qgssd" path="res://scenes/background.tscn" id="2_he1sj"]
+[ext_resource type="PackedScene" uid="uid://biyo5rxp8v5ke" path="res://scenes/button.tscn" id="2_o7i0r"]
+
+[node name="Start_Screen" type="Node2D" unique_id=762011806]
+script = ExtResource("1_5pab1")
+
+[node name="Background" parent="." unique_id=18519681 instance=ExtResource("2_he1sj")]
+position = Vector2(16, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=352817828]
+zoom = Vector2(7, 7)
+
+[node name="Button" parent="." unique_id=764166975 instance=ExtResource("2_o7i0r")]
+offset_top = -32.0
+offset_bottom = -16.0
+button_color = "RED"
+button_text = "START"
+
+[node name="Button2" parent="." unique_id=1275779343 instance=ExtResource("2_o7i0r")]
+button_color = "BLUE"
+button_text = "OPTION"
+
+[node name="Button3" parent="." unique_id=567419159 instance=ExtResource("2_o7i0r")]
+offset_top = 16.0
+offset_bottom = 32.0
+button_color = "GREEN"
+button_text = "QUIT"

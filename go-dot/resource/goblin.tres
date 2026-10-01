@@ -7,9 +7,9 @@
 script = ExtResource("1_l3n6j")
 unit_name = "Goblin"
 cooldown_speed = 5.0
-attack = 2
 sprite = ExtResource("2_gx3kh")
 description = "On trigger gain 5 gold"
 cost = 20
 income = 5
+poison = 15
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

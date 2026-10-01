@@ -18,7 +18,7 @@ var team_array: Array[unitData] = []
 
 var active_team: shop_team
 var grid: Array[Unit] = []
-var active_info_view: PanelContainer
+var active_info_view: Node2D
 
 func _ready() -> void:
 	team_array = GameManager.get_team()
@@ -33,9 +33,9 @@ func update_coin_label() -> void:
 	coins_label.text = str(GameManager.coins)
 	
 func connect_team_units() -> void:
-		for child in active_team.get_children():
-			if child is shop_unit:
-				_connect_unit(child)
+	for child in active_team.get_children():
+		if child is shop_unit:
+			_connect_unit(child)
 	
 func setup_team(unit_data: Array[unitData])->void:
 	active_team = shop_team_scene.instantiate()
@@ -51,6 +51,7 @@ func setup_team(unit_data: Array[unitData])->void:
 func create_info_view() -> void:
 	active_info_view = info_view.instantiate()
 	add_child(active_info_view)
+	active_info_view.apply_scale(Vector2(2,2))
 	
 	active_info_view.position = info_view_slot.position
 	
@@ -70,13 +71,15 @@ func _on_battle_pressed() -> void:
 
 func connect_disk(disk:Disk)->void:
 	disk.buy.connect(buy_unit)
-	disk.info.connect(update_info_view)
+	disk.hover.connect(update_info_view)
 
 func _connect_unit(u:shop_unit) -> void:
 	if not u.drag_ended.is_connected(_on_unit_drag_ended):
 		u.drag_ended.connect(_on_unit_drag_ended)
 	if not u.drag_started.is_connected(_on_unit_drag_started):
 		u.drag_started.connect(_on_unit_drag_started)
+	if not u.hover.is_connected(update_info_view):
+		u.hover.connect(update_info_view)
 
 func _on_unit_drag_started (unit:shop_unit) -> void:
 	sell_zone.show()
@@ -98,6 +101,8 @@ func _on_unit_drag_ended (unit:shop_unit) -> void:
 		unit.reset_position()
 		
 func sell_unit(unit: shop_unit) -> void:
+	GameManager.coins += (unit.unit_data.cost/2)
+	update_coin_label()
 	var current_team: Array[unitData] = active_team.export_team_data()
 	
 	if unit.slot_index != -1 and unit.slot_index < current_team.size():

@@ -3,6 +3,7 @@ extends Node
 var player_team_data: Array[unitData] = []
 var coins: int = 100
 var hearts: int = 10
+var trophys: int = 0
 
 const PEASANT_DATA = preload("res://resource/peasant.tres")
 const ARCHER_DATA = preload("res://resource/archer.tres")

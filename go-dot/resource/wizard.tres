@@ -7,9 +7,9 @@
 script = ExtResource("1_7jm4x")
 unit_name = "Wizard"
 cooldown_speed = 3.0
-attack = 1
 sprite = ExtResource("2_7jm4x")
 buff = 10
 description = "On trigger permanently buff the unit infront's attack"
 cost = 30
+burn = 50
 metadata/_custom_type_script = "uid://diifg2j7wc77r"

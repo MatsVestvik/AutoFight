@@ -34,7 +34,7 @@ func on_lose_battle() -> void:
 func on_win_battle() -> void:
 	GameManager.player_team_data = team.export_team_data()
 	GameManager.coins += 10
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
+	get_tree().change_scene_to_file("res://scenes/delta_trophys.tscn")
 	
 func _on_button_pressed() -> void:
 	GameManager.player_team_data = team.export_team_data()

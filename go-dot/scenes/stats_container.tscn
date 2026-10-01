@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b7gmnsklhl4j6"]
+
+[ext_resource type="Script" uid="uid://cmtpragek5n5t" path="res://scripts/stats_container.gd" id="1_ekbt7"]
+[ext_resource type="PackedScene" uid="uid://bhxb5q44dnl5u" path="res://scenes/single_container.tscn" id="2_6cgd4"]
+
+[node name="StatsContainer" type="Node2D" unique_id=924566793]
+script = ExtResource("1_ekbt7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1549818448]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SingleContainer" parent="HBoxContainer" unique_id=1616320671 instance=ExtResource("2_6cgd4")]
+layout_mode = 2
+
+[node name="SingleContainer2" parent="HBoxContainer" unique_id=1017589894 instance=ExtResource("2_6cgd4")]
+layout_mode = 2
+
+[node name="SingleContainer3" parent="HBoxContainer" unique_id=2032696024 instance=ExtResource("2_6cgd4")]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1113815307]
+visible = false
+zoom = Vector2(4, 4)
