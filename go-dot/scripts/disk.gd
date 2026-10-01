@@ -2,12 +2,10 @@ extends Node2D
 class_name Disk
 
 @onready var slots: Array[Marker2D] = [$Slot_1, $Slot_2, $Slot_3, $Slot_4, $Slot_5]
-@onready var button: Button = $Reroll
+@onready var reroll: Button = $Reroll
 
 @export var unit_scene: PackedScene;
 @export var disk_unit_scene: PackedScene;
-@export var peasant: unitData;
-@export var archer: unitData;
 
 var row: Array[disk_unit] = []
 
@@ -18,6 +16,7 @@ func _ready() -> void:
 	row.resize(5);
 	row.fill(null);
 	refresh_units()
+	reroll.pressed.connect(_on_reroll_pressed)
 	
 func get_slot_position(index: int) -> Vector2:
 	return slots[index].position

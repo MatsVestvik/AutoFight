@@ -6,6 +6,7 @@ extends Button
 
 @export var button_color: String = ""
 @export var button_text: String = ""
+@export var main_scale: Vector2
 
 const BLUE = preload("uid://bqex2xhvss052")
 const GREEN = preload("uid://vrsnbver6aya")
@@ -14,6 +15,7 @@ const RED = preload("uid://dl0ggtgj8qfel")
 func _ready() -> void:
 	set_color(button_color)
 	set_label(button_text)
+	set_scale(main_scale)
 	selected.hide()
 
 func set_color(color: String) -> void:
@@ -28,7 +30,6 @@ func set_color(color: String) -> void:
 
 func set_label(active_button_text: String) -> void:
 	label.text = active_button_text
-
 
 func _on_mouse_entered() -> void:
 	selected.show()
