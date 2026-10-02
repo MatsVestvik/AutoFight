@@ -15,6 +15,8 @@ var team_array: Array[unitData] = []
 @onready var team_slot: Marker2D = $Team_Slot
 @onready var sell_zone: Panel = $Sell_Zone
 @onready var coins_label: Label = $Coins_Label
+@onready var battle: Button = $Battle
+@onready var quit: Button = $Quit
 
 var active_team: shop_team
 var grid: Array[Unit] = []
@@ -28,6 +30,8 @@ func _ready() -> void:
 	active_info_view.hide()
 	update_coin_label()
 	sell_zone.hide()
+	battle.pressed.connect(_on_battle_pressed)
+	quit.pressed.connect(func() : get_tree().change_scene_to_file("res://scenes/start_screen.tscn"))
 
 func update_coin_label() -> void:
 	coins_label.text = str(GameManager.coins)

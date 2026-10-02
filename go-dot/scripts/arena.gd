@@ -21,11 +21,6 @@ func _ready() -> void:
 	team.death_signal.connect(on_lose_battle)
 	team_2.death_signal.connect(on_win_battle)
 
-	
-func attack(damage: int) -> void:
-	team.take_damage(damage)
-	return
-
 func on_lose_battle() -> void:
 	GameManager.player_team_data = team.export_team_data()
 	GameManager.coins += 10

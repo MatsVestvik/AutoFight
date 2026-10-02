@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://d2h3ynn7ql5ic" path="res://assets/font/PixelOperator8.ttf" id="1_txgcy"]
 [ext_resource type="Script" uid="uid://btmsf1kr0h43p" path="res://scripts/heatlh_bar.gd" id="2_irkm6"]
+[ext_resource type="PackedScene" uid="uid://b7gmnsklhl4j6" path="res://scenes/stats_container.tscn" id="3_f5u8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8xmf"]
 bg_color = Color(0.22352941, 0, 0, 0.41568628)
@@ -21,3 +22,6 @@ max_value = 1000.0
 value = 1000.0
 show_percentage = false
 script = ExtResource("2_irkm6")
+
+[node name="StatsContainer" parent="." unique_id=924566793 instance=ExtResource("3_f5u8a")]
+position = Vector2(16, -16)

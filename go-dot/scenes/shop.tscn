@@ -35,9 +35,9 @@ position = Vector2(424, -40)
 
 [node name="Sell_Zone" type="Panel" parent="." unique_id=31634684]
 offset_left = -552.0
-offset_top = -288.0
+offset_top = -256.0
 offset_right = -432.0
-offset_bottom = 104.0
+offset_bottom = 136.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_828cs")
 
 [node name="Label" type="Label" parent="Sell_Zone" unique_id=599432862]
@@ -115,5 +115,14 @@ offset_bottom = 264.0
 button_color = "RED"
 button_text = "FIGHT"
 main_scale = Vector2(4, 4)
+
+[node name="Quit" parent="." unique_id=1436822192 instance=ExtResource("9_7mqwv")]
+offset_left = -544.0
+offset_top = -312.0
+offset_right = -496.0
+offset_bottom = -296.0
+button_color = "RED"
+button_text = "QUIT"
+main_scale = Vector2(3, 3)
 
 [connection signal="pressed" from="Disk/Reroll" to="Disk/Reroll" method="_on_pressed"]

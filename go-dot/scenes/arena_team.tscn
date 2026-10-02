@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bqly7gvxuh4lo" path="res://resource/peasant.tres" id="2_6pm8d"]
 [ext_resource type="Resource" uid="uid://c4po4tumtpqv6" path="res://resource/archer.tres" id="4_m8wau"]
 [ext_resource type="PackedScene" uid="uid://bqr3nlxu5oaml" path="res://scenes/trigger_view.tscn" id="5_65q0i"]
+[ext_resource type="Texture2D" uid="uid://dbqntwm6olrtw" path="res://assets/boxes/HP_Bar.png" id="6_17qsj"]
 [ext_resource type="PackedScene" uid="uid://d11omibq61uxe" path="res://scenes/heatlh_bar.tscn" id="6_jpyfq"]
 
 [node name="Team" type="Node2D" unique_id=1143186444]
@@ -36,6 +37,13 @@ position = Vector2(34, 10)
 [node name="TriggerView" parent="." unique_id=771928632 instance=ExtResource("5_65q0i")]
 position = Vector2(176, -64)
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=422778672]
+position = Vector2(-16, -80)
+scale = Vector2(2, 2)
+texture = ExtResource("6_17qsj")
+
 [node name="HealthBar" parent="." unique_id=1840329202 instance=ExtResource("6_jpyfq")]
-offset_top = -72.0
-offset_bottom = -64.0
+offset_left = -70.0
+offset_top = -80.0
+offset_right = 70.0
+offset_bottom = -72.0
