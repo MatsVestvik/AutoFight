@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://csykkm6ih24ef"]
+
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="1_ai8xc"]
+[ext_resource type="Texture2D" uid="uid://b8kjbaabcru6i" path="res://assets/mons/squitonkey.png" id="2_p28pg"]
+
+[resource]
+script = ExtResource("1_ai8xc")
+texture = ExtResource("2_p28pg")
+name = "squitonkey"
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"
