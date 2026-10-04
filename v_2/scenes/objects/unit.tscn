@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cgpp4qmna44x2"]
+
+[ext_resource type="Script" uid="uid://ckssfmvqjua7n" path="res://scripts/objects/unit.gd" id="1_d0crd"]
+[ext_resource type="Texture2D" uid="uid://cyu7lviuf27iy" path="res://assets/mons/charbear.png" id="1_mh51q"]
+
+[node name="Unit" type="TextureButton" unique_id=1904344065]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_d0crd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=215201721]
+position = Vector2(32, 0)
+texture = ExtResource("1_mh51q")
