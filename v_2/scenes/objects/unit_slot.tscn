@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce3o5tiud1jrq"]
+
+[ext_resource type="Script" uid="uid://dvramnrhq6dpl" path="res://scripts/objects/unit_slot.gd" id="1_3yesy"]
+
+[node name="UnitSlot" type="PanelContainer" unique_id=1049437655]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.012
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = -40.064
+offset_top = -39.776
+offset_right = 23.936
+offset_bottom = 24.223999
+mouse_filter = 1
+script = ExtResource("1_3yesy")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1406099568]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2

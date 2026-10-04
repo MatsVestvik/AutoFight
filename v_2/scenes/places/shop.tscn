@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dxhbdp28fdvp"]
+
+[ext_resource type="PackedScene" uid="uid://dcdju5330arnc" path="res://scenes/objects/team.tscn" id="1_2udrt"]
+
+[node name="Shop" type="Node2D" unique_id=568546673]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=201467296]
+zoom = Vector2(4, 4)
+
+[node name="Team" parent="." unique_id=2035933801 instance=ExtResource("1_2udrt")]
+offset_left = -96.0
+offset_top = -64.0
+offset_right = 104.0
+offset_bottom = 68.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]

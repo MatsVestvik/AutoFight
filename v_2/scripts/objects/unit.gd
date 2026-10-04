@@ -1,11 +1,25 @@
 extends TextureButton
+class_name Unit
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var current_slot: UnitSlot = null
+	
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	var preview := TextureRect.new()
+	preview.texture = sprite_2d.texture
+	preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	preview.size = size
 
+	var preview_container := Control.new()
+	preview.position = -size / 2.0
+	preview_container.add_child(preview)
+	set_drag_preview(preview_container)
+	
+	modulate.a = 0.3
+	
+	return self
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_DRAG_END:
+		modulate.a = 1.0
