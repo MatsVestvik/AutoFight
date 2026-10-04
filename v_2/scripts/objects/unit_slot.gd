@@ -8,7 +8,6 @@ const UNIT = preload("uid://cgpp4qmna44x2")
 func _ready() -> void:
 	pass
 	
-# Check if there is currently a unit child in the slot
 func get_unit() -> Unit:
 	for child in center_container.get_children():
 		if child is Unit:

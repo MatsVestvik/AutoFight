@@ -8,13 +8,12 @@ var data: UnitData
 var current_slot: UnitSlot = null
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	# 1. Dim the ghost left in the slot (it continues playing its normal idle animation)
+
 	modulate.a = 0.3
 
-	# 2. Instantiate a copy of the unit to follow the mouse
 	var preview_unit: Unit = load("res://scenes/objects/unit.tscn").instantiate()
 	preview_unit.position = -size / 2.0
-	# Important: ignore mouse clicks so it doesn't block dropping onto the slots underneath
+
 	preview_unit.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	var preview_container := Control.new()
@@ -22,7 +21,6 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview_container.add_child(preview_unit)
 	set_drag_preview(preview_container)
 
-	# 3. Setup the preview unit and play picked_up on it!
 	if data:
 		preview_unit.create_from_data(data)
 	preview_unit.get_node("AnimationPlayer").play("picked_up")
@@ -35,5 +33,13 @@ func _notification(what: int) -> void:
 
 func create_from_data(input_data: UnitData) -> void:
 	data = input_data
-	# Use get_node so it works even before the node enters the scene tree
 	get_node("Sprite2D").texture = data.texture
+
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	if current_slot:
+		return current_slot._can_drop_data(at_position, data)
+	return false
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	if current_slot:
+		current_slot._drop_data(at_position, data)
