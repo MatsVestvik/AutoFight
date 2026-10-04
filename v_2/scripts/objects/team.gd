@@ -18,3 +18,7 @@ func _ready() -> void:
 	unit_slot_2._reparent_unit(new_unit_2)
 	new_unit_2.create_from_data(GameManager.units[1])
 	
+	var new_unit_3 = UNIT.instantiate()
+	unit_slot_3._reparent_unit(new_unit_3)
+	new_unit_3.create_from_data(GameManager.units[2])
+	

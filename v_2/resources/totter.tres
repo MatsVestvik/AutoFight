@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://con8hcw1taxcn"]
+
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="1_ec4if"]
+[ext_resource type="Texture2D" uid="uid://biydj5vtyl6q" path="res://assets/mons/totter.png" id="2_k2b17"]
+
+[resource]
+script = ExtResource("1_ec4if")
+texture = ExtResource("2_k2b17")
+name = "totter"
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

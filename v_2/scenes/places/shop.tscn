@@ -5,6 +5,7 @@
 [node name="Shop" type="Node2D" unique_id=568546673]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=201467296]
+zoom = Vector2(4, 4)
 
 [node name="Team" parent="." unique_id=2035933801 instance=ExtResource("1_2udrt")]
 offset_left = -96.0

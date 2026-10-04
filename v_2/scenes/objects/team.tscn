@@ -11,7 +11,6 @@ script = ExtResource("1_gph1r")
 
 [node name="UnitSlot" parent="." unique_id=1049437655 instance=ExtResource("2_ijiq1")]
 layout_mode = 2
-mouse_filter = 1
 
 [node name="UnitSlot2" parent="." unique_id=717576278 instance=ExtResource("2_ijiq1")]
 layout_mode = 2
