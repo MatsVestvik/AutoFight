@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="1_3k1xe"]
 [ext_resource type="Script" uid="uid://dnshd8nwfi5ni" path="res://scripts/places/arena.gd" id="1_d2xqs"]
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="2_rvdg8"]
-[ext_resource type="PackedScene" uid="uid://dcdju5330arnc" path="res://scenes/objects/team.tscn" id="4_cdhcp"]
+[ext_resource type="PackedScene" uid="uid://c53pld8524lw3" path="res://scenes/objects/team/arena_team.tscn" id="4_cdhcp"]
 
 [node name="Arena" type="Node2D" unique_id=1943734924]
 script = ExtResource("1_d2xqs")
@@ -18,10 +18,10 @@ image = ExtResource("2_rvdg8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932742916]
 
-[node name="Team" parent="." unique_id=2035933801 instance=ExtResource("4_cdhcp")]
-offset_left = -256.0
-offset_top = -152.0
-offset_right = -56.0
-offset_bottom = -20.0
+[node name="ArenaTeam" parent="." unique_id=2035933801 instance=ExtResource("4_cdhcp")]
+offset_left = -96.0
+offset_top = -72.0
+offset_right = 104.0
+offset_bottom = 60.0
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

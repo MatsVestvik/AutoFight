@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cgpp4qmna44x2"]
+[gd_scene format=3 uid="uid://jlmenso814oi"]
 
-[ext_resource type="Script" uid="uid://ckssfmvqjua7n" path="res://scripts/objects/unit.gd" id="1_d0crd"]
-[ext_resource type="Texture2D" uid="uid://cyu7lviuf27iy" path="res://assets/mons/charbear.png" id="1_mh51q"]
+[ext_resource type="Script" uid="uid://b6pmf5ey4b2fr" path="res://scripts/objects/unit/arena_unit.gd" id="1_yoqlt"]
+[ext_resource type="Texture2D" uid="uid://cyu7lviuf27iy" path="res://assets/mons/charbear.png" id="2_ajmxk"]
 
 [sub_resource type="Animation" id="Animation_d0crd"]
 length = 0.001
@@ -123,7 +123,7 @@ _data = {
 &"picked_up": SubResource("Animation_tg830")
 }
 
-[node name="Unit" type="TextureButton" unique_id=1904344065]
+[node name="ArenaUnit" type="TextureButton" unique_id=1904344065]
 custom_minimum_size = Vector2(64, 64)
 offset_left = -32.0
 offset_top = -32.0
@@ -131,11 +131,11 @@ offset_right = 32.0
 offset_bottom = 32.0
 ignore_texture_size = true
 stretch_mode = 3
-script = ExtResource("1_d0crd")
+script = ExtResource("1_yoqlt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=215201721]
 position = Vector2(32, 0)
-texture = ExtResource("1_mh51q")
+texture = ExtResource("2_ajmxk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=725924324]
 libraries/ = SubResource("AnimationLibrary_tg830")

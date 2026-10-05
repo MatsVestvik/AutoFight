@@ -1,6 +1,7 @@
 extends PanelContainer
 class_name UnitSlot
 
+@export var allow_drop: bool = true
 @onready var center_container: CenterContainer = $CenterContainer
 
 const UNIT = preload("uid://cgpp4qmna44x2")
@@ -24,6 +25,8 @@ func is_empty() -> bool:
 
 # 1. Godot asks: "Can this dragged item be dropped here?"
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	if not allow_drop:
+		return false
 	return data is Unit
 
 # 2. Godot calls this when you release the mouse over this slot

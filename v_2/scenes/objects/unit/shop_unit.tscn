@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://doh6wyhrvic3y"]
+
+[ext_resource type="Script" uid="uid://27hqy1duy2r" path="res://scripts/objects/unit/shop_unit.gd" id="1_8xfuo"]
+[ext_resource type="Texture2D" uid="uid://cyu7lviuf27iy" path="res://assets/mons/charbear.png" id="2_3efoh"]
+
+[sub_resource type="Animation" id="Animation_d0crd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ct7mf"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.23333333, 1),
+"transitions": PackedFloat32Array(3.0314326, 1, 1),
+"update": 0,
+"values": [Vector2(32, 32), Vector2(62, 32), Vector2(32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.23333333, 1),
+"transitions": PackedFloat32Array(3.0314326, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a08q0"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.008333325, 0.5, 1, 1.5083333),
+"transitions": PackedFloat32Array(7.5, 6.7271757, 5.0982404, 7.5),
+"update": 0,
+"values": [Vector2(32, 32), Vector2(32, 28), Vector2(32, 32), Vector2(32, 28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.17453292519943295, 0.08726646259971647, 0.17453292, -0.08726646259971647]
+}
+
+[sub_resource type="Animation" id="Animation_tg830"]
+resource_name = "picked_up"
+length = 2.5000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.27925268, 0.55850536]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tg830"]
+_data = {
+&"RESET": SubResource("Animation_d0crd"),
+&"attack": SubResource("Animation_ct7mf"),
+&"idle": SubResource("Animation_a08q0"),
+&"picked_up": SubResource("Animation_tg830")
+}
+
+[node name="ShopUnit" type="TextureButton" unique_id=1904344065]
+custom_minimum_size = Vector2(64, 64)
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+ignore_texture_size = true
+stretch_mode = 3
+script = ExtResource("1_8xfuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=215201721]
+position = Vector2(32, 0)
+texture = ExtResource("2_3efoh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=725924324]
+libraries/ = SubResource("AnimationLibrary_tg830")
+autoplay = &"idle"

@@ -14,18 +14,23 @@ offset_bottom = 40.0
 
 [node name="UnitSlot1" parent="Slots" unique_id=1049437655 instance=ExtResource("1_y1rs8")]
 layout_mode = 2
+allow_drop = false
 
 [node name="UnitSlot2" parent="Slots" unique_id=1765573094 instance=ExtResource("1_y1rs8")]
 layout_mode = 2
+allow_drop = false
 
 [node name="UnitSlot3" parent="Slots" unique_id=1548381295 instance=ExtResource("1_y1rs8")]
 layout_mode = 2
+allow_drop = false
 
 [node name="UnitSlot4" parent="Slots" unique_id=1761596730 instance=ExtResource("1_y1rs8")]
 layout_mode = 2
+allow_drop = false
 
 [node name="UnitSlot5" parent="Slots" unique_id=524823350 instance=ExtResource("1_y1rs8")]
 layout_mode = 2
+allow_drop = false
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("2_p64xy")]
 offset_left = -72.0

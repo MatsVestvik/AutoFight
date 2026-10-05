@@ -1,4 +1,5 @@
 extends Unit
+class_name ArenaUnit
 
 var current_timer: float
 

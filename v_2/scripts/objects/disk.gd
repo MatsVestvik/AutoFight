@@ -8,8 +8,9 @@ extends Node2D
 @onready var unit_slot_5: UnitSlot = $Slots/UnitSlot5
 @onready var slots: HBoxContainer = $Slots
 
-const UNIT = preload("uid://cgpp4qmna44x2")
+const DISK_UNIT = preload("uid://bu8jiidw7frlw")
 
+signal buy(data:UnitData, disk_unit: DiskUnit)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reroll()
@@ -17,9 +18,13 @@ func _ready() -> void:
 func reroll() -> void:
 	for slot in slots.get_children():
 		slot.clear_slot()
-		var unit: Unit = UNIT.instantiate()
+		var unit: DiskUnit = DISK_UNIT.instantiate()
 		unit.create_from_data(GameManager.get_all_unit_data().pick_random())
+		unit.buy.connect(_on_unit_buy)
 		slot._reparent_unit(unit)
 
+func _on_unit_buy(data:UnitData, disk_unit:DiskUnit) -> void:
+	buy.emit(data, disk_unit)
+	
 func _on_custom_button_pressed() -> void:
 	reroll()

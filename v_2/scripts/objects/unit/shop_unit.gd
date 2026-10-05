@@ -1,18 +1,12 @@
-extends TextureButton
-class_name Unit
-
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-var data: UnitData
-var current_slot: UnitSlot = null
+extends Unit
+class_name ShopUnit
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 
 	modulate.a = 0.3
 
-	var preview_unit: Unit = load("res://scenes/objects/unit.tscn").instantiate()
+	var preview_unit: Unit = load("res://scenes/objects/unit/shop_unit.tscn").instantiate()
 	preview_unit.position = -size / 2.0
 
 	preview_unit.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -31,10 +25,6 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
 		modulate.a = 1.0
-
-func create_from_data(input_data: UnitData) -> void:
-	data = input_data
-	get_node("Sprite2D").texture = data.texture
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if current_slot:

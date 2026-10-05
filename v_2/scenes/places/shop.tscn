@@ -1,22 +1,21 @@
 [gd_scene format=3 uid="uid://dxhbdp28fdvp"]
 
-[ext_resource type="PackedScene" uid="uid://dcdju5330arnc" path="res://scenes/objects/team.tscn" id="1_2udrt"]
 [ext_resource type="Script" uid="uid://darnhh4quoq5y" path="res://scripts/places/shop.gd" id="1_ybgvo"]
 [ext_resource type="PackedScene" uid="uid://bog8rv8i306b8" path="res://scenes/objects/disk.tscn" id="2_fopej"]
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="3_6l3g4"]
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="4_ybgvo"]
+[ext_resource type="Script" uid="uid://bhbmoyg2lyexk" path="res://scripts/places/panel.gd" id="6_t1hbj"]
+[ext_resource type="PackedScene" uid="uid://blhvji0n03tdh" path="res://scenes/objects/team/shop_team.tscn" id="7_t1hbj"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="7_w5gvn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5gvn"]
+bg_color = Color(1, 0, 0, 0.25490198)
 
 [node name="Shop" type="Node2D" unique_id=568546673]
 script = ExtResource("1_ybgvo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=201467296]
 zoom = Vector2(1.5, 1.5)
-
-[node name="Team" parent="." unique_id=2035933801 instance=ExtResource("1_2udrt")]
-offset_left = -200.0
-offset_top = -136.0
-offset_right = 0.0
-offset_bottom = -4.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]
 
@@ -31,4 +30,33 @@ offset_bottom = 192.0
 label_name = "Play"
 image = ExtResource("4_ybgvo")
 
+[node name="SellZone" type="PanelContainer" parent="." unique_id=558861919]
+offset_left = -368.0
+offset_top = 120.0
+offset_right = 56.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5gvn")
+script = ExtResource("6_t1hbj")
+
+[node name="Label" type="Label" parent="SellZone" unique_id=277643398]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_w5gvn")
+text = "Sell"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopTeam" parent="." unique_id=2035933801 instance=ExtResource("7_t1hbj")]
+offset_left = -208.0
+offset_top = -144.0
+offset_right = -8.0
+offset_bottom = -12.0
+
+[connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="unit_sold" from="SellZone" to="." method="_on_sell_zone_unit_sold"]
