@@ -3,25 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="1_3k1xe"]
 [ext_resource type="Script" uid="uid://dnshd8nwfi5ni" path="res://scripts/places/arena.gd" id="1_d2xqs"]
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="2_rvdg8"]
-[ext_resource type="PackedScene" uid="uid://c53pld8524lw3" path="res://scenes/objects/team/arena_team.tscn" id="4_cdhcp"]
+[ext_resource type="PackedScene" uid="uid://c2cypguhbo8al" path="res://scenes/objects/team/arena_team_extra.tscn" id="4_cdhcp"]
 
 [node name="Arena" type="Node2D" unique_id=1943734924]
 script = ExtResource("1_d2xqs")
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("1_3k1xe")]
-offset_left = 448.0
-offset_top = 216.0
-offset_right = 512.0
-offset_bottom = 280.0
+offset_left = 288.0
+offset_top = 128.0
+offset_right = 352.0
+offset_bottom = 192.0
 label_name = "Shop"
 image = ExtResource("2_rvdg8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932742916]
+zoom = Vector2(1.5, 1.5)
 
-[node name="ArenaTeam" parent="." unique_id=2035933801 instance=ExtResource("4_cdhcp")]
-offset_left = -96.0
-offset_top = -72.0
-offset_right = 104.0
-offset_bottom = 60.0
+[node name="Team_1" parent="." unique_id=1312879998 instance=ExtResource("4_cdhcp")]
+position = Vector2(-232, 0)
+
+[node name="Team_2" parent="." unique_id=1858334631 instance=ExtResource("4_cdhcp")]
+position = Vector2(208, 0)
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
