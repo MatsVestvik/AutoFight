@@ -7,6 +7,7 @@ class_name Unit
 var data: UnitData
 var current_slot: UnitSlot = null
 
+
 func _get_drag_data(_at_position: Vector2) -> Variant:
 
 	modulate.a = 0.3

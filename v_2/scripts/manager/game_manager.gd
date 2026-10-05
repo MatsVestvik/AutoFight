@@ -1,6 +1,7 @@
 extends Node
 
 var units: Array[UnitData] = []
+var team: Array[UnitData] = []
 
 func _ready() -> void:
 	units = get_all_unit_data()

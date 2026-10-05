@@ -7,4 +7,6 @@
 script = ExtResource("1_01mjl")
 texture = ExtResource("2_4b158")
 name = "Charbear"
+cooldown_time = 5.0
+attack = 10
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

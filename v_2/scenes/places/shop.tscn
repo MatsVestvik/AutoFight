@@ -1,16 +1,34 @@
 [gd_scene format=3 uid="uid://dxhbdp28fdvp"]
 
 [ext_resource type="PackedScene" uid="uid://dcdju5330arnc" path="res://scenes/objects/team.tscn" id="1_2udrt"]
+[ext_resource type="Script" uid="uid://darnhh4quoq5y" path="res://scripts/places/shop.gd" id="1_ybgvo"]
+[ext_resource type="PackedScene" uid="uid://bog8rv8i306b8" path="res://scenes/objects/disk.tscn" id="2_fopej"]
+[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="3_6l3g4"]
+[ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="4_ybgvo"]
 
 [node name="Shop" type="Node2D" unique_id=568546673]
+script = ExtResource("1_ybgvo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=201467296]
-zoom = Vector2(4, 4)
+zoom = Vector2(1.5, 1.5)
 
 [node name="Team" parent="." unique_id=2035933801 instance=ExtResource("1_2udrt")]
-offset_left = -96.0
-offset_top = -64.0
-offset_right = 104.0
-offset_bottom = 68.0
+offset_left = -200.0
+offset_top = -136.0
+offset_right = 0.0
+offset_bottom = -4.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]
+
+[node name="Disk" parent="." unique_id=1842291610 instance=ExtResource("2_fopej")]
+position = Vector2(-288, 128)
+
+[node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("3_6l3g4")]
+offset_left = 296.0
+offset_top = 128.0
+offset_right = 360.0
+offset_bottom = 192.0
+label_name = "Play"
+image = ExtResource("4_ybgvo")
+
+[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

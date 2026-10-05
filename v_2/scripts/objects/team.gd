@@ -9,6 +9,8 @@ extends GridContainer
 
 const UNIT = preload("uid://cgpp4qmna44x2")
 
+var team: Array[UnitData]
+
 func _ready() -> void:
 	var new_unit = UNIT.instantiate()
 	unit_slot_1._reparent_unit(new_unit)
@@ -21,4 +23,7 @@ func _ready() -> void:
 	var new_unit_3 = UNIT.instantiate()
 	unit_slot_3._reparent_unit(new_unit_3)
 	new_unit_3.create_from_data(GameManager.units[2])
+	
+func add_member(data: UnitData, slot: int) -> void:
+	team[slot] = data
 	

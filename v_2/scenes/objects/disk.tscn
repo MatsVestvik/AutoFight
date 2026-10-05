@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bog8rv8i306b8"]
+
+[ext_resource type="Script" uid="uid://c6qwavwvtu0l7" path="res://scripts/objects/disk.gd" id="1_cmxqg"]
+[ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="1_y1rs8"]
+[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_p64xy"]
+[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="3_g3o3r"]
+
+[node name="Disk" type="Node2D" unique_id=1842291610]
+script = ExtResource("1_cmxqg")
+
+[node name="Slots" type="HBoxContainer" parent="." unique_id=212516548]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UnitSlot1" parent="Slots" unique_id=1049437655 instance=ExtResource("1_y1rs8")]
+layout_mode = 2
+
+[node name="UnitSlot2" parent="Slots" unique_id=1765573094 instance=ExtResource("1_y1rs8")]
+layout_mode = 2
+
+[node name="UnitSlot3" parent="Slots" unique_id=1548381295 instance=ExtResource("1_y1rs8")]
+layout_mode = 2
+
+[node name="UnitSlot4" parent="Slots" unique_id=1761596730 instance=ExtResource("1_y1rs8")]
+layout_mode = 2
+
+[node name="UnitSlot5" parent="Slots" unique_id=524823350 instance=ExtResource("1_y1rs8")]
+layout_mode = 2
+
+[node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("2_p64xy")]
+offset_left = -72.0
+offset_right = -8.0
+label_name = "REROLL"
+image = ExtResource("3_g3o3r")
+
+[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

@@ -8,6 +8,11 @@ const UNIT = preload("uid://cgpp4qmna44x2")
 func _ready() -> void:
 	pass
 	
+func clear_slot() -> void:
+	var unit: Unit = get_unit()
+	if unit:
+		unit.queue_free()
+	
 func get_unit() -> Unit:
 	for child in center_container.get_children():
 		if child is Unit:

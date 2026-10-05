@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://doufp6qhtjpie"]
+
+[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="1_dx6r0"]
+[ext_resource type="Script" uid="uid://5e1wrkc86ql6" path="res://scripts/ui/custom_button.gd" id="1_iuo0f"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_njdmp"]
+[ext_resource type="Texture2D" uid="uid://4trqkqikj0n6" path="res://assets/buttons/selected_0001.png" id="4_y7oh5"]
+[ext_resource type="Texture2D" uid="uid://c5hr5jxb21x5o" path="res://assets/buttons/selected_0002.png" id="5_63c0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1cl8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuo0f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7oh5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63c0n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32a6k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_828cs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y7oh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_63c0n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="CustomButton" type="Button" unique_id=1197267838]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1cl8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iuo0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y7oh5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_63c0n")
+theme_override_styles/focus = SubResource("StyleBoxFlat_32a6k")
+script = ExtResource("1_iuo0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540272238]
+position = Vector2(32, 32)
+texture = ExtResource("1_dx6r0")
+
+[node name="Label" type="Label" parent="." unique_id=1309658172]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_njdmp")
+text = "Reroll"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Selected" type="AnimatedSprite2D" parent="." unique_id=2053728037]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_828cs")
+autoplay = "default"
+frame_progress = 0.6186829
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1345871109]
+root_node = NodePath("../Selected")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
