@@ -2,6 +2,8 @@ extends Team
 
 const ARENA_UNIT_SCENE = preload("res://scenes/objects/unit/arena_unit.tscn")
 
+signal unit_attacked(damage:Damage)
+
 func load_team(team_data: Array[UnitData]) -> void:
 	for i in range(team_data.size()):
 		var data: UnitData = team_data[i]
@@ -23,7 +25,7 @@ func add_member(data: UnitData, slot: int = -1) -> bool:
 
 	var new_unit: ArenaUnit = ARENA_UNIT_SCENE.instantiate()
 	new_unit.create_from_data(data)
-
+	new_unit.attacked.connect(func(damage:Damage): unit_attacked.emit(damage))
 	target_slot._reparent_unit(new_unit)
-	
 	return true
+	
