@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0xcdrce1y7a4" path="res://scripts/objects/team/arena_team_extra.gd" id="1_5nay7"]
 [ext_resource type="PackedScene" uid="uid://c53pld8524lw3" path="res://scenes/objects/team/arena_team.tscn" id="1_dvtft"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_5nay7"]
+[ext_resource type="Texture2D" uid="uid://kdub8t1oenmp" path="res://assets/buttons/team_box.png" id="2_pdqrq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdqrq"]
 bg_color = Color(1, 0, 0, 0.09803922)
@@ -12,6 +13,11 @@ bg_color = Color(0, 1, 0, 0.8627451)
 
 [node name="ArenaTeamExtra" type="Node2D" unique_id=1312879998]
 script = ExtResource("1_5nay7")
+max_health = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=63791735]
+position = Vector2(0, -32)
+texture = ExtResource("2_pdqrq")
 
 [node name="ArenaTeam" parent="." unique_id=2035933801 instance=ExtResource("1_dvtft")]
 offset_left = -96.0
@@ -21,10 +27,16 @@ offset_bottom = 68.0
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1659822668]
 offset_left = -96.0
-offset_top = -112.0
+offset_top = -104.0
 offset_right = 104.0
-offset_bottom = -85.0
+offset_bottom = -77.0
 theme_override_fonts/font = ExtResource("2_5nay7")
 theme_override_styles/background = SubResource("StyleBoxFlat_pdqrq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qb154")
 value = 50.0
+
+[node name="Effects" type="HBoxContainer" parent="." unique_id=344272465]
+offset_left = -96.0
+offset_top = -120.0
+offset_right = 104.0
+offset_bottom = -104.0

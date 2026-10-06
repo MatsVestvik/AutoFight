@@ -9,4 +9,5 @@ texture = ExtResource("2_p28pg")
 name = "squitonkey"
 cooldown_time = 2.0
 attack = 1
+poison = 7
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

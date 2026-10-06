@@ -9,4 +9,6 @@ texture = ExtResource("2_k2b17")
 name = "totter"
 cooldown_time = 4.0
 attack = 2
+poison = 2
+shield = 4
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"
