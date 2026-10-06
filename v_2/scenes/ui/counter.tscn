@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://colq0x8oeonmx"]
 
-[ext_resource type="Texture2D" uid="uid://dau4tpe0qb7e" path="res://assets/counters/poison_counter.png" id="1_fvccx"]
+[ext_resource type="Texture2D" uid="uid://b0cwvf030bk1n" path="res://assets/counters/small/normal_counter.png" id="1_x58qm"]
 [ext_resource type="Script" uid="uid://bkrnowpiqw78c" path="res://scripts/ui/counter.gd" id="2_eqj2l"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_x58qm"]
 
 [node name="Counter" type="TextureRect" unique_id=465814988]
-offset_left = -16.0
-offset_top = -8.0
-offset_right = 16.0
+offset_left = -8.0
+offset_right = 8.0
 offset_bottom = 8.0
-texture = ExtResource("1_fvccx")
+texture = ExtResource("1_x58qm")
 script = ExtResource("2_eqj2l")
 
 [node name="Label" type="Label" parent="." unique_id=1601463404]
@@ -19,10 +18,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -8.0
-offset_right = 16.0
-offset_bottom = 8.0
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -31,4 +32,3 @@ theme_override_font_sizes/font_size = 8
 text = "23"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true

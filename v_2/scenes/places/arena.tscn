@@ -9,22 +9,25 @@
 script = ExtResource("1_d2xqs")
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("1_3k1xe")]
-offset_left = 200.0
-offset_top = 88.0
-offset_right = 264.0
-offset_bottom = 152.0
+offset_left = 368.0
+offset_top = 184.0
+offset_right = 432.0
+offset_bottom = 248.0
+scale = Vector2(2, 2)
 label_name = "Shop"
 image = ExtResource("2_rvdg8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932742916]
-zoom = Vector2(2, 2)
 
 [node name="Team_1" parent="." unique_id=1312879998 instance=ExtResource("4_cdhcp")]
-position = Vector2(-144, -8)
+position = Vector2(-304, -40)
+scale = Vector2(2, 2)
 max_health = 100
 
 [node name="Team_2" parent="." unique_id=1858334631 instance=ExtResource("4_cdhcp")]
-position = Vector2(144, -8)
+position = Vector2(304, -40)
+scale = Vector2(2, 2)
 max_health = 100
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
