@@ -13,7 +13,8 @@ class_name Team
 
 func _ready() -> void:
 	pass
-
+	
+	
 func get_first_empty_slot() -> int:
 	for i in range(slots.size()):
 		if slots[i].is_empty():

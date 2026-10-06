@@ -15,26 +15,26 @@ bg_color = Color(1, 0, 0, 0.25490198)
 script = ExtResource("1_ybgvo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=201467296]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]
 
 [node name="Disk" parent="." unique_id=1842291610 instance=ExtResource("2_fopej")]
-position = Vector2(-288, 128)
+position = Vector2(-192, 80)
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("3_6l3g4")]
-offset_left = 296.0
-offset_top = 128.0
-offset_right = 360.0
-offset_bottom = 192.0
+offset_left = 200.0
+offset_top = 80.0
+offset_right = 264.0
+offset_bottom = 144.0
 label_name = "Play"
 image = ExtResource("4_ybgvo")
 
 [node name="SellZone" type="PanelContainer" parent="." unique_id=558861919]
-offset_left = -368.0
-offset_top = 120.0
-offset_right = 56.0
-offset_bottom = 200.0
+offset_left = -272.0
+offset_top = 72.0
+offset_right = 152.0
+offset_bottom = 152.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w5gvn")
 script = ExtResource("6_t1hbj")
 
@@ -52,10 +52,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopTeam" parent="." unique_id=2035933801 instance=ExtResource("7_t1hbj")]
-offset_left = -208.0
-offset_top = -144.0
-offset_right = -8.0
-offset_bottom = -12.0
+offset_left = -104.0
+offset_top = -112.0
+offset_right = 96.0
+offset_bottom = 20.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

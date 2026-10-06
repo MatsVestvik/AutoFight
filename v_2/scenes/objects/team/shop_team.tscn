@@ -1,28 +1,7 @@
 [gd_scene format=3 uid="uid://blhvji0n03tdh"]
 
+[ext_resource type="PackedScene" uid="uid://dcdju5330arnc" path="res://scenes/objects/team/team.tscn" id="1_7r2dv"]
 [ext_resource type="Script" uid="uid://cnrlmy8ihjnno" path="res://scripts/objects/team/shop_team.gd" id="1_wiu37"]
-[ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="2_kewxr"]
 
-[node name="ShopTeam" type="GridContainer" unique_id=2035933801]
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 3
+[node name="ShopTeam" unique_id=2035933801 instance=ExtResource("1_7r2dv")]
 script = ExtResource("1_wiu37")
-
-[node name="UnitSlot1" parent="." unique_id=1049437655 instance=ExtResource("2_kewxr")]
-layout_mode = 2
-
-[node name="UnitSlot2" parent="." unique_id=717576278 instance=ExtResource("2_kewxr")]
-layout_mode = 2
-
-[node name="UnitSlot3" parent="." unique_id=1266452094 instance=ExtResource("2_kewxr")]
-layout_mode = 2
-
-[node name="UnitSlot4" parent="." unique_id=1969727809 instance=ExtResource("2_kewxr")]
-layout_mode = 2
-
-[node name="UnitSlot5" parent="." unique_id=295397385 instance=ExtResource("2_kewxr")]
-layout_mode = 2
-
-[node name="UnitSlot6" parent="." unique_id=994721419 instance=ExtResource("2_kewxr")]
-layout_mode = 2
