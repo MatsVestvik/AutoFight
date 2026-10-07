@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dscqojmcw2qra"
-path="res://.godot/imported/normal_counter.png-c413449209c1fc7290cb9e6b31688228.ctex"
+uid="uid://dymd7011vp5gi"
+path="res://.godot/imported/numbers.png-92ff9d16f5edfeda5c025dcb7fdd59c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/counters/normal_counter.png"
-dest_files=["res://.godot/imported/normal_counter.png-c413449209c1fc7290cb9e6b31688228.ctex"]
+source_file="res://assets/counters/small/numbers.png"
+dest_files=["res://.godot/imported/numbers.png-92ff9d16f5edfeda5c025dcb7fdd59c6.ctex"]
 
 [params]
 
