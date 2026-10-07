@@ -6,13 +6,14 @@
 
 [node name="UserInterface" type="Control" unique_id=1809188270]
 layout_mode = 3
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Day" type="Label" parent="." unique_id=1187957558]
 layout_mode = 0
-offset_left = 152.0
-offset_right = 216.0
+offset_left = 192.0
+offset_right = 256.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
@@ -22,8 +23,8 @@ vertical_alignment = 1
 
 [node name="DayCounter" type="Label" parent="." unique_id=1474148915]
 layout_mode = 0
-offset_left = 216.0
-offset_right = 328.0
+offset_left = 256.0
+offset_right = 368.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
@@ -32,8 +33,8 @@ vertical_alignment = 1
 
 [node name="HealthCounter" type="Label" parent="." unique_id=1373783878]
 layout_mode = 0
-offset_left = 312.0
-offset_right = 336.0
+offset_left = 328.0
+offset_right = 352.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
@@ -42,8 +43,8 @@ vertical_alignment = 1
 
 [node name="WinsCounter" type="Label" parent="." unique_id=1728098728]
 layout_mode = 0
-offset_left = 408.0
-offset_right = 520.0
+offset_left = 424.0
+offset_right = 536.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
@@ -51,11 +52,11 @@ text = "0"
 vertical_alignment = 1
 
 [node name="FullHeart" type="Sprite2D" parent="." unique_id=1314511029]
-position = Vector2(288, 16)
+position = Vector2(304, 16)
 scale = Vector2(2, 2)
 texture = ExtResource("2_a44fs")
 
 [node name="FullTrophy" type="Sprite2D" parent="." unique_id=295540201]
-position = Vector2(384, 16)
+position = Vector2(400, 16)
 scale = Vector2(2, 2)
 texture = ExtResource("3_rcgkl")

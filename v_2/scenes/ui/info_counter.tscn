@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c8ogbactqmb6w"]
+
+[ext_resource type="Script" uid="uid://b4jq660rp7i4d" path="res://scripts/ui/info_counter.gd" id="1_7dwd7"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="1_nepg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynkvd"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="InfoCounter" type="PanelContainer" unique_id=11102559]
+offset_right = 80.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ynkvd")
+script = ExtResource("1_7dwd7")
+
+[node name="Label" type="Label" parent="." unique_id=622658883]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nepg4")
+text = "NORMAL"
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="." unique_id=733472704]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nepg4")
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1

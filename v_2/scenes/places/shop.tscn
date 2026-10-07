@@ -68,7 +68,6 @@ offset_right = -136.0
 offset_bottom = 32.0
 
 [node name="UserInterface" parent="." unique_id=1809188270 instance=ExtResource("10_fxpdy")]
-anchors_preset = 0
 offset_left = -288.0
 offset_top = -160.0
 offset_right = -288.0
