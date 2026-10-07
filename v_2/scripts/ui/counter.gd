@@ -3,9 +3,10 @@ class_name Counter
 
 @onready var label: Label = $Label
 
-const NORMAL_COUNTER = preload("uid://b0cwvf030bk1n")
-const POISON_COUNTER = preload("uid://b362s856vmsmr")
-const SHIELD_COUNTER = preload("uid://bmhbjsunp8wr5")
+const BURN_COUNTER = preload("uid://c1m7llyoq8jbt")
+const NORMAL_COUNTER = preload("uid://o8lq16a6cuv2")
+const POISON_COUNTER = preload("uid://dau4tpe0qb7e")
+const SHIELD_COUNTER = preload("uid://b5aygn8265a34")
 
 var type: Damage.Type
 var amount: int
@@ -21,6 +22,8 @@ func setup(p_type: Damage.Type, p_amount: int) -> void:
 			texture = POISON_COUNTER
 		Damage.Type.SHIELD:
 			texture = SHIELD_COUNTER
+		Damage.Type.BURN:
+			texture = BURN_COUNTER
 
 func update_amount(new_amount: int) -> void:
 	amount = new_amount

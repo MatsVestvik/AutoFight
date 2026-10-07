@@ -2,8 +2,25 @@
 
 [ext_resource type="Script" uid="uid://ctaapc21dsxmv" path="res://scripts/objects/unit/disk_unit.gd" id="1_uwakj"]
 [ext_resource type="PackedScene" uid="uid://cgpp4qmna44x2" path="res://scenes/objects/unit/unit.tscn" id="1_xw3vy"]
+[ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/util/cash.png" id="3_oiwvw"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="4_jormn"]
 
 [node name="DiskUnit" unique_id=1904344065 instance=ExtResource("1_xw3vy")]
 script = ExtResource("1_uwakj")
+
+[node name="Cash" type="Sprite2D" parent="." index="3" unique_id=1298167527]
+position = Vector2(0, 8)
+texture = ExtResource("3_oiwvw")
+
+[node name="Label" type="Label" parent="Cash" index="0" unique_id=2064267835]
+offset_left = 5.0
+offset_top = -7.0
+offset_right = 45.0
+offset_bottom = 9.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_jormn")
+text = "20"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

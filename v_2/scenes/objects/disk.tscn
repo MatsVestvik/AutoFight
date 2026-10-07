@@ -2,11 +2,68 @@
 
 [ext_resource type="Script" uid="uid://c6qwavwvtu0l7" path="res://scripts/objects/disk.gd" id="1_cmxqg"]
 [ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="1_y1rs8"]
+[ext_resource type="Script" uid="uid://b2gp2a6d2xunp" path="res://scripts/ui/freeze.gd" id="2_726qy"]
+[ext_resource type="Texture2D" uid="uid://bvd5x72oie3qf" path="res://assets/buttons/freeze_0001.png" id="2_gaogj"]
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_p64xy"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="3_726qy"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="3_g3o3r"]
+[ext_resource type="Texture2D" uid="uid://diyfm57bpgn8t" path="res://assets/buttons/bar.png" id="8_sfhcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_726qy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfhcp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lk7oy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh4na"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajge8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828cs"]
+bg_color = Color(0, 0.68235296, 0.7058824, 0.38431373)
 
 [node name="Disk" type="Node2D" unique_id=1842291610]
 script = ExtResource("1_cmxqg")
+
+[node name="Freeze" type="Button" parent="." unique_id=295590323]
+offset_left = 272.0
+offset_top = -40.0
+offset_right = 336.0
+offset_bottom = -8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_726qy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sfhcp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lk7oy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nh4na")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ajge8")
+script = ExtResource("2_726qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Freeze" unique_id=85492050]
+position = Vector2(32, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_gaogj")
+
+[node name="Label" type="Label" parent="Freeze" unique_id=1245931643]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "FREEZE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frozen" type="PanelContainer" parent="Freeze" unique_id=1647932294]
+visible = false
+layout_mode = 0
+offset_left = -352.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_828cs")
 
 [node name="Slots" type="HBoxContainer" parent="." unique_id=212516548]
 offset_right = 40.0
@@ -38,4 +95,75 @@ offset_right = -8.0
 label_name = "REROLL"
 image = ExtResource("3_g3o3r")
 
+[node name="Bar" type="Sprite2D" parent="." unique_id=886820011]
+position = Vector2(96, -24)
+texture = ExtResource("8_sfhcp")
+
+[node name="Label" type="Label" parent="Bar" unique_id=1708738556]
+offset_left = -168.0
+offset_top = -16.0
+offset_right = -64.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "Shop Level:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bar" unique_id=664019498]
+offset_left = -72.0
+offset_top = -16.0
+offset_right = -32.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6784314, 1)
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bar/Label2" unique_id=1005625039]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 88.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0.654902, 0, 1)
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bar/Label2/Label2" unique_id=110121041]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 88.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.1254902, 0.37254903, 0.84313726, 1)
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bar/Label2/Label2/Label2" unique_id=1557283701]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 88.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.40392157, 0.011764706, 0.81960785, 1)
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bar/Label2/Label2/Label2/Label2" unique_id=734757294]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 88.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.8745098, 0.5372549, 0, 1)
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Freeze" to="Freeze" method="_on_pressed"]
+[connection signal="toggled" from="Freeze" to="Freeze" method="_on_toggled"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

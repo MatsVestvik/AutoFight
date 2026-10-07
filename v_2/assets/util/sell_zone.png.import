@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5hr5jxb21x5o"
-path="res://.godot/imported/selected_0002.png-efef0c13ab53c6484d48b494e71baea2.ctex"
+uid="uid://bw5o5grasxwrm"
+path="res://.godot/imported/sell_zone.png-981b3799cafec1ed13f6352985e6d7f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/selected_0002.png"
-dest_files=["res://.godot/imported/selected_0002.png-efef0c13ab53c6484d48b494e71baea2.ctex"]
+source_file="res://assets/util/sell_zone.png"
+dest_files=["res://.godot/imported/sell_zone.png-981b3799cafec1ed13f6352985e6d7f7.ctex"]
 
 [params]
 

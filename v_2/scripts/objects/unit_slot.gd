@@ -3,11 +3,15 @@ class_name UnitSlot
 
 @export var allow_drop: bool = true
 @onready var center_container: CenterContainer = $CenterContainer
+@onready var selected: AnimatedSprite2D = $Selected
 
 const UNIT = preload("uid://cgpp4qmna44x2")
 
 func _ready() -> void:
-	pass
+	selected.hide()
+	if not mouse_entered.is_connected(_on_mouse_entered):
+		mouse_entered.connect(_on_mouse_entered)
+		mouse_exited.connect(_on_mouse_exited)
 	
 func clear_slot() -> void:
 	var unit: Unit = get_unit()
@@ -23,13 +27,11 @@ func get_unit() -> Unit:
 func is_empty() -> bool:
 	return get_unit() == null
 
-# 1. Godot asks: "Can this dragged item be dropped here?"
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if not allow_drop:
 		return false
 	return data is Unit
 
-# 2. Godot calls this when you release the mouse over this slot
 func _drop_data(_at_position: Vector2, new_unit: Variant) -> void:
 	if not (new_unit is Unit):
 		return
@@ -37,21 +39,17 @@ func _drop_data(_at_position: Vector2, new_unit: Variant) -> void:
 	var old_unit: Unit = get_unit()
 	var origin_slot: UnitSlot = new_unit.current_slot
 
-	# SCENARIO A: The slot is empty
 	if is_empty():
 		_reparent_unit(new_unit)
 
-	# SCENARIO B: Dropping onto the same slot it came from
 	elif origin_slot == self:
 		new_unit.modulate.a = 1.0
 
-	# SCENARIO C: The slot is occupied -> Swap the two units
 	else:
 		if origin_slot != null:
 			origin_slot._reparent_unit(old_unit)
 		_reparent_unit(new_unit)
 
-# Helper function to move a unit into this slot safely
 func _reparent_unit(unit: Unit) -> void:
 	if unit.get_parent():
 		unit.get_parent().remove_child(unit)
@@ -60,3 +58,17 @@ func _reparent_unit(unit: Unit) -> void:
 	unit.current_slot = self
 	unit.modulate.a = 1.0
 	
+func _on_mouse_entered() -> void:
+	selected.show()
+	if get_viewport().gui_is_dragging():
+		return
+
+	var unit: Unit = get_unit()
+	if unit and unit.data:
+		GameManager.unit_hovered.emit(unit.data)
+	else:
+		GameManager.unit_unhovered.emit()
+
+func _on_mouse_exited() -> void:
+	selected.hide()
+	GameManager.unit_unhovered.emit()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kdub8t1oenmp"
-path="res://.godot/imported/team_box.png-ac331bdf33d7fcfa74f7599e23fae813.ctex"
+uid="uid://brfg5n1ap3kos"
+path="res://.godot/imported/emptyTrophy.png-42962dd46dff48e332c8dd36c2da5c6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/team_box.png"
-dest_files=["res://.godot/imported/team_box.png-ac331bdf33d7fcfa74f7599e23fae813.ctex"]
+source_file="res://assets/icons/emptyTrophy.png"
+dest_files=["res://.godot/imported/emptyTrophy.png-42962dd46dff48e332c8dd36c2da5c6d.ctex"]
 
 [params]
 

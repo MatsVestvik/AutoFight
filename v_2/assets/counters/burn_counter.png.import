@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw5o5grasxwrm"
-path="res://.godot/imported/sell_zone.png-8ce894e95f1ebb2210e86a4fb5218958.ctex"
+uid="uid://c1m7llyoq8jbt"
+path="res://.godot/imported/burn_counter.png-bc1bd3cb58c7d1a1f37719c14b535d9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/sell_zone.png"
-dest_files=["res://.godot/imported/sell_zone.png-8ce894e95f1ebb2210e86a4fb5218958.ctex"]
+source_file="res://assets/counters/burn_counter.png"
+dest_files=["res://.godot/imported/burn_counter.png-bc1bd3cb58c7d1a1f37719c14b535d9e.ctex"]
 
 [params]
 

@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://ce3o5tiud1jrq"]
 
 [ext_resource type="Script" uid="uid://dvramnrhq6dpl" path="res://scripts/objects/unit_slot.gd" id="1_3yesy"]
+[ext_resource type="Texture2D" uid="uid://dnga1sde0ra50" path="res://assets/buttons/slot.png" id="2_xo4hv"]
+[ext_resource type="Texture2D" uid="uid://4trqkqikj0n6" path="res://assets/util/selected_0001.png" id="3_dryfw"]
+[ext_resource type="Texture2D" uid="uid://c5hr5jxb21x5o" path="res://assets/util/selected_0002.png" id="4_fuh65"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b32g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dryfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fuh65")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="UnitSlot" type="PanelContainer" unique_id=1049437655]
 custom_minimum_size = Vector2(64, 64)
@@ -16,6 +33,21 @@ offset_bottom = 24.223999
 mouse_filter = 1
 script = ExtResource("1_3yesy")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=500271951]
+position = Vector2(32, 32)
+texture = ExtResource("2_xo4hv")
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1406099568]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+
+[node name="Selected" type="AnimatedSprite2D" parent="." unique_id=1835066728]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_5b32g")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=607152320]
+root_node = NodePath("../Selected")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

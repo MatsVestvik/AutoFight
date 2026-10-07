@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="1_dx6r0"]
 [ext_resource type="Script" uid="uid://5e1wrkc86ql6" path="res://scripts/ui/custom_button.gd" id="1_iuo0f"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_njdmp"]
-[ext_resource type="Texture2D" uid="uid://4trqkqikj0n6" path="res://assets/buttons/selected_0001.png" id="4_y7oh5"]
-[ext_resource type="Texture2D" uid="uid://c5hr5jxb21x5o" path="res://assets/buttons/selected_0002.png" id="5_63c0n"]
+[ext_resource type="Texture2D" uid="uid://4trqkqikj0n6" path="res://assets/util/selected_0001.png" id="4_y7oh5"]
+[ext_resource type="Texture2D" uid="uid://c5hr5jxb21x5o" path="res://assets/util/selected_0002.png" id="5_63c0n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1cl8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

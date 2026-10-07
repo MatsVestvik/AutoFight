@@ -13,6 +13,7 @@ var current_slot: UnitSlot = null
 var attack_counter: Counter
 var poison_counter: Counter
 var shield_counter: Counter
+var burn_counter: Counter
 
 func _ready() -> void:
 	if data:
@@ -57,4 +58,14 @@ func _update_stats() -> void:
 	elif shield_counter != null:
 		shield_counter.queue_free()
 		shield_counter = null
-		
+	
+	if data.burn > 0:
+		if burn_counter == null:
+			burn_counter = COUNTER.instantiate()
+			stats.add_child(burn_counter)
+			burn_counter.setup(Damage.Type.BURN, data.burn)
+		else:
+			burn_counter.update_amount(data.burn)
+	elif burn_counter != null:
+		burn_counter.queue_free()
+		burn_counter = null

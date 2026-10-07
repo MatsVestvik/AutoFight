@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dnshd8nwfi5ni" path="res://scripts/places/arena.gd" id="1_d2xqs"]
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="2_rvdg8"]
 [ext_resource type="PackedScene" uid="uid://c2cypguhbo8al" path="res://scenes/objects/team/arena_team_extra.tscn" id="4_cdhcp"]
+[ext_resource type="PackedScene" uid="uid://dw2ilhce6urxk" path="res://scenes/ui/info_box.tscn" id="5_7w66w"]
 
 [node name="Arena" type="Node2D" unique_id=1943734924]
 script = ExtResource("1_d2xqs")
@@ -29,5 +30,12 @@ max_health = 100
 position = Vector2(304, -40)
 scale = Vector2(2, 2)
 max_health = 100
+
+[node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("5_7w66w")]
+offset_left = 168.0
+offset_top = -312.0
+offset_right = 296.0
+offset_bottom = -120.0
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

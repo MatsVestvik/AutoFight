@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dau4tpe0qb7e"
-path="res://.godot/imported/poison_counter.png-e795eb0b881429b9333225fe3d22030f.ctex"
+uid="uid://kdub8t1oenmp"
+path="res://.godot/imported/team_box.png-dcdb9e6fa03c400a5f20cd60cb5a600e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/counters/small/poison_counter.png"
-dest_files=["res://.godot/imported/poison_counter.png-e795eb0b881429b9333225fe3d22030f.ctex"]
+source_file="res://assets/util/team_box.png"
+dest_files=["res://.godot/imported/team_box.png-dcdb9e6fa03c400a5f20cd60cb5a600e.ctex"]
 
 [params]
 

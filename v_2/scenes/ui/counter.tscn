@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://colq0x8oeonmx"]
 
-[ext_resource type="Texture2D" uid="uid://b0cwvf030bk1n" path="res://assets/counters/small/normal_counter.png" id="1_x58qm"]
+[ext_resource type="Texture2D" uid="uid://o8lq16a6cuv2" path="res://assets/counters/normal_counter.png" id="1_x58qm"]
 [ext_resource type="Script" uid="uid://bkrnowpiqw78c" path="res://scripts/ui/counter.gd" id="2_eqj2l"]
 [ext_resource type="FontFile" uid="uid://b1sg683a68j3n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_x58qm"]
 

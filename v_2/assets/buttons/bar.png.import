@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dymd7011vp5gi"
-path="res://.godot/imported/numbers.png-92ff9d16f5edfeda5c025dcb7fdd59c6.ctex"
+uid="uid://diyfm57bpgn8t"
+path="res://.godot/imported/bar.png-a3b0fdc6f6c3cf03a2b8914a303959d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/counters/small/numbers.png"
-dest_files=["res://.godot/imported/numbers.png-92ff9d16f5edfeda5c025dcb7fdd59c6.ctex"]
+source_file="res://assets/buttons/bar.png"
+dest_files=["res://.godot/imported/bar.png-a3b0fdc6f6c3cf03a2b8914a303959d8.ctex"]
 
 [params]
 

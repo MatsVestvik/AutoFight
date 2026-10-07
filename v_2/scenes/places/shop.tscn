@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://bhbmoyg2lyexk" path="res://scripts/places/panel.gd" id="6_t1hbj"]
 [ext_resource type="PackedScene" uid="uid://blhvji0n03tdh" path="res://scenes/objects/team/shop_team.tscn" id="7_t1hbj"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="7_w5gvn"]
+[ext_resource type="PackedScene" uid="uid://dw2ilhce6urxk" path="res://scenes/ui/info_box.tscn" id="8_t1hbj"]
+[ext_resource type="PackedScene" uid="uid://clvmih7kasldp" path="res://scenes/ui/user_interface.tscn" id="10_fxpdy"]
+[ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="10_nt1a3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5gvn"]
 bg_color = Color(1, 0, 0, 0.25490198)
@@ -52,11 +55,41 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopTeam" parent="." unique_id=2035933801 instance=ExtResource("7_t1hbj")]
-offset_left = -104.0
+offset_left = -72.0
 offset_top = -112.0
-offset_right = 96.0
+offset_right = 128.0
 offset_bottom = 20.0
 metadata/_edit_use_anchors_ = true
+
+[node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
+offset_left = -264.0
+offset_top = -160.0
+offset_right = -136.0
+offset_bottom = 32.0
+
+[node name="UserInterface" parent="." unique_id=1809188270 instance=ExtResource("10_fxpdy")]
+anchors_preset = 0
+offset_left = -288.0
+offset_top = -160.0
+offset_right = -288.0
+offset_bottom = -159.992
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1263454279]
+offset_left = 200.0
+offset_top = -144.0
+offset_right = 264.0
+offset_bottom = 56.0
+
+[node name="UnitSlot" parent="VBoxContainer" unique_id=1049437655 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="UnitSlot2" parent="VBoxContainer" unique_id=1996574927 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="UnitSlot3" parent="VBoxContainer" unique_id=552786859 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

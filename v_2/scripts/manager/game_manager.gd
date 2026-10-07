@@ -3,6 +3,9 @@ extends Node
 var units: Array[UnitData] = []
 var team: Array[UnitData] = []
 
+signal unit_hovered(unit_data: UnitData)
+signal unit_unhovered()
+
 func _ready() -> void:
 	units = get_all_unit_data()
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o8lq16a6cuv2"
-path="res://.godot/imported/normal_counter.png-940925322150e682d60ad5a3d3c2d142.ctex"
+uid="uid://bvd5x72oie3qf"
+path="res://.godot/imported/freeze_0001.png-18196e04ede37f523c3ac57f9ec141e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/counters/small/normal_counter.png"
-dest_files=["res://.godot/imported/normal_counter.png-940925322150e682d60ad5a3d3c2d142.ctex"]
+source_file="res://assets/buttons/freeze_0001.png"
+dest_files=["res://.godot/imported/freeze_0001.png-18196e04ede37f523c3ac57f9ec141e1.ctex"]
 
 [params]
 
