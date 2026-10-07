@@ -2,13 +2,51 @@
 
 [ext_resource type="Script" uid="uid://ctaapc21dsxmv" path="res://scripts/objects/unit/disk_unit.gd" id="1_uwakj"]
 [ext_resource type="PackedScene" uid="uid://cgpp4qmna44x2" path="res://scenes/objects/unit/unit.tscn" id="1_xw3vy"]
+[ext_resource type="Texture2D" uid="uid://xvyo27i13lt" path="res://assets/rarity_box/common_box.png" id="3_7cyp5"]
+[ext_resource type="PackedScene" uid="uid://colq0x8oeonmx" path="res://scenes/ui/counter.tscn" id="3_jormn"]
 [ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/util/cash.png" id="3_oiwvw"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="4_jormn"]
 
 [node name="DiskUnit" unique_id=1904344065 instance=ExtResource("1_xw3vy")]
 script = ExtResource("1_uwakj")
 
-[node name="Cash" type="Sprite2D" parent="." index="3" unique_id=1298167527]
+[node name="Typing1" type="ColorRect" parent="." index="0" unique_id=1472957777]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 48.0
+mouse_filter = 1
+color = Color(0.242944, 0.32895902, 0.5285695, 1)
+
+[node name="Typing2" type="ColorRect" parent="." index="1" unique_id=248591454]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 48.0
+mouse_filter = 1
+color = Color(0.72556823, 0.40913934, 0.4052263, 1)
+
+[node name="RarityBox" type="Sprite2D" parent="." index="2" unique_id=272817613]
+position = Vector2(32, 32)
+texture = ExtResource("3_7cyp5")
+
+[node name="Sprite2D" parent="." index="3" unique_id=215201721]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=725924324]
+autoplay = &""
+
+[node name="Counter" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="0" unique_id=465814988 instance=ExtResource("3_jormn")]
+layout_mode = 2
+
+[node name="Counter2" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="1" unique_id=1356814638 instance=ExtResource("3_jormn")]
+layout_mode = 2
+
+[node name="Counter3" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="2" unique_id=682478935 instance=ExtResource("3_jormn")]
+layout_mode = 2
+
+[node name="Cash" type="Sprite2D" parent="." index="6" unique_id=1298167527]
 position = Vector2(0, 8)
 texture = ExtResource("3_oiwvw")
 

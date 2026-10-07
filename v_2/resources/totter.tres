@@ -9,6 +9,7 @@ texture = ExtResource("2_k2b17")
 name = "totter"
 cooldown_time = 4.0
 cost = 5
+rarity = 2
 attack = 2
 poison = 2
 shield = 4

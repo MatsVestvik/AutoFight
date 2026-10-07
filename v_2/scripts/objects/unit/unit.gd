@@ -26,46 +26,28 @@ func create_from_data(input_data: UnitData) -> void:
 		_update_stats()
 
 func _update_stats() -> void:
+	# 1. Remove and free existing counters
+	for child in stats.get_children():
+		stats.remove_child(child)
+		child.queue_free()
+		
+	# 2. Re-create only the stats the unit actually has
 	if data.attack > 0:
-		if attack_counter == null:
-			attack_counter = COUNTER.instantiate()
-			stats.add_child(attack_counter)
-			attack_counter.setup(Damage.Type.NORMAL, data.attack)
-		else:
-			attack_counter.update_amount(data.attack)
-	elif attack_counter != null:
-		attack_counter.queue_free()
-		attack_counter = null
+		var counter = COUNTER.instantiate()
+		stats.add_child(counter)
+		counter.setup(Damage.Type.NORMAL, data.attack)
 		
 	if data.poison > 0:
-		if poison_counter == null:
-			poison_counter = COUNTER.instantiate()
-			stats.add_child(poison_counter)
-			poison_counter.setup(Damage.Type.POISON, data.poison)
-		else:
-			poison_counter.update_amount(data.poison)
-	elif poison_counter != null:
-		poison_counter.queue_free()
-		poison_counter = null
+		var counter = COUNTER.instantiate()
+		stats.add_child(counter)
+		counter.setup(Damage.Type.POISON, data.poison)
 
 	if data.shield > 0:
-		if shield_counter == null:
-			shield_counter = COUNTER.instantiate()
-			stats.add_child(shield_counter)
-			shield_counter.setup(Damage.Type.SHIELD, data.shield)
-		else:
-			shield_counter.update_amount(data.shield)
-	elif shield_counter != null:
-		shield_counter.queue_free()
-		shield_counter = null
+		var counter = COUNTER.instantiate()
+		stats.add_child(counter)
+		counter.setup(Damage.Type.SHIELD, data.shield)
 	
 	if data.burn > 0:
-		if burn_counter == null:
-			burn_counter = COUNTER.instantiate()
-			stats.add_child(burn_counter)
-			burn_counter.setup(Damage.Type.BURN, data.burn)
-		else:
-			burn_counter.update_amount(data.burn)
-	elif burn_counter != null:
-		burn_counter.queue_free()
-		burn_counter = null
+		var counter = COUNTER.instantiate()
+		stats.add_child(counter)
+		counter.setup(Damage.Type.BURN, data.burn)
