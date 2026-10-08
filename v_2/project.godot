@@ -14,9 +14,14 @@ config/name="v_2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c58pb0v64aqjs"
+
 [autoload]
 
 GameManager="*uid://x1emkkfs7i63"
+SoundManager="*uid://71wtcb6qn703"
 
 [display]
 

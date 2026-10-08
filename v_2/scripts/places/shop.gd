@@ -17,6 +17,7 @@ func _on_custom_button_pressed() -> void:
 func _on_disk_buy(data: UnitData, disk_unit: DiskUnit) -> void:
 	var success: bool = shop_team.add_member(data)
 	if success:
+		SoundManager.play_sfx(SoundManager.BUY)
 		# Find the newly added unit and trigger ON_BUY
 		var slot_idx: int = shop_team.get_first_empty_slot() - 1 # or track target slot
 		# Or find the unit directly:
@@ -25,8 +26,11 @@ func _on_disk_buy(data: UnitData, disk_unit: DiskUnit) -> void:
 			var context := AbilityContext.new(bought_unit, shop_team)
 			bought_unit.trigger_abilities(Ability.Trigger.ON_BUY, context)
 		disk_unit.queue_free()
+	else:
+		SoundManager.play_sfx(SoundManager.ERROR)
 
 func _on_sell_zone_unit_sold(unit: ShopUnit) -> void:
+	SoundManager.play_sfx(SoundManager.SOLD)
 	# Trigger ON_SELL right before freeing
 	var context := AbilityContext.new(unit, shop_team)
 	unit.trigger_abilities(Ability.Trigger.ON_SELL, context)

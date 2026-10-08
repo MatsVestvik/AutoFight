@@ -30,7 +30,7 @@ text = "Name"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1669168297]
 layout_mode = 2
-theme_override_constants/margin_top = 64
+theme_override_constants/margin_top = 80
 
 [node name="AbilityDescription" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1081808716]
 custom_minimum_size = Vector2(120, 90)
@@ -44,6 +44,12 @@ autowrap_mode = 3
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1979407396]
 position = Vector2(28, 52)
 texture = ExtResource("3_gqibj")
+
+[node name="Typings" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Sprite2D" unique_id=1957402236]
+offset_left = -32.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 56.0
 
 [node name="CooldownTimer" type="Label" parent="MarginContainer/VBoxContainer/Sprite2D" unique_id=613263058]
 offset_left = -24.0

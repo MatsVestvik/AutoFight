@@ -59,6 +59,7 @@ func _reparent_unit(unit: Unit) -> void:
 	unit.modulate.a = 1.0
 	
 func _on_mouse_entered() -> void:
+	SoundManager.play_sfx(SoundManager.MOUSE_ENTERED)
 	selected.show()
 	if get_viewport().gui_is_dragging():
 		return
