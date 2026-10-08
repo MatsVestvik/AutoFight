@@ -6,6 +6,9 @@ class_name InfoBox
 @onready var stats: VBoxContainer = $MarginContainer/VBoxContainer/Sprite2D/VBoxContainer
 @onready var cooldown_timer: Label = $MarginContainer/VBoxContainer/Sprite2D/CooldownTimer
 @onready var ability_description: Label = $MarginContainer/VBoxContainer/AbilityDescription
+@onready var type_container_1: TypeContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings/TypeContainer_1
+@onready var type_container_2: TypeContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings/TypeContainer2
+@onready var typings: HBoxContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings
 
 const COUNTER = preload("uid://c8ogbactqmb6w")
 
@@ -29,6 +32,7 @@ func display_unit(unit_data: UnitData) -> void:
 	_update_stats()
 	_update_cooldown()
 	_update_ability_description()
+	_update_typing()
 	name_label.text = unit_data.name
 	if unit_data.texture:
 		sprite_2d.texture = unit_data.texture
@@ -36,6 +40,28 @@ func display_unit(unit_data: UnitData) -> void:
 
 func clear() -> void:
 	hide()
+
+func _update_typing() -> void:
+	if !data or !typings:
+		return
+	
+	if data.typing.size() == 0:
+		type_container_1.hide()
+		type_container_2.hide()
+	elif data.typing.size() == 1:
+		type_container_1.show()
+		type_container_2.hide()
+		type_container_1.set_typing(data.typing[0])
+	elif data.typing.size() == 2:
+		type_container_1.show()
+		type_container_2.show()
+		type_container_1.set_typing(data.typing[0])
+		type_container_2.set_typing(data.typing[1])
+	else:
+		type_container_1.show()
+		type_container_2.show()
+		type_container_1.set_typing(data.typing[0])
+		type_container_2.set_typing(data.typing[1])
 
 func _update_cooldown() -> void:
 	cooldown_timer.text = str(data.cooldown_time) + " S"

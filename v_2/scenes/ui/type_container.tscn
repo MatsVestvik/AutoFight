@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbeod2phdvgpf"]
+
+[ext_resource type="Script" uid="uid://cnky0l7ipc5bj" path="res://scripts/ui/type_container.gd" id="1_ajllb"]
+[ext_resource type="Texture2D" uid="uid://ci6v1atcnlqir" path="res://assets/typing_box/normal_box.png" id="1_frsfp"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_ajllb"]
+
+[node name="TypeContainer" type="TextureRect" unique_id=1717407552]
+offset_right = 48.0
+offset_bottom = 16.0
+texture = ExtResource("1_frsfp")
+script = ExtResource("1_ajllb")
+
+[node name="Label" type="Label" parent="." unique_id=62030941]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_ajllb")
+theme_override_font_sizes/font_size = 12
+text = "Normal"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

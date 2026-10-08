@@ -17,7 +17,12 @@ func _ready() -> void:
 	selected.hide()
 
 func _on_mouse_entered() -> void:
+	SoundManager.play_sfx(SoundManager.MOUSE_ENTERED)
 	selected.show()
 
 func _on_mouse_exited() -> void:
 	selected.hide()
+
+
+func _on_pressed() -> void:
+	SoundManager.play_sfx(SoundManager.CLICK)

@@ -52,6 +52,7 @@ func execute(context: AbilityContext) -> void:
 				GameManager.add_coins(value)
 
 		EffectType.BUFF_STAT:
+			SoundManager.play_sfx(SoundManager.BUFF)
 			var targets: Array[Unit] = _resolve_targets(context)
 			for t in targets:
 				t.apply_buff(stat_type, value)
@@ -88,15 +89,25 @@ func _resolve_targets(context: AbilityContext) -> Array[Unit]:
 
 		Target.ALLY_AHEAD:
 			if team and source and source.current_slot:
-				var idx = team.slots.find(source.current_slot)
-				if idx > 0 and not team.slots[idx - 1].is_empty():
-					result.append(team.slots[idx - 1].get_unit())
+				var idx: int = team.slots.find(source.current_slot)
+				if idx != -1:
+					# Find the end of current row (slot 2 for row 0, slot 5 for row 1)
+					var row_end: int = (idx / 3) * 3 + 2
+					for next_idx in range(idx + 1, row_end + 1):
+						var u: Unit = team.slots[next_idx].get_unit()
+						if u != null:
+							result.append(u)
+							break # Stop at the first ally found ahead
 
 		Target.ALLY_BEHIND:
 			if team and source and source.current_slot:
-				var idx = team.slots.find(source.current_slot)
-				if idx != -1 and idx < team.slots.size() - 1 and not team.slots[idx +
-1].is_empty():
-					result.append(team.slots[idx + 1].get_unit())
+				var idx: int = team.slots.find(source.current_slot)
+				if idx != -1:
+					var row_start: int = (idx / 3) * 3
+					for prev_idx in range(idx - 1, row_start - 1, -1):
+						var u: Unit = team.slots[prev_idx].get_unit()
+						if u != null:
+							result.append(u)
+							break # Stop at the first ally found behind
 
 	return result

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qgg80qyucwgs" path="res://scripts/ui/info_box.gd" id="1_78qvm"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_gqibj"]
 [ext_resource type="Texture2D" uid="uid://cyu7lviuf27iy" path="res://assets/mons/charbear.png" id="3_gqibj"]
+[ext_resource type="PackedScene" uid="uid://cbeod2phdvgpf" path="res://scenes/ui/type_container.tscn" id="4_d78kg"]
 [ext_resource type="PackedScene" uid="uid://c8ogbactqmb6w" path="res://scenes/ui/info_counter.tscn" id="4_ynkvd"]
 
 [node name="InfoBox" type="PanelContainer" unique_id=390190252]
@@ -48,8 +49,15 @@ texture = ExtResource("3_gqibj")
 [node name="Typings" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Sprite2D" unique_id=1957402236]
 offset_left = -32.0
 offset_top = 40.0
-offset_right = 32.0
+offset_right = 96.0
 offset_bottom = 56.0
+theme_override_constants/separation = 0
+
+[node name="TypeContainer_1" parent="MarginContainer/VBoxContainer/Sprite2D/Typings" unique_id=1150825753 instance=ExtResource("4_d78kg")]
+layout_mode = 2
+
+[node name="TypeContainer2" parent="MarginContainer/VBoxContainer/Sprite2D/Typings" unique_id=1002167314 instance=ExtResource("4_d78kg")]
+layout_mode = 2
 
 [node name="CooldownTimer" type="Label" parent="MarginContainer/VBoxContainer/Sprite2D" unique_id=613263058]
 offset_left = -24.0

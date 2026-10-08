@@ -8,6 +8,8 @@ const ERROR = preload("uid://drafje5yas4ix")
 const LEVEL_UP = preload("uid://c6xh4hpv66mtl")
 const MOUSE_ENTERED = preload("uid://1bg6n7exwou6")
 const SOLD = preload("uid://nq7bngm4r1ty")
+const BUFF = preload("uid://bl4jhnloqqmx5")
+const SELECT = preload("uid://0l0cdidqlhoa")
 
 ## Plays a sound effect globally with optional pitch variation
 func play_sfx(stream: AudioStream, pitch_variance: float = 0.1) -> void:
