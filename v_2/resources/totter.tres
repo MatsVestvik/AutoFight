@@ -10,6 +10,7 @@ name = "totter"
 cooldown_time = 4.0
 cost = 5
 rarity = 2
+typing = Array[int]([1, 5])
 attack = 2
 poison = 2
 shield = 4

@@ -90,5 +90,6 @@ layout_mode = 2
 [node name="UnitSlot3" parent="VBoxContainer" unique_id=552786859 instance=ExtResource("10_nt1a3")]
 layout_mode = 2
 
+[connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
 [connection signal="unit_sold" from="SellZone" to="." method="_on_sell_zone_unit_sold"]

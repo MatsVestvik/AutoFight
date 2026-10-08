@@ -37,13 +37,17 @@ scale = Vector2(0.5, 0.5)
 [node name="AnimationPlayer" parent="." index="4" unique_id=725924324]
 autoplay = &""
 
-[node name="Counter" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="0" unique_id=465814988 instance=ExtResource("3_jormn")]
+[node name="Stats" parent="." index="5" unique_id=875673227]
+offset_top = 48.0
+offset_bottom = 56.0
+
+[node name="Counter" parent="Stats" index="0" unique_id=465814988 instance=ExtResource("3_jormn")]
 layout_mode = 2
 
-[node name="Counter2" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="1" unique_id=1356814638 instance=ExtResource("3_jormn")]
+[node name="Counter2" parent="Stats" index="1" unique_id=1356814638 instance=ExtResource("3_jormn")]
 layout_mode = 2
 
-[node name="Counter3" parent="Stats" parent_id_path=PackedInt32Array(875673227) index="2" unique_id=682478935 instance=ExtResource("3_jormn")]
+[node name="Counter3" parent="Stats" index="2" unique_id=682478935 instance=ExtResource("3_jormn")]
 layout_mode = 2
 
 [node name="Cash" type="Sprite2D" parent="." index="6" unique_id=1298167527]

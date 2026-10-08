@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bialmymt2wh7p"
-path="res://.godot/imported/ultra_rare_box.png-5e0b147b27441b99f6ce043c9c4570f6.ctex"
+uid="uid://cmj6y4t46htt"
+path="res://.godot/imported/epic_box.png-356222058ba06118025f13e2c628953a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rarity_box/ultra_rare_box.png"
-dest_files=["res://.godot/imported/ultra_rare_box.png-5e0b147b27441b99f6ce043c9c4570f6.ctex"]
+source_file="res://assets/rarity_box/epic_box.png"
+dest_files=["res://.godot/imported/epic_box.png-356222058ba06118025f13e2c628953a.ctex"]
 
 [params]
 

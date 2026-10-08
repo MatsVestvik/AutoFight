@@ -4,9 +4,17 @@ enum RARITY {
 	COMMON,
 	UNCOMMON,
 	RARE,
-	ULTRA_RARE,
+	EPIC,
 	LEGENDARY,
 	MYTHICAL
+}
+enum TYPING {
+	FIRE,
+	WATER,
+	GRASS,
+	FLYING,
+	STEEL,
+	DRAGON
 }
 
 @export var texture: Texture2D
@@ -15,6 +23,7 @@ enum RARITY {
 @export var cost: int
 @export var level: int
 @export var rarity: RARITY
+@export var typing: Array[TYPING]
 @export var attack: int
 @export var poison: int
 @export var shield: int

@@ -102,62 +102,62 @@ texture = ExtResource("8_sfhcp")
 [node name="Label" type="Label" parent="Bar" unique_id=1708738556]
 offset_left = -168.0
 offset_top = -16.0
-offset_right = -64.0
+offset_right = -56.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("3_726qy")
-text = "Shop Level:"
+text = "Shop Level: 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Bar" unique_id=664019498]
-offset_left = -72.0
+[node name="Common" type="Label" parent="Bar" unique_id=664019498]
+offset_left = -56.0
 offset_top = -16.0
-offset_right = -32.0
+offset_right = -16.0
 offset_bottom = 16.0
-theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6784314, 1)
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Bar/Label2" unique_id=1005625039]
-layout_mode = 0
-offset_left = 48.0
-offset_right = 88.0
-offset_bottom = 32.0
+[node name="Uncommon" type="Label" parent="Bar" unique_id=1005625039]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
 theme_override_colors/font_color = Color(0, 0.654902, 0, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Bar/Label2/Label2" unique_id=110121041]
-layout_mode = 0
-offset_left = 48.0
-offset_right = 88.0
-offset_bottom = 32.0
+[node name="Rare" type="Label" parent="Bar" unique_id=110121041]
+offset_left = 24.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.1254902, 0.37254903, 0.84313726, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Bar/Label2/Label2/Label2" unique_id=1557283701]
-layout_mode = 0
-offset_left = 48.0
-offset_right = 88.0
-offset_bottom = 32.0
+[node name="Epic" type="Label" parent="Bar" unique_id=1557283701]
+offset_left = 64.0
+offset_top = -16.0
+offset_right = 104.0
+offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.40392157, 0.011764706, 0.81960785, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Bar/Label2/Label2/Label2/Label2" unique_id=734757294]
-layout_mode = 0
-offset_left = 48.0
-offset_right = 88.0
-offset_bottom = 32.0
+[node name="Legendary" type="Label" parent="Bar" unique_id=734757294]
+offset_left = 104.0
+offset_top = -16.0
+offset_right = 144.0
+offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.8745098, 0.5372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"

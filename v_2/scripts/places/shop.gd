@@ -15,7 +15,6 @@ func _on_custom_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/places/arena.tscn")
 
 func _on_disk_buy(data: UnitData, disk_unit: DiskUnit) -> void:
-	# Attempt to add to team
 	var success: bool = shop_team.add_member(data)
 	
 	if success:

@@ -11,7 +11,7 @@ extends Node2D
 const DISK_UNIT = preload("uid://bu8jiidw7frlw")
 
 signal buy(data:UnitData, disk_unit: DiskUnit)
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	reroll()
 	
