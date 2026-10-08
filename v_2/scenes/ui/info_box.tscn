@@ -32,7 +32,7 @@ text = "Name"
 layout_mode = 2
 theme_override_constants/margin_top = 64
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1081808716]
+[node name="AbilityDescription" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1081808716]
 custom_minimum_size = Vector2(120, 90)
 custom_maximum_size = Vector2(120, 90)
 layout_mode = 2

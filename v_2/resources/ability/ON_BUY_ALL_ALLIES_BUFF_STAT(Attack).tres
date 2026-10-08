@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://d0h1j75bei4n8"]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_7f6rg"]
+
+[resource]
+script = ExtResource("1_7f6rg")
+description = "On buy give all allies +3 attack"
+target = 1
+value = 3
+metadata/_custom_type_script = "uid://xqgjex8fyfk3"

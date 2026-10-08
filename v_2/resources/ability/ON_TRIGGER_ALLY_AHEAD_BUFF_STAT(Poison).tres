@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://d1pqpdkn34se1"]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_6q2jk"]
+
+[resource]
+script = ExtResource("1_6q2jk")
+description = "On trigger give ally ahead +5 poison"
+trigger = 2
+target = 3
+stat_type = 1
+value = 5
+metadata/_custom_type_script = "uid://xqgjex8fyfk3"

@@ -15,6 +15,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func trigger() -> void:
+	var parent_team: Team = current_slot.get_parent() as Team if current_slot else null
+	var context := AbilityContext.new(self, parent_team)
+	trigger_abilities(Ability.Trigger.ON_TRIGGER, context)
 	animation_player.play("attack")
 	attacked.emit(Damage.new(data.attack, Damage.Type.NORMAL, self))
 	attacked.emit(Damage.new(data.poison, Damage.Type.POISON, self))

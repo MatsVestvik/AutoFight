@@ -11,6 +11,8 @@ class_name Team
 	$UnitSlot6
 ]
 
+
+
 func _ready() -> void:
 	pass
 	
@@ -23,6 +25,8 @@ func get_first_empty_slot() -> int:
 func is_full() -> bool:
 	return get_first_empty_slot() == -1
 
+
+	
 func get_team_data() -> Array[UnitData]:
 	var result: Array[UnitData] = []
 	for slot in slots:

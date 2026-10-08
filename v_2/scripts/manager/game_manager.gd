@@ -2,6 +2,7 @@ extends Node
 
 var units: Array[UnitData] = []
 var team: Array[UnitData] = []
+var coins: int
 
 signal unit_hovered(unit_data: UnitData)
 signal unit_unhovered()
@@ -11,7 +12,7 @@ func _ready() -> void:
 	
 func get_all_unit_data() -> Array[UnitData]:
 	var unit_data_list: Array[UnitData] = []
-	var dir_path := "res://resources/"
+	var dir_path := "res://resources/units/"
 	
 	for file in DirAccess.get_files_at(dir_path):
 		# When exporting, Godot sometimes adds '.remap' to .tres files
@@ -23,3 +24,6 @@ func get_all_unit_data() -> Array[UnitData]:
 				unit_data_list.append(resource)
 
 	return unit_data_list
+
+func add_coins(p_coins:int) -> void:
+	coins += p_coins

@@ -18,13 +18,31 @@ var burn_counter: Counter
 func _ready() -> void:
 	if data:
 		_update_stats()
-	
+		
 func create_from_data(input_data: UnitData) -> void:
-	data = input_data
+	# Duplicate data so runtime stat buffs only affect this specific unit
+	data = input_data.duplicate()
 	get_node("Sprite2D").texture = data.texture
 	if is_node_ready():
 		_update_stats()
 
+func trigger_abilities(trigger_type: Ability.Trigger, context: AbilityContext) -> void:
+	if data == null:
+		return
+	for ability in data.abilities:
+		if ability.can_trigger(trigger_type):
+			ability.execute(context)
+
+func apply_buff(stat: Ability.StatType, amount: int) -> void:
+	match stat:
+		Ability.StatType.ATTACK:
+			data.attack = maxi(0, data.attack + amount)
+		Ability.StatType.POISON:
+			data.poison = maxi(0, data.poison + amount)
+		Ability.StatType.SHIELD:
+			data.shield = maxi(0, data.shield + amount)
+		Ability.StatType.BURN:
+			data.burn = maxi(0, data.burn + amount)
 func _update_stats() -> void:
 	# 1. Remove and free existing counters
 	for child in stats.get_children():

@@ -23,7 +23,8 @@ enum TYPING {
 @export var cost: int
 @export var level: int
 @export var rarity: RARITY
-@export var typing: Array[TYPING]
+@export var typing: Array[TYPING] = []
+@export var abilities: Array[Ability] = []
 @export var attack: int
 @export var poison: int
 @export var shield: int

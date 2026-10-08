@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://con8hcw1taxcn"]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_o05s3"]
+[ext_resource type="Resource" uid="uid://d0h1j75bei4n8" path="res://resources/ability/ON_BUY_ALL_ALLIES_BUFF_STAT(Attack).tres" id="2_innov"]
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="3_3y4ue"]
+[ext_resource type="Texture2D" uid="uid://biydj5vtyl6q" path="res://assets/mons/totter.png" id="4_2ejml"]
+
+[resource]
+script = ExtResource("3_3y4ue")
+texture = ExtResource("4_2ejml")
+name = "totter"
+cooldown_time = 4.0
+cost = 5
+rarity = 2
+typing = Array[int]([1, 5])
+abilities = Array[ExtResource("1_o05s3")]([ExtResource("2_innov")])
+attack = 2
+poison = 2
+shield = 4
+burn = 2
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

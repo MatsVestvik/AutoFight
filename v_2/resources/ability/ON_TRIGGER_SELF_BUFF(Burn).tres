@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://c52gxftj0p0y"]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_lspby"]
+
+[resource]
+script = ExtResource("1_lspby")
+description = "On trigger give +2 burn to this unit permanently"
+trigger = 2
+stat_type = 3
+value = 2
+metadata/_custom_type_script = "uid://xqgjex8fyfk3"

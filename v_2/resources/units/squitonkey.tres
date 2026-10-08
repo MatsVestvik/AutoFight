@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://csykkm6ih24ef"]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_m80my"]
+[ext_resource type="Resource" uid="uid://d1pqpdkn34se1" path="res://resources/ability/ON_TRIGGER_ALLY_AHEAD_BUFF_STAT(Poison).tres" id="2_dvyw4"]
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="3_adayw"]
+[ext_resource type="Texture2D" uid="uid://b8kjbaabcru6i" path="res://assets/mons/squitonkey.png" id="4_7ydyv"]
+
+[resource]
+script = ExtResource("3_adayw")
+texture = ExtResource("4_7ydyv")
+name = "squitonkey"
+cooldown_time = 2.0
+cost = 15
+rarity = 4
+typing = Array[int]([1, 2])
+abilities = Array[ExtResource("1_m80my")]([ExtResource("2_dvyw4")])
+attack = 1
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

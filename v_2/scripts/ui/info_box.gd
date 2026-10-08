@@ -5,6 +5,7 @@ class_name InfoBox
 @onready var sprite_2d: Sprite2D = $MarginContainer/VBoxContainer/Sprite2D
 @onready var stats: VBoxContainer = $MarginContainer/VBoxContainer/Sprite2D/VBoxContainer
 @onready var cooldown_timer: Label = $MarginContainer/VBoxContainer/Sprite2D/CooldownTimer
+@onready var ability_description: Label = $MarginContainer/VBoxContainer/AbilityDescription
 
 const COUNTER = preload("uid://c8ogbactqmb6w")
 
@@ -27,6 +28,7 @@ func display_unit(unit_data: UnitData) -> void:
 	data = unit_data
 	_update_stats()
 	_update_cooldown()
+	_update_ability_description()
 	name_label.text = unit_data.name
 	if unit_data.texture:
 		sprite_2d.texture = unit_data.texture
@@ -37,7 +39,10 @@ func clear() -> void:
 
 func _update_cooldown() -> void:
 	cooldown_timer.text = str(data.cooldown_time) + " S"
-	
+
+func _update_ability_description() -> void:
+		ability_description.text = data.abilities[0].description
+		
 func _update_stats() -> void:
 	# 1. Remove and free existing counters
 	for child in stats.get_children():
