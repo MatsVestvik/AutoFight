@@ -19,9 +19,13 @@ func trigger() -> void:
 	var context := AbilityContext.new(self, parent_team)
 	trigger_abilities(Ability.Trigger.ON_TRIGGER, context)
 	animation_player.play("attack")
-	attacked.emit(Damage.new(data.attack, Damage.Type.NORMAL, self))
-	attacked.emit(Damage.new(data.poison, Damage.Type.POISON, self))
-	attacked.emit(Damage.new(data.shield, Damage.Type.SHIELD, self))
-	attacked.emit(Damage.new(data.burn, Damage.Type.BURN, self))
+	if data.attack > 0:
+		attacked.emit(Damage.new(data.attack, Damage.Type.NORMAL, self))
+	if data.poison > 0:
+		attacked.emit(Damage.new(data.poison, Damage.Type.POISON, self))
+	if data.shield > 0:
+		attacked.emit(Damage.new(data.shield, Damage.Type.SHIELD, self))
+	if data.burn > 0:
+		attacked.emit(Damage.new(data.burn, Damage.Type.BURN, self))
 	await animation_player.animation_finished
 	animation_player.play("idle")

@@ -7,53 +7,99 @@ signal damage_taken(damage: Damage)
 signal defeated()
 signal team_attacked(damage: Damage)
 
+const COUNTER = preload("uid://colq0x8oeonmx")
+const POISON_TICK_INTERVAL: float = 1.0
+const BURN_TICK_INTERVAL: float = 0.5
+
 @export var max_health: int = 100
 
 @onready var arena_team: Team = $ArenaTeam
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var Effects: HBoxContainer = $Effects
 
-const COUNTER = preload("uid://colq0x8oeonmx")
-
 var current_health: int = 100
 var poison: int = 0
+var burn: int = 0
 var shield: int = 0
 
+var poison_timer: float = 0.0
+var burn_timer: float = 0.0
+
 var poison_counter: Counter
+var burn_counter: Counter
 var shield_counter: Counter
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_health = max_health
 	_update_progress_bar()
-	arena_team.unit_attacked.connect(func(damage:Damage): team_attacked.emit(damage))
-	
-func take_damage(damage: Damage) -> void:
+	arena_team.unit_attacked.connect(_on_unit_attacked)
+
+func _process(delta: float) -> void:
 	if current_health <= 0:
 		return
 
-	var remaining_damage: int = damage.amount
+	if poison > 0:
+		poison_timer += delta
+		if poison_timer >= POISON_TICK_INTERVAL:
+			poison_timer -= POISON_TICK_INTERVAL
+			_apply_damage_to_health(poison)
+	else:
+		poison_timer = 0.0
+
+	if current_health <= 0:
+		return
+
+	if burn > 0:
+		burn_timer += delta
+		if burn_timer >= BURN_TICK_INTERVAL:
+			burn_timer -= BURN_TICK_INTERVAL
+			var burn_damage: int = burn
+			burn = maxi(0, burn - 1)
+			_apply_damage_to_health(burn_damage)
+	else:
+		burn_timer = 0.0
+
+func _on_unit_attacked(damage: Damage) -> void:
+	if damage == null or damage.amount <= 0:
+		return
+	if damage.type == Damage.Type.SHIELD:
+		add_shield(damage.amount)
+	else:
+		team_attacked.emit(damage)
+
+func take_damage(damage: Damage) -> void:
+	if current_health <= 0 or damage == null or damage.amount <= 0:
+		return
 
 	match damage.type:
-		Damage.Type.NORMAL:
-			# Shield absorbs normal damage first
-			if shield > 0:
-				var absorbed: int = mini(shield, remaining_damage)
-				shield -= absorbed
-				remaining_damage -= absorbed
-				shield_changed.emit(shield)
-			
-			current_health = maxi(0, current_health - remaining_damage)
-			
+		Damage.Type.NORMAL, Damage.Type.SHOCK:
+			_apply_damage_to_health(damage.amount)
 		Damage.Type.POISON:
-			poison += damage.amount
+			add_poison(damage.amount)
+		Damage.Type.BURN:
+			add_burn(damage.amount)
 		Damage.Type.SHIELD:
-			shield += damage.amount
+			add_shield(damage.amount)
+
+	damage_taken.emit(damage)
+
+func _apply_damage_to_health(amount: int) -> void:
+	if current_health <= 0 or amount <= 0:
+		return
+
+	var remaining_damage: int = amount
+	if shield > 0:
+		var absorbed: int = mini(shield, remaining_damage)
+		shield -= absorbed
+		remaining_damage -= absorbed
+		shield_changed.emit(shield)
+
+	if remaining_damage > 0:
+		current_health = maxi(0, current_health - remaining_damage)
+		health_changed.emit(current_health, max_health)
 
 	_update_progress_bar()
 	_update_effects()
-	health_changed.emit(current_health, max_health)
-	damage_taken.emit(damage)
 
 	if current_health <= 0:
 		defeated.emit()
@@ -61,9 +107,15 @@ func take_damage(damage: Damage) -> void:
 func add_shield(amount: int) -> void:
 	shield += amount
 	shield_changed.emit(shield)
+	_update_effects()
 
 func add_poison(stacks: int) -> void:
 	poison += stacks
+	_update_effects()
+
+func add_burn(stacks: int) -> void:
+	burn += stacks
+	_update_effects()
 
 func _update_progress_bar() -> void:
 	if progress_bar:
@@ -71,6 +123,7 @@ func _update_progress_bar() -> void:
 		progress_bar.value = current_health
 
 func _update_effects() -> void:
+	# 1. Handle Poison Counter
 	if poison > 0:
 		if poison_counter == null:
 			poison_counter = COUNTER.instantiate()
@@ -82,7 +135,19 @@ func _update_effects() -> void:
 		poison_counter.queue_free()
 		poison_counter = null
 
-# 2. Handle Shield Counter
+	# 2. Handle Burn Counter
+	if burn > 0:
+		if burn_counter == null:
+			burn_counter = COUNTER.instantiate()
+			Effects.add_child(burn_counter)
+			burn_counter.setup(Damage.Type.BURN, burn)
+		else:
+			burn_counter.update_amount(burn)
+	elif burn_counter != null:
+		burn_counter.queue_free()
+		burn_counter = null
+
+	# 3. Handle Shield Counter
 	if shield > 0:
 		if shield_counter == null:
 			shield_counter = COUNTER.instantiate()
