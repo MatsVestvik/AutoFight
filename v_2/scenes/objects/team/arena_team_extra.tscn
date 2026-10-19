@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_5nay7"]
 [ext_resource type="Texture2D" uid="uid://kdub8t1oenmp" path="res://assets/util/team_box.png" id="2_pdqrq"]
 [ext_resource type="Texture2D" uid="uid://dxv5pk3ygpogv" path="res://assets/buttons/health_bar.png" id="5_qb154"]
+[ext_resource type="Texture2D" uid="uid://cjo3e2pjojdkh" path="res://assets/icons/shield.png" id="6_shield"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdqrq"]
 bg_color = Color(1, 0, 0, 0.09803922)
@@ -45,3 +46,19 @@ offset_bottom = -96.0
 [node name="HealthBar" type="Sprite2D" parent="." unique_id=437328068]
 position = Vector2(4, -89)
 texture = ExtResource("5_qb154")
+
+[node name="Shield" type="Sprite2D" parent="." unique_id=1948572613]
+position = Vector2(108, -91)
+texture = ExtResource("6_shield")
+
+[node name="Label" type="Label" parent="Shield" unique_id=1948572614]
+offset_left = -15.0
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 16.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_5nay7")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

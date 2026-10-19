@@ -16,6 +16,8 @@ const BURN_TICK_INTERVAL: float = 0.5
 @onready var arena_team: Team = $ArenaTeam
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var Effects: HBoxContainer = $Effects
+@onready var shield_sprite: Sprite2D = $Shield
+@onready var shield_label: Label = $Shield/Label
 
 var current_health: int = 100
 var poison: int = 0
@@ -27,11 +29,11 @@ var burn_timer: float = 0.0
 
 var poison_counter: Counter
 var burn_counter: Counter
-var shield_counter: Counter
 
 func _ready() -> void:
 	current_health = max_health
 	_update_progress_bar()
+	_update_shield()
 	arena_team.unit_attacked.connect(_on_unit_attacked)
 
 func _process(delta: float) -> void:
@@ -93,6 +95,7 @@ func _apply_damage_to_health(amount: int) -> void:
 		shield -= absorbed
 		remaining_damage -= absorbed
 		shield_changed.emit(shield)
+		_update_shield()
 
 	if remaining_damage > 0:
 		current_health = maxi(0, current_health - remaining_damage)
@@ -107,7 +110,7 @@ func _apply_damage_to_health(amount: int) -> void:
 func add_shield(amount: int) -> void:
 	shield += amount
 	shield_changed.emit(shield)
-	_update_effects()
+	_update_shield()
 
 func add_poison(stacks: int) -> void:
 	poison += stacks
@@ -121,6 +124,10 @@ func _update_progress_bar() -> void:
 	if progress_bar:
 		progress_bar.max_value = max_health
 		progress_bar.value = current_health
+
+func _update_shield() -> void:
+	if shield_label:
+		shield_label.text = str(shield)
 
 func _update_effects() -> void:
 	# 1. Handle Poison Counter
@@ -146,15 +153,3 @@ func _update_effects() -> void:
 	elif burn_counter != null:
 		burn_counter.queue_free()
 		burn_counter = null
-
-	# 3. Handle Shield Counter
-	if shield > 0:
-		if shield_counter == null:
-			shield_counter = COUNTER.instantiate()
-			Effects.add_child(shield_counter)
-			shield_counter.setup(Damage.Type.SHIELD, shield)
-		else:
-			shield_counter.update_amount(shield)
-	elif shield_counter != null:
-		shield_counter.queue_free()
-		shield_counter = null
