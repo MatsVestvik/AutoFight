@@ -29,8 +29,7 @@ func _on_team_1_defeated() -> void:
 			var context := AbilityContext.new(u, team_1.arena_team)
 			u.trigger_abilities(Ability.Trigger.ON_DEFEAT, context)
 	GameManager.team = team_1.arena_team.get_team_data()
-	GameManager.on_battle_lost()
-	get_tree().change_scene_to_file("res://scenes/places/shop.tscn")
+	get_tree().change_scene_to_file("res://scenes/places/lose_health.tscn")
 
 func _on_team_2_defeated() -> void:
 	if battle_ended:
@@ -43,8 +42,7 @@ func _on_team_2_defeated() -> void:
 			var context := AbilityContext.new(u, team_1.arena_team)
 			u.trigger_abilities(Ability.Trigger.ON_VICTORY, context)
 	GameManager.team = team_1.arena_team.get_team_data()
-	GameManager.on_battle_won()
-	get_tree().change_scene_to_file("res://scenes/places/shop.tscn")
+	get_tree().change_scene_to_file("res://scenes/places/gain_trophy.tscn")
 	
 func _on_custom_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/places/shop.tscn")
