@@ -5,12 +5,12 @@ extends Control
 @onready var wins_counter: Label = $WinsCounter
 @onready var cash_counter: Label = $CashCounter
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	day_counter.text = str(GameManager.coins)
+	GameManager.stats_changed.connect(_update_ui)
+	_update_ui()
+
+func _update_ui() -> void:
+	day_counter.text = str(GameManager.day)
+	cash_counter.text = str(GameManager.coins)
 	health_counter.text = str(GameManager.health)
 	wins_counter.text = str(GameManager.wins)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

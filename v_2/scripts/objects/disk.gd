@@ -9,6 +9,7 @@ extends Node2D
 @onready var slots: HBoxContainer = $Slots
 
 const DISK_UNIT = preload("uid://bu8jiidw7frlw")
+const REROLL_COST: int = 1
 
 signal buy(data:UnitData, disk_unit: DiskUnit)
 
@@ -27,4 +28,8 @@ func _on_unit_buy(data:UnitData, disk_unit:DiskUnit) -> void:
 	buy.emit(data, disk_unit)
 	
 func _on_custom_button_pressed() -> void:
-	reroll()
+	if GameManager.spend_coins(REROLL_COST):
+		reroll()
+	else:
+		SoundManager.play_sfx(SoundManager.ERROR)
+

@@ -1,0 +1,167 @@
+{
+	"1": [
+		[
+			{
+				"attack": 2.0,
+				"burn": 2.0,
+				"level": 0.0,
+				"name": "totter",
+				"poison": 2.0,
+				"shield": 4.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			null,
+			null,
+			{
+				"attack": 1.0,
+				"burn": 0.0,
+				"level": 0.0,
+				"name": "squitonkey",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			null,
+			null
+		],
+		[
+			{
+				"attack": 17,
+				"burn": 2,
+				"level": 0,
+				"name": "totter",
+				"poison": 2,
+				"shield": 4
+			},
+			{
+				"attack": 14,
+				"burn": 2,
+				"level": 0,
+				"name": "totter",
+				"poison": 2,
+				"shield": 4
+			},
+			{
+				"attack": 11,
+				"burn": 2,
+				"level": 0,
+				"name": "totter",
+				"poison": 2,
+				"shield": 4
+			},
+			{
+				"attack": 8,
+				"burn": 2,
+				"level": 0,
+				"name": "totter",
+				"poison": 2,
+				"shield": 4
+			},
+			{
+				"attack": 1,
+				"burn": 0,
+				"level": 0,
+				"name": "squitonkey",
+				"poison": 0,
+				"shield": 0
+			},
+			{
+				"attack": 5,
+				"burn": 2,
+				"level": 0,
+				"name": "totter",
+				"poison": 2,
+				"shield": 4
+			}
+		]
+	],
+	"2": [
+		[
+			{
+				"attack": 3.0,
+				"burn": 2.0,
+				"level": 0.0,
+				"name": "totter",
+				"poison": 2.0,
+				"shield": 4.0
+			},
+			{
+				"attack": 3.0,
+				"burn": 5.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 2.0,
+				"level": 0.0,
+				"name": "totter",
+				"poison": 2.0,
+				"shield": 4.0
+			},
+			null,
+			null,
+			null
+		]
+	],
+	"3": [
+		[
+			{
+				"attack": 3.0,
+				"burn": 6.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 0.0,
+				"name": "squitonkey",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 3.0,
+				"burn": 2.0,
+				"level": 0.0,
+				"name": "totter",
+				"poison": 2.0,
+				"shield": 4.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 2.0,
+				"level": 0.0,
+				"name": "totter",
+				"poison": 2.0,
+				"shield": 4.0
+			},
+			null,
+			null
+		]
+	]
+}
