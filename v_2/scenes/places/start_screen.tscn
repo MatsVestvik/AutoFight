@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://c7vllbhf5de2x"]
+[gd_scene format=3 uid="uid://bstartscreenv2"]
 
-[node name="StartScreen" type="Node2D" unique_id=1441528724]
+[ext_resource type="Script" path="res://scripts/places/start_screen.gd" id="1_start"]
+[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_btn"]
+[ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="3_green"]
+[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="4_yellow"]
+
+[node name="StartScreen" type="Node2D" unique_id=762011806]
+script = ExtResource("1_start")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=352817828]
+zoom = Vector2(2, 2)
+
+[node name="NewGameButton" parent="." unique_id=764166975 instance=ExtResource("2_btn")]
+offset_left = -32.0
+offset_top = -104.0
+offset_right = 32.0
+offset_bottom = -40.0
+label_name = "New Game"
+image = ExtResource("3_green")
+
+[node name="SettingsButton" parent="." unique_id=1275779343 instance=ExtResource("2_btn")]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+label_name = "Settings"
+image = ExtResource("4_yellow")
+
+[node name="QuitButton" parent="." unique_id=567419159 instance=ExtResource("2_btn")]
+offset_left = -32.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 104.0
+label_name = "Quit"
+image = ExtResource("4_yellow")
+
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

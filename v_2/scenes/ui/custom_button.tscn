@@ -62,6 +62,7 @@ theme_override_fonts/font = ExtResource("2_njdmp")
 text = "Reroll"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Selected" type="AnimatedSprite2D" parent="." unique_id=2053728037]
 position = Vector2(32, 32)

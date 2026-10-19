@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cl4rinq8o4etw" path="res://assets/icons/fullHeart.png" id="2_a44fs"]
 [ext_resource type="Texture2D" uid="uid://new5kku4yju7" path="res://assets/icons/fullTrophy.png" id="3_rcgkl"]
 [ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/icons/cash.png" id="4_rcgkl"]
+[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="5_cbtn"]
+[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="6_ybtn"]
 
 [node name="UserInterface" type="Control" unique_id=1809188270]
 layout_mode = 3
@@ -83,3 +85,14 @@ texture = ExtResource("3_rcgkl")
 position = Vector2(528, 72)
 scale = Vector2(4, 4)
 texture = ExtResource("4_rcgkl")
+
+[node name="ExitButton" parent="." unique_id=1498237412 instance=ExtResource("5_cbtn")]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 240.0
+offset_right = 568.0
+offset_bottom = 304.0
+label_name = "Exit"
+image = ExtResource("6_ybtn")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
