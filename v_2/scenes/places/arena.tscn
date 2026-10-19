@@ -32,10 +32,11 @@ scale = Vector2(2, 2)
 max_health = 100
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("5_7w66w")]
-offset_left = 168.0
+visible = false
+offset_left = 72.0
 offset_top = -312.0
-offset_right = 296.0
-offset_bottom = -120.0
+offset_right = 200.0
+offset_bottom = -104.0
 scale = Vector2(3, 3)
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

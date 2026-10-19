@@ -26,9 +26,9 @@ zoom = Vector2(2, 2)
 position = Vector2(-192, 80)
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("3_6l3g4")]
-offset_left = 200.0
+offset_left = 152.0
 offset_top = 80.0
-offset_right = 264.0
+offset_right = 216.0
 offset_bottom = 144.0
 label_name = "Play"
 image = ExtResource("4_ybgvo")
@@ -55,9 +55,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopTeam" parent="." unique_id=2035933801 instance=ExtResource("7_t1hbj")]
-offset_left = -72.0
+offset_left = -96.0
 offset_top = -112.0
-offset_right = 128.0
+offset_right = 104.0
 offset_bottom = 20.0
 metadata/_edit_use_anchors_ = true
 
@@ -76,10 +76,10 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1263454279]
-offset_left = 200.0
-offset_top = -144.0
-offset_right = 264.0
-offset_bottom = 56.0
+offset_left = 152.0
+offset_top = -128.0
+offset_right = 216.0
+offset_bottom = 72.0
 
 [node name="UnitSlot" parent="VBoxContainer" unique_id=1049437655 instance=ExtResource("10_nt1a3")]
 layout_mode = 2

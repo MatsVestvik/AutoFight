@@ -3,6 +3,8 @@ extends Node
 var units: Array[UnitData] = []
 var team: Array[UnitData] = []
 var coins: int
+var health: int
+var wins: int
 
 signal unit_hovered(unit_data: UnitData)
 signal unit_unhovered()
