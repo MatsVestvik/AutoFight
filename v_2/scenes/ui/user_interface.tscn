@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://new5kku4yju7" path="res://assets/icons/fullTrophy.png" id="3_rcgkl"]
 [ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/icons/cash.png" id="4_rcgkl"]
 [ext_resource type="Texture2D" uid="uid://bvtqcdwdk8qox" path="res://assets/icons/settings.png" id="8_fhs8v"]
-[ext_resource type="Script" uid="uid://bf7mlfi35y4dp" path="res://scenes/ui/settings_button.gd" id="9_kw8g8"]
+[ext_resource type="Script" uid="uid://bf7mlfi35y4dp" path="res://scripts/ui/settings_button.gd" id="9_kw8g8"]
 [ext_resource type="PackedScene" uid="uid://csettingsui01" path="res://scenes/ui/settings.tscn" id="10_setscn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxpdy"]
@@ -113,10 +113,10 @@ script = ExtResource("9_kw8g8")
 [node name="Settings" parent="SettingsButton" unique_id=948172635 instance=ExtResource("10_setscn")]
 visible = false
 layout_mode = 0
-offset_left = 192.0
-offset_top = 72.0
-offset_right = 352.0
-offset_bottom = 232.0
+offset_left = 182.0
+offset_top = 62.0
+offset_right = 362.0
+offset_bottom = 242.0
 
 [connection signal="mouse_entered" from="SettingsButton" to="SettingsButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsButton" to="SettingsButton" method="_on_mouse_exited"]
