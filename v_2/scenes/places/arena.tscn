@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2cypguhbo8al" path="res://scenes/objects/team/arena_team_extra.tscn" id="4_cdhcp"]
 [ext_resource type="PackedScene" uid="uid://dw2ilhce6urxk" path="res://scenes/ui/info_box.tscn" id="5_7w66w"]
 [ext_resource type="Texture2D" uid="uid://cd5hhiiwumyum" path="res://assets/util/1_speed.png" id="6_spd1"]
+[ext_resource type="PackedScene" uid="uid://cbgmovingv201" path="res://scenes/objects/background.tscn" id="7_bg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1"]
 
@@ -19,6 +20,9 @@
 
 [node name="Arena" type="Node2D" unique_id=1943734924]
 script = ExtResource("1_d2xqs")
+
+[node name="Background" parent="." unique_id=817263541 instance=ExtResource("7_bg")]
+scale = Vector2(6, 6)
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("1_3k1xe")]
 offset_left = 24.0
