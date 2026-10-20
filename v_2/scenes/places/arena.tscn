@@ -24,12 +24,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Team_1" parent="." unique_id=1312879998 instance=ExtResource("4_cdhcp")]
 position = Vector2(-304, -40)
 scale = Vector2(2, 2)
-max_health = 100
+max_health = 500
 
 [node name="Team_2" parent="." unique_id=1858334631 instance=ExtResource("4_cdhcp")]
 position = Vector2(304, -40)
 scale = Vector2(2, 2)
-max_health = 100
+max_health = 500
 enemy = true
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("5_7w66w")]

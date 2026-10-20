@@ -11,7 +11,7 @@ const COUNTER = preload("uid://colq0x8oeonmx")
 const POISON_TICK_INTERVAL: float = 1.0
 const BURN_TICK_INTERVAL: float = 0.5
 
-@export var max_health: int = 100
+@export var max_health: int = 500
 @export var enemy: bool = false
 
 @onready var arena_team: Team = $ArenaTeam
@@ -20,7 +20,7 @@ const BURN_TICK_INTERVAL: float = 0.5
 @onready var shield_sprite: Sprite2D = $Shield
 @onready var shield_label: Label = $Shield/Label
 
-var current_health: int = 100
+var current_health: int = 500
 var poison: int = 0
 var burn: int = 0
 var shield: int = 0
@@ -33,6 +33,9 @@ var burn_counter: Counter
 
 func _ready() -> void:
 	arena_team.enemy = enemy
+	if enemy:
+		shield_sprite.position.x = -100.0
+		Effects.alignment = BoxContainer.ALIGNMENT_END
 	current_health = max_health
 	_update_progress_bar()
 	_update_shield()
