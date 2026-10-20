@@ -25,6 +25,8 @@ func add_member(data: UnitData, slot: int = -1) -> bool:
 
 	var new_unit: ArenaUnit = ARENA_UNIT_SCENE.instantiate()
 	new_unit.create_from_data(data)
+	if enemy:
+		new_unit.flip()
 	new_unit.attacked.connect(func(damage:Damage): unit_attacked.emit(damage))
 	target_slot._reparent_unit(new_unit)
 	return true

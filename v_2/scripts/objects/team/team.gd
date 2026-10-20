@@ -1,6 +1,12 @@
 extends GridContainer
 class_name Team
 
+@export var enemy: bool = false:
+	set(value):
+		enemy = value
+		if is_node_ready():
+			_update_slots_order()
+
 # Store references to all 6 slots in order
 @onready var slots: Array[UnitSlot] = [
 	$UnitSlot1,
@@ -11,10 +17,28 @@ class_name Team
 	$UnitSlot6
 ]
 
-
-
 func _ready() -> void:
-	pass
+	_update_slots_order()
+
+func _update_slots_order() -> void:
+	if enemy:
+		slots = [
+			$UnitSlot3,
+			$UnitSlot2,
+			$UnitSlot1,
+			$UnitSlot6,
+			$UnitSlot5,
+			$UnitSlot4
+		]
+	else:
+		slots = [
+			$UnitSlot1,
+			$UnitSlot2,
+			$UnitSlot3,
+			$UnitSlot4,
+			$UnitSlot5,
+			$UnitSlot6
+		]
 	
 func get_first_empty_slot() -> int:
 	for i in range(slots.size()):

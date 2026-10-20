@@ -30,6 +30,7 @@ max_health = 100
 position = Vector2(304, -40)
 scale = Vector2(2, 2)
 max_health = 100
+enemy = true
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("5_7w66w")]
 visible = false

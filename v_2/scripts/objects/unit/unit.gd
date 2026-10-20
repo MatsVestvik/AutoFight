@@ -37,6 +37,9 @@ func create_from_data(input_data: UnitData) -> void:
 	if is_node_ready():
 		_update_stats()
 
+func flip() -> void:
+	$Sprite2D.flip_h = not $Sprite2D.flip_h
+
 ## Apply a stat buff or debuff
 func apply_buff(stat_type: Ability.StatType, amount: int) -> void:
 	if data == null:

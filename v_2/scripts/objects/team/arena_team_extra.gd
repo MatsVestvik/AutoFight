@@ -12,6 +12,7 @@ const POISON_TICK_INTERVAL: float = 1.0
 const BURN_TICK_INTERVAL: float = 0.5
 
 @export var max_health: int = 100
+@export var enemy: bool = false
 
 @onready var arena_team: Team = $ArenaTeam
 @onready var progress_bar: ProgressBar = $ProgressBar
@@ -31,6 +32,7 @@ var poison_counter: Counter
 var burn_counter: Counter
 
 func _ready() -> void:
+	arena_team.enemy = enemy
 	current_health = max_health
 	_update_progress_bar()
 	_update_shield()
