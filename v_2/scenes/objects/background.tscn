@@ -34,7 +34,7 @@ texture = ExtResource("3_l1")
 texture = ExtResource("4_l2")
 
 [node name="SpriteB" type="Sprite2D" parent="Layer2" unique_id=817263550]
-position = Vector2(0, 264)
+position = Vector2(0, 384)
 texture = ExtResource("4_l2")
 
 [node name="Layer3" type="Sprite2D" parent="." unique_id=817263551]

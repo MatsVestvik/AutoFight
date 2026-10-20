@@ -93,7 +93,7 @@ offset_right = -144.0
 offset_bottom = 56.0
 
 [node name="Background" parent="." unique_id=817263541 instance=ExtResource("11_nt1a3")]
-position = Vector2(0, 32)
+position = Vector2(0, 24)
 scale = Vector2(3, 3)
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
