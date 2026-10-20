@@ -5,29 +5,54 @@
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="2_rvdg8"]
 [ext_resource type="PackedScene" uid="uid://c2cypguhbo8al" path="res://scenes/objects/team/arena_team_extra.tscn" id="4_cdhcp"]
 [ext_resource type="PackedScene" uid="uid://dw2ilhce6urxk" path="res://scenes/ui/info_box.tscn" id="5_7w66w"]
+[ext_resource type="Texture2D" uid="uid://cd5hhiiwumyum" path="res://assets/util/1_speed.png" id="6_spd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5"]
 
 [node name="Arena" type="Node2D" unique_id=1943734924]
 script = ExtResource("1_d2xqs")
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("1_3k1xe")]
-offset_left = 368.0
-offset_top = 184.0
-offset_right = 432.0
-offset_bottom = 248.0
+offset_left = 24.0
+offset_top = -344.0
+offset_right = 88.0
+offset_bottom = -280.0
 scale = Vector2(2, 2)
 label_name = "Shop"
 image = ExtResource("2_rvdg8")
 metadata/_edit_use_anchors_ = true
 
+[node name="SpeedButton" type="Button" parent="." unique_id=1647382910]
+offset_left = -96.0
+offset_top = -296.0
+offset_right = -64.0
+offset_bottom = -264.0
+scale = Vector2(2, 2)
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s5")
+icon = ExtResource("6_spd1")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932742916]
 
 [node name="Team_1" parent="." unique_id=1312879998 instance=ExtResource("4_cdhcp")]
-position = Vector2(-304, -40)
+position = Vector2(-280, 64)
 scale = Vector2(2, 2)
 max_health = 500
 
 [node name="Team_2" parent="." unique_id=1858334631 instance=ExtResource("4_cdhcp")]
-position = Vector2(304, -40)
+position = Vector2(280, 64)
 scale = Vector2(2, 2)
 max_health = 500
 enemy = true
@@ -41,3 +66,4 @@ offset_bottom = -104.0
 scale = Vector2(3, 3)
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="pressed" from="SpeedButton" to="." method="_on_speed_button_pressed"]
