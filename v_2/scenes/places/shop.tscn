@@ -86,11 +86,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
-visible = false
-offset_left = -272.0
-offset_top = -152.0
-offset_right = -144.0
-offset_bottom = 56.0
+offset_left = -264.0
+offset_top = -160.0
+offset_right = -136.0
+offset_bottom = 33.0
 
 [node name="Background" parent="." unique_id=817263541 instance=ExtResource("11_nt1a3")]
 position = Vector2(0, 24)

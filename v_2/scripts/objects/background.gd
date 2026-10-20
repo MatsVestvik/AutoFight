@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var layer_0_speed: float = 20.0
-@export var layer_1_speed: float = 50.0
-@export var layer_2_speed: float = 100.0
-@export var layer_2_spacing_multiplier: float = 3.0
+@export var layer_0_speed: float = 10.0
+@export var layer_1_speed: float = 25.0
+@export var layer_2_speed: float = 40.0
+@export var layer_2_spacing_multiplier: float = 6.0
 
 @onready var layer_0: Node2D = $Layer0
 @onready var layer_1: Node2D = $Layer1
