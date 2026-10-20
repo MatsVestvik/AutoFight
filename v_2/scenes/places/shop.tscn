@@ -61,12 +61,6 @@ offset_right = 104.0
 offset_bottom = 20.0
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
-offset_left = -264.0
-offset_top = -160.0
-offset_right = -136.0
-offset_bottom = 32.0
-
 [node name="UserInterface" parent="." unique_id=1809188270 instance=ExtResource("10_fxpdy")]
 offset_left = -288.0
 offset_top = -160.0
@@ -89,6 +83,13 @@ layout_mode = 2
 
 [node name="UnitSlot3" parent="VBoxContainer" unique_id=552786859 instance=ExtResource("10_nt1a3")]
 layout_mode = 2
+
+[node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
+visible = false
+offset_left = -272.0
+offset_top = -152.0
+offset_right = -144.0
+offset_bottom = 56.0
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
