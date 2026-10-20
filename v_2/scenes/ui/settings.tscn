@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://csettingsui01"]
+
+[ext_resource type="Script" path="res://scripts/ui/settings.gd" id="1_setgd"]
+[ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="2_font"]
+[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="3_cbtn"]
+[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="4_ybtn"]
+
+[node name="Settings" type="PanelContainer" unique_id=948172635]
+z_index = 100
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_setgd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1425364758]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1928374650]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1122334455]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitGameButton" parent="MarginContainer/VBoxContainer" unique_id=1554433221 instance=ExtResource("3_cbtn")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+label_name = "Quit Game"
+image = ExtResource("4_ybtn")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

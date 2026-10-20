@@ -14,6 +14,3 @@ func _update_ui() -> void:
 	cash_counter.text = str(GameManager.coins)
 	health_counter.text = str(GameManager.health)
 	wins_counter.text = str(GameManager.wins)
-
-func _on_exit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/places/start_screen.tscn")

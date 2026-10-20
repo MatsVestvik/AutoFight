@@ -5,10 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cl4rinq8o4etw" path="res://assets/icons/fullHeart.png" id="2_a44fs"]
 [ext_resource type="Texture2D" uid="uid://new5kku4yju7" path="res://assets/icons/fullTrophy.png" id="3_rcgkl"]
 [ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/icons/cash.png" id="4_rcgkl"]
-[ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="5_cbtn"]
-[ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="6_ybtn"]
 [ext_resource type="Texture2D" uid="uid://bvtqcdwdk8qox" path="res://assets/icons/settings.png" id="8_fhs8v"]
 [ext_resource type="Script" uid="uid://bf7mlfi35y4dp" path="res://scenes/ui/settings_button.gd" id="9_kw8g8"]
+[ext_resource type="PackedScene" uid="uid://csettingsui01" path="res://scenes/ui/settings.tscn" id="10_setscn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxpdy"]
 
@@ -96,15 +95,6 @@ position = Vector2(40, 80)
 scale = Vector2(4, 4)
 texture = ExtResource("4_rcgkl")
 
-[node name="ExitButton" parent="." unique_id=1498237412 instance=ExtResource("5_cbtn")]
-layout_mode = 0
-offset_left = 504.0
-offset_top = 240.0
-offset_right = 568.0
-offset_bottom = 304.0
-label_name = "Exit"
-image = ExtResource("6_ybtn")
-
 [node name="SettingsButton" type="Button" parent="." unique_id=1284376066]
 layout_mode = 0
 offset_left = 16.0
@@ -120,6 +110,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_dm6ui")
 icon = ExtResource("8_fhs8v")
 script = ExtResource("9_kw8g8")
 
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="Settings" parent="SettingsButton" unique_id=948172635 instance=ExtResource("10_setscn")]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 72.0
+offset_right = 352.0
+offset_bottom = 232.0
+
 [connection signal="mouse_entered" from="SettingsButton" to="SettingsButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsButton" to="SettingsButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="SettingsButton" to="SettingsButton" method="_on_pressed"]
