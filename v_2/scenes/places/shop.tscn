@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://clvmih7kasldp" path="res://scenes/ui/user_interface.tscn" id="10_fxpdy"]
 [ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="10_nt1a3"]
 [ext_resource type="PackedScene" uid="uid://cbgmovingv201" path="res://scenes/objects/background.tscn" id="11_nt1a3"]
+[ext_resource type="PackedScene" uid="uid://csidepanel001" path="res://scenes/ui/side_panel.tscn" id="12_sidepanel"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5gvn"]
 bg_color = Color(1, 0, 0, 0.25490198)
@@ -60,9 +61,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopTeam" parent="." unique_id=2035933801 instance=ExtResource("7_t1hbj")]
-offset_left = -96.0
+offset_left = -128.0
 offset_top = -112.0
-offset_right = 104.0
+offset_right = 72.0
 offset_bottom = 20.0
 metadata/_edit_use_anchors_ = true
 
@@ -74,26 +75,33 @@ offset_bottom = -159.992
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1263454279]
-offset_left = 216.0
-offset_top = -128.0
-offset_right = 280.0
-offset_bottom = 72.0
-
-[node name="UnitSlot" parent="VBoxContainer" unique_id=1049437655 instance=ExtResource("10_nt1a3")]
-layout_mode = 2
-
-[node name="UnitSlot2" parent="VBoxContainer" unique_id=1996574927 instance=ExtResource("10_nt1a3")]
-layout_mode = 2
-
-[node name="UnitSlot3" parent="VBoxContainer" unique_id=552786859 instance=ExtResource("10_nt1a3")]
-layout_mode = 2
-
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
 offset_left = -264.0
 offset_top = -160.0
 offset_right = -136.0
 offset_bottom = 33.0
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1401211291]
+offset_left = 96.0
+offset_top = -112.0
+offset_right = 228.0
+offset_bottom = 20.0
+columns = 2
+
+[node name="UnitSlot" parent="GridContainer" unique_id=1049437655 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="UnitSlot2" parent="GridContainer" unique_id=1996574927 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="UnitSlot3" parent="GridContainer" unique_id=552786859 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="UnitSlot4" parent="GridContainer" unique_id=140020435 instance=ExtResource("10_nt1a3")]
+layout_mode = 2
+
+[node name="SidePanel" parent="." unique_id=918273645 instance=ExtResource("12_sidepanel")]
+position = Vector2(240, -144)
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
