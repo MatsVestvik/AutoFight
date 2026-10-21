@@ -28,7 +28,7 @@ scale = Vector2(3, 3)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]
 
 [node name="Disk" parent="." unique_id=1842291610 instance=ExtResource("2_fopej")]
-position = Vector2(-192, 80)
+position = Vector2(-136, 80)
 
 [node name="CustomButton" parent="." unique_id=1197267838 instance=ExtResource("3_6l3g4")]
 offset_left = 216.0
@@ -39,9 +39,9 @@ label_name = "Play"
 image = ExtResource("4_ybgvo")
 
 [node name="SellZone" type="PanelContainer" parent="." unique_id=558861919]
-offset_left = -272.0
+offset_left = -216.0
 offset_top = 72.0
-offset_right = 152.0
+offset_right = 208.0
 offset_bottom = 152.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w5gvn")
 script = ExtResource("6_t1hbj")

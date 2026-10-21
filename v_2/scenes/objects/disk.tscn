@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://c6qwavwvtu0l7" path="res://scripts/objects/disk.gd" id="1_cmxqg"]
 [ext_resource type="PackedScene" uid="uid://ce3o5tiud1jrq" path="res://scenes/objects/unit_slot.tscn" id="1_y1rs8"]
 [ext_resource type="Script" uid="uid://b2gp2a6d2xunp" path="res://scripts/ui/freeze.gd" id="2_726qy"]
-[ext_resource type="Texture2D" uid="uid://bvd5x72oie3qf" path="res://assets/buttons/freeze_0001.png" id="2_gaogj"]
+[ext_resource type="Texture2D" uid="uid://bvd5x72oie3qf" path="res://assets/buttons/long.png" id="2_gaogj"]
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_p64xy"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="3_726qy"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="3_g3o3r"]
 [ext_resource type="Texture2D" uid="uid://diyfm57bpgn8t" path="res://assets/buttons/bar.png" id="8_sfhcp"]
 [ext_resource type="Texture2D" uid="uid://i402tdw23655" path="res://assets/shop_level/level_1.png" id="9_nh4na"]
-[ext_resource type="Texture2D" uid="uid://em3kgo0jmgb7" path="res://assets/shop_level/upgrade.png" id="10_ajge8"]
+[ext_resource type="Texture2D" uid="uid://c74fnp05yvrn3" path="res://assets/shop_level/level_0.png" id="10_nh4na"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_726qy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -167,13 +167,44 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Level" type="Sprite2D" parent="." unique_id=630111640]
-position = Vector2(376, 32)
+position = Vector2(-112, 32)
 texture = ExtResource("9_nh4na")
 
-[node name="Upgrade" type="Sprite2D" parent="." unique_id=301912127]
-position = Vector2(376, 32)
-texture = ExtResource("10_ajge8")
+[node name="Level" type="Sprite2D" parent="Level" unique_id=1313560324]
+position = Vector2(32, 0)
+texture = ExtResource("10_nh4na")
 
+[node name="Upgrade2" type="Button" parent="." unique_id=198071321]
+offset_left = -144.0
+offset_top = -40.0
+offset_right = -80.0
+offset_bottom = -8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_726qy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sfhcp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lk7oy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nh4na")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ajge8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Upgrade2" unique_id=1533933664]
+position = Vector2(32, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_gaogj")
+
+[node name="Label" type="Label" parent="Upgrade2" unique_id=1530797483]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "UPGRADE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Freeze" to="Freeze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Freeze" to="Freeze" method="_on_mouse_exited"]
 [connection signal="pressed" from="Freeze" to="Freeze" method="_on_pressed"]
-[connection signal="toggled" from="Freeze" to="Freeze" method="_on_toggled"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="button_down" from="Upgrade2" to="." method="_on_upgrade_button_down"]
+[connection signal="button_up" from="Upgrade2" to="." method="_on_upgrade_button_up"]
+[connection signal="mouse_entered" from="Upgrade2" to="." method="_on_upgrade_mouse_entered"]
+[connection signal="mouse_exited" from="Upgrade2" to="." method="_on_upgrade_mouse_exited"]
+[connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_pressed"]

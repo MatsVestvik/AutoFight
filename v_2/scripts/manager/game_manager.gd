@@ -2,9 +2,30 @@ extends Node
 
 const STARTING_COINS: int = 50
 const STARTING_HEALTH: int = 10
+const STARTING_SHOP_LEVEL: int = 1
+const MAX_SHOP_LEVEL: int = 14
+const SHOP_UPGRADE_BASE_COST: int = 5
 const ROUND_COINS_REWARD: int = 10
 const TARGET_WINS: int = 10
 const ENEMY_DB_PATH: String = "res://resources/enemy_teams_db.json"
+
+## Rarity drop percentages per shop level [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+const SHOP_RARITY_ODDS: Dictionary = {
+	1: [100, 0, 0, 0, 0],
+	2: [80, 20, 0, 0, 0],
+	3: [65, 30, 5, 0, 0],
+	4: [55, 35, 10, 0, 0],
+	5: [45, 35, 20, 0, 0],
+	6: [35, 35, 25, 5, 0],
+	7: [30, 30, 30, 10, 0],
+	8: [25, 25, 35, 14, 1],
+	9: [20, 25, 35, 18, 2],
+	10: [15, 20, 35, 25, 5],
+	11: [12, 18, 32, 30, 8],
+	12: [10, 15, 30, 33, 12],
+	13: [8, 12, 25, 37, 18],
+	14: [5, 10, 20, 40, 25]
+}
 
 var units: Array[UnitData] = []
 var team: Array[UnitData] = []
@@ -28,6 +49,11 @@ var wins: int = 0:
 var day: int = 1:
 	set(value):
 		day = maxi(1, value)
+		stats_changed.emit()
+
+var shop_level: int = STARTING_SHOP_LEVEL:
+	set(value):
+		shop_level = clampi(value, STARTING_SHOP_LEVEL, MAX_SHOP_LEVEL)
 		stats_changed.emit()
 
 signal unit_hovered(unit_data: UnitData)
@@ -178,6 +204,67 @@ func spend_coins(amount: int) -> bool:
 	coins -= amount
 	return true
 
+func get_shop_upgrade_cost() -> int:
+	return shop_level * SHOP_UPGRADE_BASE_COST
+
+func get_shop_rarity_odds(level: int = shop_level) -> Array:
+	var clamped_level: int = clampi(level, STARTING_SHOP_LEVEL, MAX_SHOP_LEVEL)
+	return SHOP_RARITY_ODDS.get(clamped_level, [100, 0, 0, 0, 0])
+
+func upgrade_shop() -> bool:
+	if shop_level >= MAX_SHOP_LEVEL:
+		return false
+	var cost: int = get_shop_upgrade_cost()
+	if not spend_coins(cost):
+		return false
+	shop_level += 1
+	return true
+
+func get_random_unit_for_shop() -> UnitData:
+	if units.is_empty():
+		units = get_all_unit_data()
+	if units.is_empty():
+		return null
+
+	var odds: Array = get_shop_rarity_odds(shop_level)
+	var roll: int = randi_range(1, 100)
+	var cumulative: int = 0
+	var rolled_rarity: int = UnitData.RARITY.COMMON
+
+	for rarity_idx in range(odds.size()):
+		cumulative += int(odds[rarity_idx])
+		if roll <= cumulative:
+			rolled_rarity = rarity_idx
+			break
+
+	var pool: Array[UnitData] = _get_units_by_rarity_with_fallback(rolled_rarity)
+	return pool.pick_random()
+
+func _get_units_by_rarity_with_fallback(target_rarity: int) -> Array[UnitData]:
+	var exact: Array[UnitData] = []
+	for u in units:
+		if u.rarity == target_rarity:
+			exact.append(u)
+	if not exact.is_empty():
+		return exact
+
+	# Fallback to closest lower rarity first, then higher rarity if none exist for the rolled tier yet
+	for r in range(target_rarity - 1, -1, -1):
+		for u in units:
+			if u.rarity == r:
+				exact.append(u)
+		if not exact.is_empty():
+			return exact
+
+	for r in range(target_rarity + 1, UnitData.RARITY.size()):
+		for u in units:
+			if u.rarity == r:
+				exact.append(u)
+		if not exact.is_empty():
+			return exact
+
+	return units
+
 func on_battle_won() -> void:
 	wins += 1
 	if wins >= TARGET_WINS:
@@ -200,3 +287,4 @@ func reset_game() -> void:
 	health = STARTING_HEALTH
 	wins = 0
 	day = 1
+	shop_level = STARTING_SHOP_LEVEL
