@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://bstartscreenv2"]
+[gd_scene format=3 uid="uid://c7vllbhf5de2x"]
 
-[ext_resource type="Script" path="res://scripts/places/start_screen.gd" id="1_start"]
+[ext_resource type="Script" uid="uid://ci4x6p1amxjkq" path="res://scripts/places/start_screen.gd" id="1_start"]
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_btn"]
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="3_green"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="4_yellow"]
+[ext_resource type="PackedScene" uid="uid://cbgmovingv201" path="res://scenes/objects/background.tscn" id="5_xdr4b"]
 
 [node name="StartScreen" type="Node2D" unique_id=762011806]
 script = ExtResource("1_start")
@@ -34,6 +35,10 @@ offset_right = 32.0
 offset_bottom = 104.0
 label_name = "Quit"
 image = ExtResource("4_yellow")
+
+[node name="Background" parent="." unique_id=817263541 instance=ExtResource("5_xdr4b")]
+position = Vector2(0, 24)
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

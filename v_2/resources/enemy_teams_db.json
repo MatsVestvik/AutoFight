@@ -216,9 +216,7 @@
 			null,
 			null,
 			null
-		]
-	],
-	"2": [
+		],
 		[
 			{
 				"attack": 2,
@@ -227,19 +225,63 @@
 				"name": "Charbear",
 				"poison": 0,
 				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 5,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			null,
+			{
+				"attack": 2,
+				"burn": 5,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 5,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			null
+		]
+	],
+	"2": [
+		[
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
 			},
 			null,
 			null,
 			null,
 			null,
 			null
-		]
-	],
-	"3": [
+		],
 		[
 			{
 				"attack": 2,
-				"burn": 17,
+				"burn": 9,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 9,
 				"level": 0,
 				"name": "Charbear",
 				"poison": 0,
@@ -252,6 +294,50 @@
 				"name": "Charbear",
 				"poison": 0,
 				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 9,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 9,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			{
+				"attack": 2,
+				"burn": 5,
+				"level": 0,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			}
+		]
+	],
+	"3": [
+		[
+			{
+				"attack": 2.0,
+				"burn": 17.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 0.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
 			},
 			null,
 			null,
