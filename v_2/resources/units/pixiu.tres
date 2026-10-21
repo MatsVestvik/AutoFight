@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitData" format=3]
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://degirw0rs5k3o"]
 
 [ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_ab"]
 [ext_resource type="Resource" path="res://resources/ability/pixiu.tres" id="2_pixiu_ab"]
@@ -11,9 +11,8 @@ texture = ExtResource("4_tex")
 name = "Pixiu"
 cooldown_time = 4.5
 cost = 8
-rarity = 3
+rarity = 1
 typing = Array[int]([4, 5])
 abilities = Array[ExtResource("1_ab")]([ExtResource("2_pixiu_ab")])
-attack = 3
 shield = 6
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

@@ -8,7 +8,7 @@ extends Node2D
 @onready var unit_slot_5: UnitSlot = $Slots/UnitSlot5
 @onready var slots: HBoxContainer = $Slots
 
-@onready var shop_level_label: Label = $Bar/Label
+@onready var shop_level_label: Label = $Bar/Level
 @onready var common_label: Label = $Bar/Common
 @onready var uncommon_label: Label = $Bar/Uncommon
 @onready var rare_label: Label = $Bar/Rare
@@ -16,6 +16,8 @@ extends Node2D
 @onready var legendary_label: Label = $Bar/Legendary
 @onready var level_sprite_1: Sprite2D = $Level
 @onready var level_sprite_2: Sprite2D = $Level/Level
+@onready var upgrade_cost_label: Label = $Level/UpgradeCost
+@onready var upgrade_cash: Sprite2D = $Level/Cash
 @onready var upgrade_button: Button = $Upgrade2
 @onready var upgrade_sprite: Sprite2D = $Upgrade2/Sprite2D
 @onready var upgrade_label: Label = $Upgrade2/Label
@@ -60,7 +62,7 @@ func reroll() -> void:
 
 func _update_shop_level_ui() -> void:
 	var lvl: int = GameManager.shop_level
-	shop_level_label.text = "Shop Level: " + str(lvl)
+	shop_level_label.text = "Level: " + str(lvl)
 
 	var odds: Array = GameManager.get_shop_rarity_odds(lvl)
 	common_label.text = str(odds[0]) + "%"
@@ -74,7 +76,15 @@ func _update_shop_level_ui() -> void:
 	level_sprite_1.texture = LEVEL_TEXTURES[left_bars]
 	level_sprite_2.texture = LEVEL_TEXTURES[right_bars]
 
-	upgrade_button.disabled = (lvl >= GameManager.MAX_SHOP_LEVEL)
+	if lvl >= GameManager.MAX_SHOP_LEVEL:
+		upgrade_button.disabled = true
+		upgrade_cost_label.text = "MAX"
+		upgrade_cash.hide()
+	else:
+		upgrade_button.disabled = false
+		upgrade_cost_label.text = str(GameManager.get_shop_upgrade_cost())
+		upgrade_cash.show()
+
 	_update_upgrade_button_visual()
 
 func _update_upgrade_button_visual() -> void:

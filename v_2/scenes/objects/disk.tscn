@@ -5,11 +5,13 @@
 [ext_resource type="Script" uid="uid://b2gp2a6d2xunp" path="res://scripts/ui/freeze.gd" id="2_726qy"]
 [ext_resource type="Texture2D" uid="uid://bvd5x72oie3qf" path="res://assets/buttons/long.png" id="2_gaogj"]
 [ext_resource type="PackedScene" uid="uid://doufp6qhtjpie" path="res://scenes/ui/custom_button.tscn" id="2_p64xy"]
+[ext_resource type="Texture2D" uid="uid://djbyrgmpou11" path="res://assets/util/tag.png" id="2_wr1yd"]
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="3_726qy"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="3_g3o3r"]
 [ext_resource type="Texture2D" uid="uid://diyfm57bpgn8t" path="res://assets/buttons/bar.png" id="8_sfhcp"]
 [ext_resource type="Texture2D" uid="uid://i402tdw23655" path="res://assets/shop_level/level_1.png" id="9_nh4na"]
 [ext_resource type="Texture2D" uid="uid://c74fnp05yvrn3" path="res://assets/shop_level/level_0.png" id="10_nh4na"]
+[ext_resource type="Texture2D" uid="uid://d0l23k81xyc7u" path="res://assets/icons/cash.png" id="12_cash"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_726qy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -31,6 +33,11 @@ bg_color = Color(0, 0.68235296, 0.7058824, 0.38431373)
 
 [node name="Disk" type="Node2D" unique_id=1842291610]
 script = ExtResource("1_cmxqg")
+metadata/_edit_vertical_guides_ = [-208.0]
+
+[node name="Tag" type="Sprite2D" parent="." unique_id=613281115]
+position = Vector2(-40, -24)
+texture = ExtResource("2_wr1yd")
 
 [node name="Freeze" type="Button" parent="." unique_id=295590323]
 offset_left = 272.0
@@ -98,23 +105,24 @@ label_name = "REROLL"
 image = ExtResource("3_g3o3r")
 
 [node name="Bar" type="Sprite2D" parent="." unique_id=886820011]
-position = Vector2(96, -24)
+position = Vector2(132, -24)
+scale = Vector2(0.78571427, 1)
 texture = ExtResource("8_sfhcp")
 
-[node name="Label" type="Label" parent="Bar" unique_id=1708738556]
-offset_left = -168.0
+[node name="Level" type="Label" parent="Bar" unique_id=1708738556]
+offset_left = -157.81818
 offset_top = -16.0
-offset_right = -56.0
+offset_right = -85.81818
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("3_726qy")
-text = "Shop Level: 4"
+text = "Level: 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Common" type="Label" parent="Bar" unique_id=664019498]
-offset_left = -56.0
+offset_left = -86.545456
 offset_top = -16.0
-offset_right = -16.0
+offset_right = -46.545456
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
@@ -123,9 +131,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Uncommon" type="Label" parent="Bar" unique_id=1005625039]
-offset_left = -16.0
+offset_left = -35.636368
 offset_top = -16.0
-offset_right = 24.0
+offset_right = 4.363632
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0, 0.654902, 0, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
@@ -134,9 +142,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rare" type="Label" parent="Bar" unique_id=110121041]
-offset_left = 24.0
+offset_left = 15.27273
 offset_top = -16.0
-offset_right = 64.0
+offset_right = 55.272728
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.1254902, 0.37254903, 0.84313726, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
@@ -145,9 +153,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Epic" type="Label" parent="Bar" unique_id=1557283701]
-offset_left = 64.0
+offset_left = 66.18182
 offset_top = -16.0
-offset_right = 104.0
+offset_right = 106.18182
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.40392157, 0.011764706, 0.81960785, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
@@ -156,9 +164,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Legendary" type="Label" parent="Bar" unique_id=734757294]
-offset_left = 104.0
+offset_left = 117.090904
 offset_top = -16.0
-offset_right = 144.0
+offset_right = 157.09091
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0.8745098, 0.5372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_726qy")
@@ -169,6 +177,20 @@ vertical_alignment = 1
 [node name="Level" type="Sprite2D" parent="." unique_id=630111640]
 position = Vector2(-112, 32)
 texture = ExtResource("9_nh4na")
+
+[node name="UpgradeCost" type="Label" parent="Level" unique_id=683943807]
+offset_left = 64.0
+offset_top = -72.0
+offset_right = 104.0
+offset_bottom = -40.0
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "5"
+vertical_alignment = 1
+
+[node name="Cash" type="Sprite2D" parent="Level" unique_id=1251485036]
+position = Vector2(56, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("12_cash")
 
 [node name="Level" type="Sprite2D" parent="Level" unique_id=1313560324]
 position = Vector2(32, 0)

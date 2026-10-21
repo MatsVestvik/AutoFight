@@ -9,8 +9,8 @@
 script = ExtResource("3_tkdfd")
 texture = ExtResource("4_jnxb7")
 name = "Charbear"
-cooldown_time = 5.0
-cost = 10
+cooldown_time = 4.0
+cost = 5
 typing = Array[int]([0])
 abilities = Array[ExtResource("1_8n3oh")]([ExtResource("2_vfcfg")])
 attack = 2

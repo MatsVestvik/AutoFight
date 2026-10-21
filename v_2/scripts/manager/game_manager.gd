@@ -272,6 +272,7 @@ func on_battle_won() -> void:
 		reset_game()
 	else:
 		day += 1
+		shop_level += 1
 		coins += ROUND_COINS_REWARD
 
 func on_battle_lost() -> void:
@@ -280,6 +281,7 @@ func on_battle_lost() -> void:
 		reset_game()
 	else:
 		day += 1
+		shop_level += 1
 		coins += ROUND_COINS_REWARD
 
 func reset_game() -> void:
