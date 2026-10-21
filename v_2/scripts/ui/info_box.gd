@@ -5,6 +5,7 @@ class_name InfoBox
 @onready var sprite_2d: Sprite2D = $MarginContainer/VBoxContainer/Sprite2D
 @onready var stats: VBoxContainer = $MarginContainer/VBoxContainer/Sprite2D/VBoxContainer
 @onready var cooldown_timer: Label = $MarginContainer/VBoxContainer/Sprite2D/CooldownTimer
+@onready var level_label: Label = $MarginContainer/VBoxContainer/Sprite2D/Level
 @onready var ability_description: Label = $MarginContainer/VBoxContainer/AbilityDescription
 @onready var type_container_1: TypeContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings/TypeContainer_1
 @onready var type_container_2: TypeContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings/TypeContainer2
@@ -31,6 +32,7 @@ func display_unit(unit_data: UnitData) -> void:
 	data = unit_data
 	_update_stats()
 	_update_cooldown()
+	_update_level()
 	_update_ability_description()
 	_update_typing()
 	name_label.text = unit_data.name
@@ -66,8 +68,18 @@ func _update_typing() -> void:
 func _update_cooldown() -> void:
 	cooldown_timer.text = str(data.cooldown_time) + " S"
 
+func _update_level() -> void:
+	if level_label and data:
+		level_label.text = "Lv." + str(maxi(1, data.level))
+
 func _update_ability_description() -> void:
-		ability_description.text = data.abilities[0].description
+	if data and not data.abilities.is_empty() and data.abilities[0]:
+		var ab: Ability = data.abilities[0]
+		var lvl: int = maxi(1, data.level)
+		if lvl > 1:
+			ability_description.text = ab.description.replace("+" + str(ab.value), "+" + str(ab.value * lvl))
+		else:
+			ability_description.text = ab.description
 		
 func _update_stats() -> void:
 	# 1. Remove and free existing counters

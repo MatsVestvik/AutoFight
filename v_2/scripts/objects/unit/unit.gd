@@ -6,6 +6,7 @@ const COUNTER = preload("uid://colq0x8oeonmx")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var stats: HBoxContainer = $Stats
+@onready var level_label: Label = get_node_or_null("LevelLabel")
 
 var data: UnitData
 var current_slot: UnitSlot = null
@@ -22,6 +23,7 @@ signal stats_changed(unit:Unit)
 func _ready() -> void:
 	if data:
 		_update_stats()
+		_update_level_label()
 
 func trigger_abilities(trigger_type: Ability.Trigger, context: AbilityContext) -> void:
 	if data == null:
@@ -33,9 +35,53 @@ func trigger_abilities(trigger_type: Ability.Trigger, context: AbilityContext) -
 func create_from_data(input_data: UnitData) -> void:
 	# Duplicate data so buffs on this unit don't mutate other units!
 	data = input_data.duplicate()
+	if data.level <= 0:
+		data.level = 1
 	$Sprite2D.texture = data.texture
 	if is_node_ready():
 		_update_stats()
+		_update_level_label()
+
+func _update_level_label() -> void:
+	if level_label and data:
+		level_label.text = "Lv." + str(maxi(1, data.level))
+
+func can_combine_with(other_unit: Unit) -> bool:
+	if other_unit == null or other_unit == self:
+		return false
+	return can_combine_with_data(other_unit.data)
+
+func can_combine_with_data(other_data: UnitData) -> bool:
+	if data == null or other_data == null:
+		return false
+	var my_lvl: int = maxi(1, data.level)
+	var other_lvl: int = maxi(1, other_data.level)
+	return data.name.to_lower() == other_data.name.to_lower() and my_lvl == other_lvl
+
+func combine_with(other_unit: Unit) -> void:
+	if not can_combine_with(other_unit):
+		return
+	combine_with_data(other_unit.data)
+	other_unit.queue_free()
+
+func combine_with_data(other_data: UnitData) -> void:
+	if not can_combine_with_data(other_data):
+		return
+	data.level = maxi(1, data.level) + 1
+	data.cost += other_data.cost
+	_update_level_label()
+
+	if other_data.attack > 0:
+		apply_buff(Ability.StatType.ATTACK, other_data.attack)
+	if other_data.poison > 0:
+		apply_buff(Ability.StatType.POISON, other_data.poison)
+	if other_data.shield > 0:
+		apply_buff(Ability.StatType.SHIELD, other_data.shield)
+	if other_data.burn > 0:
+		apply_buff(Ability.StatType.BURN, other_data.burn)
+
+	SoundManager.play_sfx(SoundManager.LEVEL_UP)
+	stats_changed.emit(self)
 
 func flip() -> void:
 	$Sprite2D.flip_h = not $Sprite2D.flip_h

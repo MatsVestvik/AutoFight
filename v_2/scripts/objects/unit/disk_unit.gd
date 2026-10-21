@@ -18,12 +18,16 @@ signal buy(data:UnitData, disk_unit:DiskUnit)
 
 func _ready() -> void:
 	super._ready()
+	if level_label:
+		level_label.hide()
 	_update_cost()
 	_update_rarity_box()
 	_update_typing()
 
 func create_from_data(input_data: UnitData) -> void:
-	data = input_data
+	data = input_data.duplicate()
+	if data.level <= 0:
+		data.level = 1
 	get_node("Sprite2D").texture = data.texture
 	if is_node_ready():
 		_update_cost()

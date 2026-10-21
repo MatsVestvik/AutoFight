@@ -52,9 +52,21 @@ func _get_first_empty_bench_slot() -> UnitSlot:
 			return slot
 	return null
 
+func _find_combinable_unit(data: UnitData) -> Unit:
+	for slot in shop_team.slots:
+		var u: Unit = slot.get_unit()
+		if u and u.can_combine_with_data(data):
+			return u
+	for slot in _get_bench_slots():
+		var u: Unit = slot.get_unit()
+		if u and u.can_combine_with_data(data):
+			return u
+	return null
+
 func _on_disk_buy(data: UnitData, disk_unit: DiskUnit) -> void:
 	var empty_bench_slot: UnitSlot = _get_first_empty_bench_slot()
-	if GameManager.coins < data.cost or (shop_team.is_full() and empty_bench_slot == null):
+	var combinable_unit: Unit = _find_combinable_unit(data)
+	if GameManager.coins < data.cost or (shop_team.is_full() and empty_bench_slot == null and combinable_unit == null):
 		SoundManager.play_sfx(SoundManager.ERROR)
 		return
 
@@ -79,6 +91,13 @@ func _on_disk_buy(data: UnitData, disk_unit: DiskUnit) -> void:
 		SoundManager.play_sfx(SoundManager.BUY)
 		var context := AbilityContext.new(new_unit, shop_team)
 		new_unit.trigger_abilities(Ability.Trigger.ON_BUY, context)
+		disk_unit.queue_free()
+	elif combinable_unit != null:
+		GameManager.spend_coins(data.cost)
+		SoundManager.play_sfx(SoundManager.BUY)
+		var context := AbilityContext.new(combinable_unit, shop_team)
+		combinable_unit.trigger_abilities(Ability.Trigger.ON_BUY, context)
+		combinable_unit.combine_with_data(data)
 		disk_unit.queue_free()
 
 func _on_sell_zone_unit_sold(unit: ShopUnit) -> void:

@@ -45,6 +45,10 @@ func _drop_data(_at_position: Vector2, new_unit: Variant) -> void:
 	elif origin_slot == self:
 		new_unit.modulate.a = 1.0
 
+	elif old_unit.can_combine_with(new_unit):
+		old_unit.combine_with(new_unit)
+		GameManager.unit_hovered.emit(old_unit.data)
+
 	else:
 		if origin_slot != null:
 			origin_slot._reparent_unit(old_unit)

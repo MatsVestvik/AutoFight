@@ -46,16 +46,20 @@ func can_trigger(trigger_type: Trigger) -> bool:
 	return trigger == trigger_type
 
 func execute(context: AbilityContext) -> void:
+	var lvl: int = 1
+	if context and is_instance_valid(context.source_unit) and context.source_unit.data:
+		lvl = maxi(1, context.source_unit.data.level)
+	var scaled_value: int = value * lvl
+
 	match effect_type:
 		EffectType.GAIN_COINS:
-
-				GameManager.add_coins(value)
+			GameManager.add_coins(scaled_value)
 
 		EffectType.BUFF_STAT:
 			SoundManager.play_sfx(SoundManager.BUFF)
 			var targets: Array[Unit] = _resolve_targets(context)
 			for t in targets:
-				t.apply_buff(stat_type, value)
+				t.apply_buff(stat_type, scaled_value)
 
 		EffectType.DEAL_DAMAGE:
 			pass

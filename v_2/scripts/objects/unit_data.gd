@@ -21,7 +21,7 @@ enum TYPING {
 @export var name: String = ""
 @export var cooldown_time: float
 @export var cost: int
-@export var level: int
+@export var level: int = 1
 @export var rarity: RARITY
 @export var typing: Array[TYPING] = []
 @export var abilities: Array[Ability] = []
