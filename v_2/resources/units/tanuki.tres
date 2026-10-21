@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_ab"]
+[ext_resource type="Resource" path="res://resources/ability/tanuki.tres" id="2_tanuki_ab"]
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="3_ud"]
+[ext_resource type="Texture2D" uid="uid://ca4c6obdv211o" path="res://assets/mons/tanuki.png" id="4_tex"]
+
+[resource]
+script = ExtResource("3_ud")
+texture = ExtResource("4_tex")
+name = "Tanuki"
+cooldown_time = 3.5
+cost = 4
+rarity = 1
+typing = Array[int]([2])
+abilities = Array[ExtResource("1_ab")]([ExtResource("2_tanuki_ab")])
+attack = 2
+shield = 3
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

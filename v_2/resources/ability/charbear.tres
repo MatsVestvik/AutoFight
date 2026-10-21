@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_lspby")
+ability_name = "Charbear"
 description = "On trigger give +2 burn to this unit permanently"
 trigger = 2
 stat_type = 3

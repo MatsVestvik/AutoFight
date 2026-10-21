@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_6q2jk")
+ability_name = "Squitonkey"
 description = "On trigger give ally ahead +5 poison"
 trigger = 2
 target = 3
