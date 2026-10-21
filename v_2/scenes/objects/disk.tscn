@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://c2h8gscc2qba0" path="res://assets/fonts/editundo.ttf" id="3_726qy"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="3_g3o3r"]
 [ext_resource type="Texture2D" uid="uid://diyfm57bpgn8t" path="res://assets/buttons/bar.png" id="8_sfhcp"]
+[ext_resource type="Texture2D" uid="uid://i402tdw23655" path="res://assets/shop_level/level_1.png" id="9_nh4na"]
+[ext_resource type="Texture2D" uid="uid://em3kgo0jmgb7" path="res://assets/shop_level/upgrade.png" id="10_ajge8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_726qy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -163,6 +165,14 @@ theme_override_fonts/font = ExtResource("3_726qy")
 text = "20%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Level" type="Sprite2D" parent="." unique_id=630111640]
+position = Vector2(376, 32)
+texture = ExtResource("9_nh4na")
+
+[node name="Upgrade" type="Sprite2D" parent="." unique_id=301912127]
+position = Vector2(376, 32)
+texture = ExtResource("10_ajge8")
 
 [connection signal="pressed" from="Freeze" to="Freeze" method="_on_pressed"]
 [connection signal="toggled" from="Freeze" to="Freeze" method="_on_toggled"]
