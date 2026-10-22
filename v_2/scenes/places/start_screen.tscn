@@ -37,7 +37,7 @@ label_name = "Quit"
 image = ExtResource("4_yellow")
 
 [node name="Background" parent="." unique_id=817263541 instance=ExtResource("5_xdr4b")]
-position = Vector2(0, 24)
+position = Vector2(0, 8)
 scale = Vector2(3, 3)
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]

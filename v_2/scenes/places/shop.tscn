@@ -23,7 +23,6 @@ script = ExtResource("1_ybgvo")
 zoom = Vector2(2, 2)
 
 [node name="Background" parent="." unique_id=817263541 instance=ExtResource("11_nt1a3")]
-position = Vector2(0, 24)
 scale = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1629197774]

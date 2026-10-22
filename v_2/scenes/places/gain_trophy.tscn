@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://clob3voc4yt3p"]
 
-[ext_resource type="Script" path="res://scripts/places/gain_trophy.gd" id="1_gaint"]
+[ext_resource type="Script" uid="uid://bh3sc5ne3iega" path="res://scripts/places/gain_trophy.gd" id="1_gaint"]
 [ext_resource type="Texture2D" uid="uid://brfg5n1ap3kos" path="res://assets/icons/emptyTrophy.png" id="2_empty"]
+[ext_resource type="PackedScene" uid="uid://cbgmovingv201" path="res://scenes/objects/background.tscn" id="3_iealp"]
 
 [node name="GainTrophy" type="Node2D" unique_id=557692732]
 script = ExtResource("1_gaint")
@@ -48,3 +49,6 @@ texture = ExtResource("2_empty")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1101760271]
 zoom = Vector2(7, 7)
+
+[node name="Background" parent="." unique_id=817263541 instance=ExtResource("3_iealp")]
+position = Vector2(0, 8)

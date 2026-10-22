@@ -49,10 +49,10 @@ vertical_alignment = 1
 
 [node name="HealthCounter" type="Label" parent="." unique_id=1373783878]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 104.0
-offset_right = 176.0
-offset_bottom = 144.0
+offset_left = 338.0
+offset_top = 8.0
+offset_right = 450.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
 text = "10"
@@ -60,10 +60,10 @@ vertical_alignment = 1
 
 [node name="WinsCounter" type="Label" parent="." unique_id=1728098728]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 144.0
-offset_right = 176.0
-offset_bottom = 184.0
+offset_left = 416.0
+offset_top = 8.0
+offset_right = 528.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -71,27 +71,27 @@ vertical_alignment = 1
 
 [node name="CashCounter" type="Label" parent="." unique_id=1955365814]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 176.0
-offset_bottom = 104.0
+offset_left = 248.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
 text = "0"
 vertical_alignment = 1
 
 [node name="FullHeart" type="Sprite2D" parent="." unique_id=1314511029]
-position = Vector2(40, 120)
+position = Vector2(312, 24)
 scale = Vector2(2, 2)
 texture = ExtResource("2_a44fs")
 
 [node name="FullTrophy" type="Sprite2D" parent="." unique_id=295540201]
-position = Vector2(40, 160)
+position = Vector2(392, 24)
 scale = Vector2(2, 2)
 texture = ExtResource("3_rcgkl")
 
 [node name="Cash" type="Sprite2D" parent="." unique_id=422345182]
-position = Vector2(40, 80)
+position = Vector2(226, 26)
 scale = Vector2(4, 4)
 texture = ExtResource("4_rcgkl")
 
