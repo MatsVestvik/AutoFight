@@ -72,6 +72,7 @@ offset_left = -352.0
 offset_top = 32.0
 offset_right = 72.0
 offset_bottom = 112.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_828cs")
 
 [node name="Slots" type="HBoxContainer" parent="." unique_id=212516548]
@@ -103,6 +104,25 @@ offset_left = -72.0
 offset_right = -8.0
 label_name = "REROLL"
 image = ExtResource("3_g3o3r")
+
+[node name="Cash" type="Sprite2D" parent="CustomButton" unique_id=1583920411]
+position = Vector2(26, 48)
+texture = ExtResource("12_cash")
+
+[node name="RerollCost" type="Label" parent="CustomButton" unique_id=1583920412]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 54.0
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_726qy")
+text = "1"
+vertical_alignment = 1
 
 [node name="Bar" type="Sprite2D" parent="." unique_id=886820011]
 position = Vector2(132, -24)

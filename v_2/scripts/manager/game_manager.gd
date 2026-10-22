@@ -30,6 +30,8 @@ const SHOP_RARITY_ODDS: Dictionary = {
 var units: Array[UnitData] = []
 var team: Array[UnitData] = []
 var bench: Array[UnitData] = []
+var frozen_shop_units: Array[UnitData] = []
+var is_shop_frozen: bool = false
 var enemy_teams_db: Dictionary = {}
 
 var coins: int = STARTING_COINS:
@@ -287,6 +289,8 @@ func on_battle_lost() -> void:
 func reset_game() -> void:
 	team.clear()
 	bench.clear()
+	frozen_shop_units.clear()
+	is_shop_frozen = false
 	coins = STARTING_COINS
 	health = STARTING_HEALTH
 	wins = 0

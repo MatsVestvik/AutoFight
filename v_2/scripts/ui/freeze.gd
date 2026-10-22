@@ -11,10 +11,17 @@ const LONG_PRESSED = preload("uid://chpfymtvsuwmu")
 var toggled_freeze: bool = false
 var is_hovered: bool = false
 
+signal freeze_toggled(is_frozen: bool)
+
+func set_frozen(value: bool) -> void:
+	toggled_freeze = value
+	_update_visual()
+
 func _on_pressed() -> void:
 	toggled_freeze = !toggled_freeze
 	SoundManager.play_sfx(SoundManager.CLICK)
 	_update_visual()
+	freeze_toggled.emit(toggled_freeze)
 
 func _on_mouse_entered() -> void:
 	is_hovered = true

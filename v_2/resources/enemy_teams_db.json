@@ -356,31 +356,143 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 10,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 10.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 0,
-				"shield": 0
+				"poison": 0.0,
+				"shield": 0.0
 			},
 			{
-				"attack": 2,
-				"burn": 5,
-				"level": 1,
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 1.0,
 				"name": "Charbear",
-				"poison": 0,
-				"shield": 0
+				"poison": 0.0,
+				"shield": 0.0
 			},
 			{
-				"attack": 8,
-				"burn": 0,
-				"level": 2,
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 2.0,
 				"name": "Jormundgandr",
-				"poison": 12,
-				"shield": 8
+				"poison": 12.0,
+				"shield": 8.0
 			},
 			null,
 			null,
+			null
+		],
+		[
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			null,
+			null,
+			{
+				"attack": 2.0,
+				"burn": 5.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			}
+		]
+	],
+	"10": [
+		[
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 4.0,
+				"name": "Tanuki",
+				"poison": 84.0,
+				"shield": 48.0
+			},
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Jormundgandr",
+				"poison": 99.0,
+				"shield": 49.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 4.0,
+				"name": "Pixiu",
+				"poison": 75.0,
+				"shield": 57.0
+			},
+			null,
+			null
+		]
+	],
+	"11": [
+		[
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 4.0,
+				"name": "Tanuki",
+				"poison": 93.0,
+				"shield": 60.0
+			},
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Jormundgandr",
+				"poison": 108.0,
+				"shield": 49.0
+			},
+			{
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 4.0,
+				"name": "Pixiu",
+				"poison": 84.0,
+				"shield": 57.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 3.0
+			},
 			null
 		]
 	],
@@ -560,30 +672,95 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 18,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 18.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 18,
-				"shield": 0
+				"poison": 18.0,
+				"shield": 0.0
 			},
 			{
-				"attack": 0,
-				"burn": 0,
-				"level": 1,
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
 				"name": "Pixiu",
-				"poison": 0,
-				"shield": 6
+				"poison": 0.0,
+				"shield": 6.0
 			},
 			null,
 			{
-				"attack": 0,
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			null,
+			null
+		],
+		[
+			{
+				"attack": 2.0,
+				"burn": 9.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 9.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 9.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			null,
+			{
+				"attack": 2.0,
+				"burn": 9.0,
+				"level": 1.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			}
+		],
+		[
+			{
+				"attack": 2,
 				"burn": 0,
 				"level": 1,
-				"name": "Pixiu",
+				"name": "Tanuki",
 				"poison": 0,
-				"shield": 6
+				"shield": 3
 			},
+			{
+				"attack": 2,
+				"burn": 0,
+				"level": 1,
+				"name": "Tanuki",
+				"poison": 0,
+				"shield": 3
+			},
+			null,
+			null,
 			null,
 			null
 		]
@@ -735,20 +912,91 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 26,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 26.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 18,
-				"shield": 0
+				"poison": 18.0,
+				"shield": 0.0
 			},
 			{
-				"attack": 0,
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 3.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 3.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 3.0
+			},
+			{
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Jormundgandr",
+				"poison": 6.0,
+				"shield": 4.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 52.0,
+				"level": 3.0,
+				"name": "Charbear",
+				"poison": 0.0,
+				"shield": 0.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 2,
 				"burn": 0,
 				"level": 1,
-				"name": "Pixiu",
+				"name": "Tanuki",
 				"poison": 0,
-				"shield": 6
+				"shield": 9
 			},
 			{
 				"attack": 2,
@@ -756,24 +1004,18 @@
 				"level": 1,
 				"name": "Tanuki",
 				"poison": 0,
-				"shield": 3
+				"shield": 9
 			},
 			{
-				"attack": 0,
+				"attack": 4,
 				"burn": 0,
 				"level": 1,
-				"name": "Pixiu",
-				"poison": 0,
-				"shield": 6
+				"name": "Jormundgandr",
+				"poison": 6,
+				"shield": 4
 			},
-			{
-				"attack": 2,
-				"burn": 0,
-				"level": 1,
-				"name": "Tanuki",
-				"poison": 0,
-				"shield": 3
-			},
+			null,
+			null,
 			null
 		]
 	],
@@ -916,38 +1158,110 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 34,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 34.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 18,
-				"shield": 6
+				"poison": 18.0,
+				"shield": 6.0
 			},
 			null,
 			{
-				"attack": 2,
-				"burn": 0,
-				"level": 1,
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
 				"name": "Tanuki",
-				"poison": 0,
-				"shield": 6
+				"poison": 0.0,
+				"shield": 6.0
 			},
 			{
-				"attack": 0,
-				"burn": 0,
-				"level": 3,
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 3.0,
 				"name": "Pixiu",
-				"poison": 0,
-				"shield": 24
+				"poison": 0.0,
+				"shield": 24.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Tanuki",
+				"poison": 6.0,
+				"shield": 9.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Jormundgandr",
+				"poison": 18.0,
+				"shield": 8.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 6.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 64.0,
+				"level": 3.0,
+				"name": "Charbear",
+				"poison": 6.0,
+				"shield": 3.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 2,
+				"burn": 0,
+				"level": 1,
+				"name": "Tanuki",
+				"poison": 9,
+				"shield": 9
 			},
 			{
 				"attack": 2,
 				"burn": 0,
 				"level": 1,
 				"name": "Tanuki",
-				"poison": 0,
-				"shield": 6
+				"poison": 9,
+				"shield": 12
 			},
+			{
+				"attack": 4,
+				"burn": 0,
+				"level": 1,
+				"name": "Jormundgandr",
+				"poison": 15,
+				"shield": 13
+			},
+			{
+				"attack": 2,
+				"burn": 5,
+				"level": 1,
+				"name": "Charbear",
+				"poison": 0,
+				"shield": 0
+			},
+			null,
 			null
 		]
 	],
@@ -1054,12 +1368,116 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 42,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 42.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 18,
-				"shield": 9
+				"poison": 18.0,
+				"shield": 9.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 27.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 12.0
+			}
+		],
+		[
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Tanuki",
+				"poison": 18.0,
+				"shield": 15.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Jormundgandr",
+				"poison": 30.0,
+				"shield": 14.0
+			},
+			null,
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 18.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 70.0,
+				"level": 3.0,
+				"name": "Charbear",
+				"poison": 18.0,
+				"shield": 3.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 2,
+				"burn": 0,
+				"level": 1,
+				"name": "Tanuki",
+				"poison": 15,
+				"shield": 12
+			},
+			{
+				"attack": 2,
+				"burn": 0,
+				"level": 1,
+				"name": "Tanuki",
+				"poison": 15,
+				"shield": 12
+			},
+			{
+				"attack": 4,
+				"burn": 0,
+				"level": 1,
+				"name": "Jormundgandr",
+				"poison": 21,
+				"shield": 13
+			},
+			{
+				"attack": 2,
+				"burn": 7,
+				"level": 1,
+				"name": "Charbear",
+				"poison": 6,
+				"shield": 3
+			},
+			{
+				"attack": 2,
+				"burn": 0,
+				"level": 1,
+				"name": "Tanuki",
+				"poison": 0,
+				"shield": 3
 			},
 			{
 				"attack": 0,
@@ -1068,24 +1486,6 @@
 				"name": "Pixiu",
 				"poison": 0,
 				"shield": 6
-			},
-			null,
-			{
-				"attack": 0,
-				"burn": 0,
-				"level": 3,
-				"name": "Pixiu",
-				"poison": 0,
-				"shield": 27
-			},
-			null,
-			{
-				"attack": 0,
-				"burn": 0,
-				"level": 2,
-				"name": "Pixiu",
-				"poison": 0,
-				"shield": 12
 			}
 		]
 	],
@@ -1192,44 +1592,87 @@
 		],
 		[
 			{
-				"attack": 4,
-				"burn": 50,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 50.0,
+				"level": 2.0,
 				"name": "Charbear",
-				"poison": 18,
-				"shield": 9
+				"poison": 18.0,
+				"shield": 9.0
 			},
 			{
-				"attack": 4,
-				"burn": 0,
-				"level": 2,
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 2.0,
 				"name": "Tanuki",
-				"poison": 0,
-				"shield": 6
+				"poison": 0.0,
+				"shield": 6.0
 			},
 			{
-				"attack": 4,
-				"burn": 0,
-				"level": 1,
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 1.0,
 				"name": "Jormundgandr",
-				"poison": 6,
-				"shield": 4
+				"poison": 6.0,
+				"shield": 4.0
 			},
 			{
-				"attack": 0,
-				"burn": 0,
-				"level": 4,
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 4.0,
 				"name": "Pixiu",
-				"poison": 0,
-				"shield": 51
+				"poison": 0.0,
+				"shield": 51.0
 			},
 			{
-				"attack": 2,
-				"burn": 0,
-				"level": 1,
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
 				"name": "Tanuki",
-				"poison": 0,
-				"shield": 3
+				"poison": 0.0,
+				"shield": 3.0
+			},
+			null
+		],
+		[
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Tanuki",
+				"poison": 30.0,
+				"shield": 24.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Jormundgandr",
+				"poison": 42.0,
+				"shield": 14.0
+			},
+			{
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Jormundgandr",
+				"poison": 6.0,
+				"shield": 4.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 30.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 76.0,
+				"level": 3.0,
+				"name": "Charbear",
+				"poison": 30.0,
+				"shield": 3.0
 			},
 			null
 		]
@@ -1334,6 +1777,49 @@
 				"poison": 24.0,
 				"shield": 6.0
 			}
+		],
+		[
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Tanuki",
+				"poison": 39.0,
+				"shield": 24.0
+			},
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Jormundgandr",
+				"poison": 72.0,
+				"shield": 31.0
+			},
+			{
+				"attack": 2.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Tanuki",
+				"poison": 0.0,
+				"shield": 3.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Pixiu",
+				"poison": 39.0,
+				"shield": 12.0
+			},
+			{
+				"attack": 8.0,
+				"burn": 82.0,
+				"level": 3.0,
+				"name": "Charbear",
+				"poison": 39.0,
+				"shield": 3.0
+			},
+			null
 		]
 	],
 	"8": [
@@ -1436,6 +1922,42 @@
 				"poison": 24.0,
 				"shield": 6.0
 			}
+		],
+		[
+			{
+				"attack": 8.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Tanuki",
+				"poison": 48.0,
+				"shield": 24.0
+			},
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Jormundgandr",
+				"poison": 81.0,
+				"shield": 31.0
+			},
+			{
+				"attack": 4.0,
+				"burn": 0.0,
+				"level": 2.0,
+				"name": "Tanuki",
+				"poison": 9.0,
+				"shield": 18.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Pixiu",
+				"poison": 48.0,
+				"shield": 24.0
+			},
+			null,
+			null
 		]
 	],
 	"9": [
@@ -1488,6 +2010,42 @@
 				"poison": 24.0,
 				"shield": 6.0
 			}
+		],
+		[
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 4.0,
+				"name": "Tanuki",
+				"poison": 75.0,
+				"shield": 48.0
+			},
+			{
+				"attack": 16.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Jormundgandr",
+				"poison": 90.0,
+				"shield": 37.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 1.0,
+				"name": "Pixiu",
+				"poison": 0.0,
+				"shield": 6.0
+			},
+			{
+				"attack": 0.0,
+				"burn": 0.0,
+				"level": 3.0,
+				"name": "Pixiu",
+				"poison": 57.0,
+				"shield": 33.0
+			},
+			null,
+			null
 		]
 	]
 }

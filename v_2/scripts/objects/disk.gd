@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var custom_button: Button = $CustomButton
+@onready var reroll_cost_label: Label = $CustomButton/RerollCost
+@onready var freeze_button: Button = $Freeze
 @onready var unit_slot_1: UnitSlot = $Slots/UnitSlot1
 @onready var unit_slot_2: UnitSlot = $Slots/UnitSlot2
 @onready var unit_slot_3: UnitSlot = $Slots/UnitSlot3
@@ -46,9 +48,58 @@ signal buy(data:UnitData, disk_unit: DiskUnit)
 
 func _ready() -> void:
 	GameManager.stats_changed.connect(_update_shop_level_ui)
+	freeze_button.freeze_toggled.connect(_on_freeze_toggled)
+	if reroll_cost_label:
+		reroll_cost_label.text = str(REROLL_COST)
 	_update_shop_level_ui()
-	reroll()
-	
+	if GameManager.is_shop_frozen:
+		freeze_button.set_frozen(true)
+		load_disk(GameManager.frozen_shop_units)
+	else:
+		freeze_button.set_frozen(false)
+		reroll()
+
+func _exit_tree() -> void:
+	_save_freeze_state()
+
+func _on_freeze_toggled(_is_frozen: bool) -> void:
+	_save_freeze_state()
+
+func _save_freeze_state() -> void:
+	if not is_instance_valid(freeze_button):
+		return
+	GameManager.is_shop_frozen = freeze_button.toggled_freeze
+	if freeze_button.toggled_freeze:
+		GameManager.frozen_shop_units = get_disk_data()
+	else:
+		GameManager.frozen_shop_units.clear()
+
+func get_disk_data() -> Array[UnitData]:
+	var result: Array[UnitData] = []
+	for slot in slots.get_children():
+		if slot is UnitSlot:
+			var unit: Unit = slot.get_unit()
+			if unit != null and not unit.is_queued_for_deletion():
+				result.append(unit.data)
+			else:
+				result.append(null)
+	return result
+
+func load_disk(disk_data: Array[UnitData]) -> void:
+	var slot_nodes := slots.get_children()
+	for i in range(slot_nodes.size()):
+		var slot: UnitSlot = slot_nodes[i] as UnitSlot
+		if slot == null:
+			continue
+		slot.clear_slot()
+		var unit_data: UnitData = disk_data[i] if i < disk_data.size() else null
+		if unit_data == null:
+			continue
+		var unit: DiskUnit = DISK_UNIT.instantiate()
+		unit.create_from_data(unit_data)
+		unit.buy.connect(_on_unit_buy)
+		slot._reparent_unit(unit)
+
 func reroll() -> void:
 	for slot in slots.get_children():
 		slot.clear_slot()
@@ -59,6 +110,7 @@ func reroll() -> void:
 		unit.create_from_data(unit_data)
 		unit.buy.connect(_on_unit_buy)
 		slot._reparent_unit(unit)
+	_save_freeze_state()
 
 func _update_shop_level_ui() -> void:
 	var lvl: int = GameManager.shop_level
@@ -102,6 +154,9 @@ func _on_unit_buy(data:UnitData, disk_unit:DiskUnit) -> void:
 	buy.emit(data, disk_unit)
 	
 func _on_custom_button_pressed() -> void:
+	if freeze_button.toggled_freeze:
+		SoundManager.play_sfx(SoundManager.ERROR)
+		return
 	if GameManager.spend_coins(REROLL_COST):
 		reroll()
 	else:

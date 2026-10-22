@@ -85,6 +85,26 @@ func combine_with_data(other_data: UnitData) -> void:
 
 func flip() -> void:
 	$Sprite2D.flip_h = not $Sprite2D.flip_h
+	var anim_player: AnimationPlayer = $AnimationPlayer
+	if anim_player and anim_player.has_animation("attack"):
+		var lib: AnimationLibrary = anim_player.get_animation_library("").duplicate()
+		var attack_anim: Animation = lib.get_animation("attack").duplicate()
+		for track_idx in range(attack_anim.get_track_count()):
+			var path := str(attack_anim.track_get_path(track_idx))
+			if path == "Sprite2D:position":
+				for key_idx in range(attack_anim.track_get_key_count(track_idx)):
+					var pos: Vector2 = attack_anim.track_get_key_value(track_idx, key_idx)
+					pos.x = 64.0 - pos.x
+					attack_anim.track_set_key_value(track_idx, key_idx, pos)
+			elif path == "Sprite2D:rotation":
+				for key_idx in range(attack_anim.track_get_key_count(track_idx)):
+					var rot: float = attack_anim.track_get_key_value(track_idx, key_idx)
+					attack_anim.track_set_key_value(track_idx, key_idx, -rot)
+		lib.remove_animation("attack")
+		lib.add_animation("attack", attack_anim)
+		anim_player.remove_animation_library("")
+		anim_player.add_animation_library("", lib)
+		anim_player.play("idle")
 
 ## Apply a stat buff or debuff
 func apply_buff(stat_type: Ability.StatType, amount: int) -> void:
