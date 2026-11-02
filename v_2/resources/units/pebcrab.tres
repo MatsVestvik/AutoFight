@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" uid="uid://xqgjex8fyfk3" path="res://scripts/objects/ability.gd" id="1_ab"]
+[ext_resource type="Resource" path="res://resources/ability/pebcrab.tres" id="2_u_ab"]
+[ext_resource type="Script" uid="uid://cq6w3eahcbo3j" path="res://scripts/objects/unit_data.gd" id="3_ud"]
+[ext_resource type="Texture2D" uid="uid://jpdacycede8c" path="res://assets/mons/placeholder.png" id="4_tex"]
+
+[resource]
+script = ExtResource("3_ud")
+texture = ExtResource("4_tex")
+name = "Pebcrab"
+cooldown_time = 3.0
+cost = 3
+rarity = 0
+typing = Array[int]([1, 4])
+abilities = Array[ExtResource("1_ab")]([ExtResource("2_u_ab")])
+attack = 3
+shield = 5
+metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

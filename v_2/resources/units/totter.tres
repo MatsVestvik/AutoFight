@@ -8,13 +8,13 @@
 [resource]
 script = ExtResource("3_3y4ue")
 texture = ExtResource("4_2ejml")
-name = "totter"
-cooldown_time = 4.0
-cost = 5
+name = "Totter"
+cooldown_time = 3.0
+cost = 7
 rarity = 2
 typing = Array[int]([1, 5])
 abilities = Array[ExtResource("1_o05s3")]([ExtResource("2_innov")])
-attack = 2
-poison = 2
-burn = 2
+attack = 4
+poison = 3
+burn = 3
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

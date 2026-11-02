@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ab")
 ability_name = "Jormundgandr"
-description = "On trigger give all allies +3 poison"
+description = "On trigger give all allies +2 poison"
 trigger = 2
 target = 1
 stat_type = 1
-value = 3
+value = 2
 metadata/_custom_type_script = "uid://xqgjex8fyfk3"

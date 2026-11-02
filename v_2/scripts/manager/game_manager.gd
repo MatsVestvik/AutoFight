@@ -1,6 +1,6 @@
 extends Node
 
-const STARTING_COINS: int = 50
+const STARTING_COINS: int = 10
 const STARTING_HEALTH: int = 10
 const STARTING_SHOP_LEVEL: int = 1
 const MAX_SHOP_LEVEL: int = 14
@@ -12,19 +12,19 @@ const ENEMY_DB_PATH: String = "res://resources/enemy_teams_db.json"
 ## Rarity drop percentages per shop level [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
 const SHOP_RARITY_ODDS: Dictionary = {
 	1: [100, 0, 0, 0, 0],
-	2: [80, 20, 0, 0, 0],
-	3: [65, 30, 5, 0, 0],
-	4: [55, 35, 10, 0, 0],
-	5: [45, 35, 20, 0, 0],
-	6: [35, 35, 25, 5, 0],
-	7: [30, 30, 30, 10, 0],
-	8: [25, 25, 35, 14, 1],
-	9: [20, 25, 35, 18, 2],
-	10: [15, 20, 35, 25, 5],
-	11: [12, 18, 32, 30, 8],
-	12: [10, 15, 30, 33, 12],
-	13: [8, 12, 25, 37, 18],
-	14: [5, 10, 20, 40, 25]
+	2: [70, 30, 0, 0, 0],
+	3: [55, 35, 10, 0, 0],
+	4: [45, 35, 20, 0, 0],
+	5: [35, 35, 25, 5, 0],
+	6: [30, 30, 30, 10, 0],
+	7: [25, 25, 32, 16, 2],
+	8: [20, 25, 32, 19, 4],
+	9: [15, 22, 32, 23, 8],
+	10: [12, 18, 30, 28, 12],
+	11: [10, 15, 28, 31, 16],
+	12: [8, 12, 25, 35, 20],
+	13: [5, 10, 22, 38, 25],
+	14: [3, 7, 20, 40, 30]
 }
 
 var units: Array[UnitData] = []

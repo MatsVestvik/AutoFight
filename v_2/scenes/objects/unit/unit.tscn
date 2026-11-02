@@ -47,5 +47,3 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_font")
 text = "Lv.1"
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

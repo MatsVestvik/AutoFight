@@ -9,11 +9,11 @@
 script = ExtResource("3_ud")
 texture = ExtResource("4_tex")
 name = "Tanuki"
-cooldown_time = 3.5
-cost = 4
+cooldown_time = 3.0
+cost = 5
 rarity = 1
 typing = Array[int]([2])
 abilities = Array[ExtResource("1_ab")]([ExtResource("2_tanuki_ab")])
-attack = 2
-shield = 3
+attack = 4
+shield = 5
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

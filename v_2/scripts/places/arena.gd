@@ -19,6 +19,17 @@ func _ready() -> void:
 	var enemy_team: Array[UnitData] = GameManager.get_enemy_team_for_day(GameManager.day)
 	team_2.arena_team.load_team(enemy_team)
 	GameManager.save_team_for_day(GameManager.day, GameManager.team)
+
+	for slot in team_1.arena_team.slots:
+		var u: Unit = slot.get_unit()
+		if u:
+			var context := AbilityContext.new(u, team_1.arena_team, team_2.arena_team)
+			u.trigger_abilities(Ability.Trigger.ON_ROUND_START, context)
+	for slot in team_2.arena_team.slots:
+		var u: Unit = slot.get_unit()
+		if u:
+			var context := AbilityContext.new(u, team_2.arena_team, team_1.arena_team)
+			u.trigger_abilities(Ability.Trigger.ON_ROUND_START, context)
 	
 	team_1.team_attacked.connect(func(dmg: Damage): team_2.take_damage(dmg))
 	team_2.team_attacked.connect(func(dmg: Damage): team_1.take_damage(dmg))

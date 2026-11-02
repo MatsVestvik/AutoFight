@@ -9,10 +9,11 @@
 script = ExtResource("3_tkdfd")
 texture = ExtResource("4_jnxb7")
 name = "Charbear"
-cooldown_time = 4.0
-cost = 5
+cooldown_time = 3.5
+cost = 3
+rarity = 0
 typing = Array[int]([0])
 abilities = Array[ExtResource("1_8n3oh")]([ExtResource("2_vfcfg")])
-attack = 2
-burn = 5
+attack = 4
+burn = 3
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

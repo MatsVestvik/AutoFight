@@ -12,6 +12,15 @@ class_name InfoBox
 @onready var typings: HBoxContainer = $MarginContainer/VBoxContainer/Sprite2D/Typings
 
 const COUNTER = preload("uid://c8ogbactqmb6w")
+const RARITY_NAMES: Array[String] = ["COMMON", "UNCOMMON", "RARE", "EPIC", "LEGENDARY", "MYTHICAL"]
+const RARITY_COLORS: Array[Color] = [
+	Color(0.75, 0.75, 0.75, 1.0),
+	Color(0.2, 0.85, 0.2, 1.0),
+	Color(0.3, 0.55, 1.0, 1.0),
+	Color(0.7, 0.3, 1.0, 1.0),
+	Color(1.0, 0.65, 0.1, 1.0),
+	Color(1.0, 0.25, 0.5, 1.0)
+]
 
 var data:UnitData
 
@@ -70,7 +79,9 @@ func _update_cooldown() -> void:
 
 func _update_level() -> void:
 	if level_label and data:
-		level_label.text = "Lv." + str(maxi(1, data.level))
+		var r_idx: int = clampi(data.rarity, 0, RARITY_NAMES.size() - 1)
+		level_label.text = "Lv." + str(maxi(1, data.level)) + " ($" + str(data.cost) + ")"
+		name_label.modulate = RARITY_COLORS[r_idx]
 
 func _update_ability_description() -> void:
 	if data and not data.abilities.is_empty() and data.abilities[0]:
@@ -80,6 +91,8 @@ func _update_ability_description() -> void:
 			ability_description.text = ab.description.replace("+" + str(ab.value), "+" + str(ab.value * lvl))
 		else:
 			ability_description.text = ab.description
+	else:
+		ability_description.text = ""
 		
 func _update_stats() -> void:
 	# 1. Remove and free existing counters

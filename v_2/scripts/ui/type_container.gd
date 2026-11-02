@@ -21,6 +21,8 @@ func set_typing(p_typing:UnitData.TYPING) -> void:
 		UnitData.TYPING.FIRE: typing_sprite.texture = FIRE_BOX; label.text = "FIRE"
 		UnitData.TYPING.GRASS: typing_sprite.texture = GRASS_BOX; label.text = "GRASS"
 		UnitData.TYPING.WATER: typing_sprite.texture = WATER_BOX; label.text = "WATER"
+		UnitData.TYPING.FLYING: typing_sprite.texture = NORMAL_BOX; label.text = "FLYING"
+		UnitData.TYPING.STEEL: typing_sprite.texture = NORMAL_BOX; label.text = "STEEL"
 	
 func _process(delta: float) -> void:
 	pass

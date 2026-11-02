@@ -9,17 +9,18 @@ script = ExtResource("1_spgd")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=918273646]
 position = Vector2(-16, -16)
-scale = Vector2(1.5, 1.1666666)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_panel")
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=918273647]
-offset_left = -16.0
-offset_right = 136.0
-offset_bottom = 208.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 160.0
+offset_bottom = 256.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 8
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=918273648]

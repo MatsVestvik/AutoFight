@@ -9,10 +9,11 @@
 script = ExtResource("3_ud")
 texture = ExtResource("4_tex")
 name = "Pixiu"
-cooldown_time = 4.5
-cost = 8
+cooldown_time = 3.5
+cost = 5
 rarity = 1
 typing = Array[int]([4, 5])
 abilities = Array[ExtResource("1_ab")]([ExtResource("2_pixiu_ab")])
+attack = 3
 shield = 6
 metadata/_custom_type_script = "uid://cq6w3eahcbo3j"

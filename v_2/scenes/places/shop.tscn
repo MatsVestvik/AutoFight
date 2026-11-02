@@ -75,6 +75,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("8_t1hbj")]
+z_index = 25
 offset_left = -264.0
 offset_top = -160.0
 offset_right = -136.0
@@ -100,7 +101,8 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SidePanel" parent="." unique_id=918273645 instance=ExtResource("12_sidepanel")]
-position = Vector2(240, -144)
+z_index = 20
+position = Vector2(280, -144)
 
 [connection signal="buy" from="Disk" to="." method="_on_disk_buy"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
