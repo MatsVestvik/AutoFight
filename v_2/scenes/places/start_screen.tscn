@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://buyskdebcsedc" path="res://assets/buttons/green_1x1.png" id="3_green"]
 [ext_resource type="Texture2D" uid="uid://uokr206a6yig" path="res://assets/buttons/yellow_1x1.png" id="4_yellow"]
 [ext_resource type="PackedScene" uid="uid://cbgmovingv201" path="res://scenes/objects/background.tscn" id="5_xdr4b"]
-[ext_resource type="PackedScene" uid="uid://csidepanel001" path="res://scenes/ui/side_panel.tscn" id="6_sidepanel"]
+[ext_resource type="PackedScene" uid="uid://cunitpackvw01" path="res://scenes/ui/unit_pack_view.tscn" id="6_unitpack"]
 [ext_resource type="PackedScene" uid="uid://dw2ilhce6urxk" path="res://scenes/ui/info_box.tscn" id="7_infobox"]
 [ext_resource type="PackedScene" uid="uid://csettingsui01" path="res://scenes/ui/settings.tscn" id="8_settings"]
 
@@ -17,25 +17,33 @@ zoom = Vector2(2, 2)
 
 [node name="NewGameButton" parent="." unique_id=764166975 instance=ExtResource("2_btn")]
 offset_left = -32.0
-offset_top = -104.0
+offset_top = -140.0
 offset_right = 32.0
-offset_bottom = -40.0
+offset_bottom = -76.0
 label_name = "New Game"
 image = ExtResource("3_green")
 
+[node name="UnitPackButton" parent="." unique_id=764166976 instance=ExtResource("2_btn")]
+offset_left = -32.0
+offset_top = -68.0
+offset_right = 32.0
+offset_bottom = -4.0
+label_name = "Unit Pack"
+image = ExtResource("4_yellow")
+
 [node name="SettingsButton" parent="." unique_id=1275779343 instance=ExtResource("2_btn")]
 offset_left = -32.0
-offset_top = -32.0
+offset_top = 4.0
 offset_right = 32.0
-offset_bottom = 32.0
+offset_bottom = 68.0
 label_name = "Settings"
 image = ExtResource("4_yellow")
 
 [node name="QuitButton" parent="." unique_id=567419159 instance=ExtResource("2_btn")]
 offset_left = -32.0
-offset_top = 40.0
+offset_top = 76.0
 offset_right = 32.0
-offset_bottom = 104.0
+offset_bottom = 140.0
 label_name = "Quit"
 image = ExtResource("4_yellow")
 
@@ -44,15 +52,18 @@ position = Vector2(0, 8)
 scale = Vector2(3, 3)
 
 [node name="InfoBox" parent="." unique_id=390190252 instance=ExtResource("7_infobox")]
-z_index = 25
+z_index = 110
 offset_left = -264.0
 offset_top = -144.0
 offset_right = -136.0
 offset_bottom = 49.0
 
-[node name="SidePanel" parent="." unique_id=918273645 instance=ExtResource("6_sidepanel")]
-z_index = 20
-position = Vector2(280, -144)
+[node name="UnitPackView" parent="." unique_id=951753852 instance=ExtResource("6_unitpack")]
+visible = false
+offset_left = -96.0
+offset_top = -128.0
+offset_right = 192.0
+offset_bottom = 128.0
 
 [node name="Settings" parent="." unique_id=948172635 instance=ExtResource("8_settings")]
 visible = false
@@ -62,5 +73,6 @@ offset_right = 90.0
 offset_bottom = 90.0
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="UnitPackButton" to="." method="_on_unit_pack_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

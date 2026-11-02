@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bvtqcdwdk8qox" path="res://assets/icons/settings.png" id="8_fhs8v"]
 [ext_resource type="Script" uid="uid://bf7mlfi35y4dp" path="res://scripts/ui/settings_button.gd" id="9_kw8g8"]
 [ext_resource type="PackedScene" uid="uid://csettingsui01" path="res://scenes/ui/settings.tscn" id="10_setscn"]
+[ext_resource type="Texture2D" path="res://assets/icons/unit_pack.png" id="11_upicon"]
+[ext_resource type="Script" path="res://scripts/ui/unit_pack_button.gd" id="12_upbtn"]
+[ext_resource type="PackedScene" uid="uid://cunitpackvw01" path="res://scenes/ui/unit_pack_view.tscn" id="13_upscn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxpdy"]
 
@@ -28,9 +31,9 @@ script = ExtResource("1_vnpvo")
 
 [node name="Day" type="Label" parent="." unique_id=1187957558]
 layout_mode = 0
-offset_left = 72.0
-offset_right = 136.0
-offset_bottom = 40.0
+offset_left = 88.0
+offset_right = 152.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
 text = "DAY"
@@ -39,9 +42,9 @@ vertical_alignment = 1
 
 [node name="DayCounter" type="Label" parent="." unique_id=1474148915]
 layout_mode = 0
-offset_left = 136.0
-offset_right = 248.0
-offset_bottom = 40.0
+offset_left = 152.0
+offset_right = 216.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_284y0")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -97,9 +100,9 @@ texture = ExtResource("4_rcgkl")
 
 [node name="SettingsButton" type="Button" parent="." unique_id=1284376066]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 12.0
 offset_top = 8.0
-offset_right = 48.0
+offset_right = 44.0
 offset_bottom = 40.0
 theme_override_constants/h_separation = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fxpdy")
@@ -113,11 +116,37 @@ script = ExtResource("9_kw8g8")
 [node name="Settings" parent="SettingsButton" unique_id=948172635 instance=ExtResource("10_setscn")]
 visible = false
 layout_mode = 0
-offset_left = 182.0
+offset_left = 186.0
 offset_top = 62.0
-offset_right = 362.0
+offset_right = 366.0
 offset_bottom = 242.0
+
+[node name="UnitPackButton" type="Button" parent="." unique_id=1284376067]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 80.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fxpdy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nt1a3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t0b7b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_afwx3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dm6ui")
+icon = ExtResource("11_upicon")
+script = ExtResource("12_upbtn")
+
+[node name="UnitPackView" parent="UnitPackButton" unique_id=951753852 instance=ExtResource("13_upscn")]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 36.0
+offset_right = 432.0
+offset_bottom = 292.0
 
 [connection signal="mouse_entered" from="SettingsButton" to="SettingsButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsButton" to="SettingsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="SettingsButton" to="SettingsButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="UnitPackButton" to="UnitPackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UnitPackButton" to="UnitPackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="UnitPackButton" to="UnitPackButton" method="_on_pressed"]

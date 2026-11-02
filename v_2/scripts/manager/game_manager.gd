@@ -32,6 +32,7 @@ var team: Array[UnitData] = []
 var bench: Array[UnitData] = []
 var frozen_shop_units: Array[UnitData] = []
 var is_shop_frozen: bool = false
+var is_endless_mode: bool = false
 var enemy_teams_db: Dictionary = {}
 
 var coins: int = STARTING_COINS:
@@ -270,18 +271,13 @@ func _get_units_by_rarity_with_fallback(target_rarity: int) -> Array[UnitData]:
 
 func on_battle_won() -> void:
 	wins += 1
-	if wins >= TARGET_WINS:
-		reset_game()
-	else:
-		day += 1
-		shop_level += 1
-		coins += ROUND_COINS_REWARD
+	day += 1
+	shop_level += 1
+	coins += ROUND_COINS_REWARD
 
 func on_battle_lost() -> void:
 	health -= 1
-	if health <= 0:
-		reset_game()
-	else:
+	if health > 0:
 		day += 1
 		shop_level += 1
 		coins += ROUND_COINS_REWARD
@@ -291,6 +287,7 @@ func reset_game() -> void:
 	bench.clear()
 	frozen_shop_units.clear()
 	is_shop_frozen = false
+	is_endless_mode = false
 	coins = STARTING_COINS
 	health = STARTING_HEALTH
 	wins = 0

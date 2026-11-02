@@ -7,6 +7,7 @@ const SETTINGS = preload("uid://bvtqcdwdk8qox")
 
 
 func _on_mouse_entered() -> void:
+	SoundManager.play_sfx(SoundManager.MOUSE_ENTERED)
 	icon = HOVER_SETTINGS
 
 
@@ -15,4 +16,9 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
+	SoundManager.play_sfx(SoundManager.CLICK)
 	settings.visible = not settings.visible
+	if settings.visible:
+		var unit_pack_node := get_parent().get_node_or_null("UnitPackButton/UnitPackView")
+		if unit_pack_node is CanvasItem:
+			unit_pack_node.visible = false
